@@ -202,7 +202,7 @@ function AlcantaraInspiredPage() {
             ].map((b) => (
               <Link
                 key={b.label}
-                href={b.href}
+                href={b.href as any}
                 className="text-center py-3 rounded-xl border border-neutral-300 hover:bg-neutral-100"
               >
                 {b.label}
