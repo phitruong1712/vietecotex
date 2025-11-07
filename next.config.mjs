@@ -13,7 +13,7 @@ const nextConfig = {
           },
         ],
       },
-      // Favicon specific headers
+      // Favicon specific headers - critical for iPhone Chrome
       {
         source: '/favicon.ico',
         headers: [
@@ -23,7 +23,11 @@ const nextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=86400, must-revalidate',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
           },
         ],
       },

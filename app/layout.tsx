@@ -25,17 +25,10 @@ export const metadata: Metadata = {
     site: '@vietecotex', // update if you have it
   },
   robots: { index: true, follow: true },
-  // Favicon configuration - iPhone Chrome requires specific sizes
+  // Simplified favicon config - Next.js will auto-serve app/favicon.ico
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    shortcut: '/favicon.ico',
+    icon: '/favicon.ico',
+    apple: '/favicon.png',
   },
   manifest: '/manifest.json',
 };
@@ -48,16 +41,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* CRITICAL: Favicon MUST be first for iPhone Chrome compatibility */}
-        <link rel="icon" href="https://vietecotex.com/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="https://vietecotex.com/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="https://vietecotex.com/favicon.png" type="image/png" sizes="32x32" />
-        <link rel="icon" href="https://vietecotex.com/favicon.png" type="image/png" sizes="16x16" />
-        <link rel="apple-touch-icon" href="https://vietecotex.com/favicon.png" sizes="180x180" />
-        <link rel="apple-touch-icon" href="https://vietecotex.com/favicon.png" />
-        <link rel="manifest" href="https://vietecotex.com/manifest.json" />
+        {/* Favicon links - multiple formats for maximum compatibility */}
+        {/* Primary ICO - must be first for iPhone Chrome */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        {/* PNG fallbacks */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        {/* Apple touch icons */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1A6B6B" />
-        <meta name="msapplication-TileImage" content="https://vietecotex.com/favicon.png" />
+        <meta name="msapplication-TileImage" content="/favicon.png" />
         <meta name="msapplication-TileColor" content="#1A6B6B" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
