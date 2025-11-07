@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://vietecotex.com',
     title: 'Viet Ecotex — Eco Microfiber Leather',
     description: 'Sustainable microfiber leather for modern applications.',
-    images: ['/logo.png'], // replace with a wide OG image later (1200x630)
+    images: ['/logo.png'], // 1200x630 OG image
     siteName: 'Viet EcoTex',
     locale: 'en_US',
   },
