@@ -25,26 +25,12 @@ export const metadata: Metadata = {
     site: '@vietecotex', // update if you have it
   },
   robots: { index: true, follow: true },
+  // Next.js will auto-generate favicons from app/icon.png
+  // Additional icons for maximum compatibility
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
-      { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
-      { url: '/favicon.png', sizes: '152x152', type: 'image/png' },
-      { url: '/favicon.png', sizes: '120x120', type: 'image/png' },
-    ],
-    other: [
-      {
-        rel: 'mask-icon',
-        url: '/favicon.png',
-        color: '#1A6B6B',
-      },
-    ],
+    icon: '/favicon.ico',
+    apple: '/favicon.png',
+    shortcut: '/favicon.ico',
   },
   manifest: '/manifest.json',
 };
@@ -57,20 +43,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon must be in <head> before other links for iPhone Chrome */}
-        <link rel="shortcut icon" href="https://vietecotex.com/favicon.ico" />
-        <link rel="icon" type="image/x-icon" href="https://vietecotex.com/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://vietecotex.com/favicon.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="https://vietecotex.com/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="https://vietecotex.com/favicon.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="https://vietecotex.com/favicon.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="https://vietecotex.com/favicon.png" />
-        <link rel="apple-touch-icon" href="https://vietecotex.com/favicon.png" />
-        <link rel="mask-icon" href="https://vietecotex.com/favicon.png" color="#1A6B6B" />
-        <meta name="msapplication-TileColor" content="#1A6B6B" />
-        <meta name="msapplication-TileImage" content="https://vietecotex.com/favicon.png" />
+        {/* Essential favicon links - Next.js auto-generates from app/icon.png */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1A6B6B" />
-        <link rel="manifest" href="https://vietecotex.com/manifest.json" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
