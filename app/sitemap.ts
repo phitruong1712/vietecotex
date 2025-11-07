@@ -1,0 +1,1 @@
+export default function sitemap(){const b='https://vietecotex.com',d=new Date();return['','/catalog','/certifications','/contact'].map(r=>({url:b+r,lastModified:d,changeFrequency:'weekly',priority:r===''?1:0.7}))}
