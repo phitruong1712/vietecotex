@@ -43,9 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Essential favicon links - Next.js auto-generates from app/icon.png */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        {/* Essential favicon links - placed first for maximum compatibility */}
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1A6B6B" />
