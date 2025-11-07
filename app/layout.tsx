@@ -26,9 +26,23 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: [
+      { url: '/favicon.png', sizes: 'any' },
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/favicon.png',
+        color: '#1A6B6B',
+      },
+    ],
   },
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
@@ -49,8 +63,25 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.png" sizes="any" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        {/* Favicons for all platforms */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicon.png" />
+        <link rel="mask-icon" href="/favicon.png" color="#1A6B6B" />
+        <meta name="msapplication-TileColor" content="#1A6B6B" />
+        <meta name="msapplication-TileImage" content="/favicon.png" />
+        <meta name="theme-color" content="#1A6B6B" />
+        <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
