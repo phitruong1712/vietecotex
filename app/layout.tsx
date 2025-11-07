@@ -57,6 +57,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon must be in <head> before other links for iPhone Chrome */}
+        <link rel="shortcut icon" href="https://vietecotex.com/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="https://vietecotex.com/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://vietecotex.com/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="https://vietecotex.com/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://vietecotex.com/favicon.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://vietecotex.com/favicon.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://vietecotex.com/favicon.png" />
+        <link rel="apple-touch-icon" href="https://vietecotex.com/favicon.png" />
+        <link rel="mask-icon" href="https://vietecotex.com/favicon.png" color="#1A6B6B" />
+        <meta name="msapplication-TileColor" content="#1A6B6B" />
+        <meta name="msapplication-TileImage" content="https://vietecotex.com/favicon.png" />
+        <meta name="theme-color" content="#1A6B6B" />
+        <link rel="manifest" href="https://vietecotex.com/manifest.json" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -67,17 +81,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
-        {/* Favicons for all platforms - Next.js will auto-generate from app/icon.png */}
-        {/* Additional explicit links for maximum compatibility */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-        <link rel="mask-icon" href="/favicon.png" color="#1A6B6B" />
-        <meta name="msapplication-TileColor" content="#1A6B6B" />
-        <meta name="msapplication-TileImage" content="/favicon.png" />
-        <meta name="theme-color" content="#1A6B6B" />
-        <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
