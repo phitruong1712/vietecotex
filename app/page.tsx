@@ -103,7 +103,7 @@ function AlcantaraInspiredPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div className="h-96 flex flex-col justify-center">
-              <h2 className="text-xl tracking-[0.2em] text-neutral-600">COLLECTION MOODBOARD</h2>
+              <h2 className="text-xl tracking-[0.2em] text-neutral-600">ECO LEATHER</h2>
               <p className="mt-4 text-neutral-700 leading-relaxed">
                 Each collection explores a palette and a craft: laser cut, embossing, perforation, embroidery. We link fashion and accessories with hi‑tech, automotive and interior design — unlocking endless applications.
               </p>
