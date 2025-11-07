@@ -25,9 +25,12 @@ export const metadata: Metadata = {
     site: '@vietecotex', // update if you have it
   },
   robots: { index: true, follow: true },
-  // Simplified favicon config - Next.js will auto-serve app/favicon.ico
+  // Favicon config - prioritize PNG for iPhone Chrome
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
     apple: '/favicon.png',
   },
   manifest: '/manifest.json',
@@ -41,14 +44,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon links - multiple formats for maximum compatibility */}
-        {/* Primary ICO - must be first for iPhone Chrome */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        {/* PNG fallbacks */}
+        {/* Favicon links - iPhone Chrome may prefer PNG over ICO */}
+        {/* Try PNG first for iPhone Chrome compatibility */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-        {/* Apple touch icons */}
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        {/* ICO for other browsers */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        {/* Apple touch icons - critical for iOS */}
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
         <link rel="apple-touch-icon" sizes="152x152" href="/favicon.png" />
         <link rel="apple-touch-icon" sizes="120x120" href="/favicon.png" />
