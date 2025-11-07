@@ -25,6 +25,10 @@ export const metadata: Metadata = {
     site: '@vietecotex', // update if you have it
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
@@ -45,6 +49,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
