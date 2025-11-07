@@ -25,11 +25,16 @@ export const metadata: Metadata = {
     site: '@vietecotex', // update if you have it
   },
   robots: { index: true, follow: true },
-  // Next.js will auto-generate favicons from app/icon.png
-  // Additional icons for maximum compatibility
+  // Favicon configuration - iPhone Chrome requires specific sizes
   icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+    ],
     shortcut: '/favicon.ico',
   },
   manifest: '/manifest.json',
@@ -43,14 +48,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Essential favicon links - placed first for maximum compatibility */}
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        {/* CRITICAL: Favicon MUST be first for iPhone Chrome compatibility */}
+        <link rel="icon" href="https://vietecotex.com/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="https://vietecotex.com/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://vietecotex.com/favicon.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="https://vietecotex.com/favicon.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="https://vietecotex.com/favicon.png" sizes="180x180" />
+        <link rel="apple-touch-icon" href="https://vietecotex.com/favicon.png" />
+        <link rel="manifest" href="https://vietecotex.com/manifest.json" />
         <meta name="theme-color" content="#1A6B6B" />
+        <meta name="msapplication-TileImage" content="https://vietecotex.com/favicon.png" />
+        <meta name="msapplication-TileColor" content="#1A6B6B" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
