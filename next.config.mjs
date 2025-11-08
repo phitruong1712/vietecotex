@@ -14,7 +14,7 @@ const nextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate',
+            value: 'public, max-age=86400, must-revalidate',
           },
           {
             key: 'X-Content-Type-Options',
@@ -56,7 +56,7 @@ const nextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate',
+            value: 'public, max-age=86400, must-revalidate',
           },
         ],
       },
@@ -69,7 +69,7 @@ const nextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate',
+            value: 'public, max-age=86400, must-revalidate',
           },
         ],
       },
@@ -82,7 +82,7 @@ const nextConfig = {
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate',
+            value: 'public, max-age=86400, must-revalidate',
           },
         ],
       },
