@@ -137,10 +137,10 @@ function AlcantaraInspiredPage() {
               INSPIRATIONS
             </p>
             <h1 className="font-[Gilda_Display] text-4xl sm:text-5xl text-white leading-tight">
-              Vietnam Microfiber Leather Supplier — Alternative to China
+              Eco Microfiber Leather For Future Innovation
             </h1>
             <p className="text-neutral-200/90 mt-3 text-sm">
-              Premium eco microfiber leather and furniture textile supplier based in Vietnam. Small MOQs, US/EU compliant, custom solutions. Ideal alternative to Chinese manufacturing for automotive, fashion, and interior design industries.
+              Vietnam Microfiber Leather Supplier — Alternative to China. Premium eco microfiber leather and furniture textile supplier based in Vietnam. Small MOQs, US/EU compliant, custom solutions. Ideal alternative to Chinese manufacturing for automotive, fashion, and interior design industries.
             </p>
             <a
               href="#catalog"
