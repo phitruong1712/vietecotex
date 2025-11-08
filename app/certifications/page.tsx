@@ -2,10 +2,14 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Manufacturing Certifications — REACH, RoHS, TB117, GRS, OEKO-TEX®',
+  title:
+    'US/EU Certifications — Vietnam Supplier Alternative to China | Certifications',
   description:
-    'Viet Ecotex provides third-party testing and certifications for US/EU buyers including REACH & RoHS chemical compliance, TB117/BS5852 flammability for upholstery, OEKO-TEX®, and GRS support. View our manufacturing certifications.',
+    'Vietnam-based microfiber leather and furniture textile supplier with US/EU compliant certifications. REACH, RoHS, TB117, BS5852, OEKO-TEX®, and GRS support. Premium alternative to Chinese manufacturing with full compliance documentation.',
   keywords: [
+    'Vietnam supplier certifications',
+    'alternative to China certifications',
+    'US EU compliant supplier',
     'microfiber leather certifications',
     'REACH compliance',
     'RoHS compliance',
@@ -16,11 +20,14 @@ export const metadata: Metadata = {
     'furniture fabric certifications',
     'US EU compliance',
     'sustainable material certifications',
+    'non-China supplier certifications',
+    'Vietnam manufacturing certifications',
   ],
   openGraph: {
-    title: 'Manufacturing Certifications — REACH, RoHS, TB117, GRS, OEKO-TEX®',
+    title:
+      'US/EU Certifications — Vietnam Supplier Alternative to China | Certifications',
     description:
-      'Third-party testing and certifications for eco microfiber leather and furniture fabrics. REACH, RoHS, TB117, BS5852, OEKO-TEX®, and GRS support.',
+      'Vietnam-based supplier with US/EU compliant certifications. REACH, RoHS, TB117, BS5852, OEKO-TEX®, and GRS support. Premium alternative to Chinese manufacturing.',
     url: 'https://vietecotex.com/certifications',
   },
   alternates: {
@@ -59,13 +66,16 @@ export default function Certifications() {
   return (
     <section className="container-xl py-10 md:py-14">
       <h1 className="font-serif text-3xl md:text-4xl mb-2">
-        Manufacturing Certifications
+        US/EU Certifications — Vietnam Supplier Alternative to China
       </h1>
       <p className="text-neutral-700 max-w-3xl">
-        We can provide third-party testing and certificates as required for
-        US/EU buyers, including REACH & RoHS chemical compliance, TB117/BS5852
-        flammability for upholstery, OEKO-TEX®, and GRS support via partners.
-        Below is a sample of documents.
+        As a Vietnam-based supplier offering an alternative to Chinese
+        manufacturing, we provide third-party testing and certificates as
+        required for US/EU buyers. Full compliance documentation including REACH
+        & RoHS chemical compliance, TB117/BS5852 flammability for upholstery,
+        OEKO-TEX®, and GRS support via partners. Ideal for companies seeking
+        non-China suppliers with complete certification transparency. Below is a
+        sample of documents.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
         {certs.map((c) => (

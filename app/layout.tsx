@@ -9,8 +9,17 @@ export const metadata: Metadata = {
     template: '%s | Viet Ecotex',
   },
   description:
-    'Premium eco microfiber leather and sustainable furniture fabrics for automotive, fashion, and interior design. Custom colors, grains, and specifications. Small MOQs. US/EU compliant certifications. Vietnam + China manufacturing. Specializing in PU/PVC leather, furniture textiles, and eco-friendly materials.',
+    'Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Eco microfiber leather, sustainable furniture fabrics, PU/PVC leather. Small MOQs, custom colors, US/EU compliant. Ideal for companies seeking reliable non-China suppliers for automotive, fashion, and interior design applications.',
   keywords: [
+    'microfiber leather supplier',
+    'furniture textile supplier',
+    'alternative to China manufacturing',
+    'Vietnam microfiber leather supplier',
+    'non-China supplier',
+    'microfiber leather manufacturer',
+    'furniture textile manufacturer',
+    'Vietnam manufacturing alternative',
+    'alternative to Chinese suppliers',
     'microfiber leather',
     'eco fabrics',
     'furniture textiles',
@@ -30,13 +39,16 @@ export const metadata: Metadata = {
     'synthetic leather',
     'vegan leather',
     'sustainable materials',
+    'Vietnam supplier',
+    'alternative supplier',
   ],
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     url: 'https://vietecotex.com',
     title: 'Viet Ecotex — Eco Microfiber Leather',
-    description: 'Sustainable microfiber leather for modern applications.',
+    description:
+      'Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Small MOQs, US/EU compliant, custom solutions.',
     images: [
       {
         url: 'https://vietecotex.com/opengraph-image', // Dynamic OG image route (1200x630)
@@ -141,7 +153,7 @@ export default function RootLayout({
               },
               sameAs: [],
               description:
-                'Eco microfiber leather and sustainable furniture fabrics for automotive, fashion, and interior design. Vietnam + China manufacturing.',
+                'Vietnam-based supplier of eco microfiber leather and sustainable furniture fabrics. Premium alternative to Chinese manufacturing for automotive, fashion, and interior design industries.',
             }),
           }}
         />
@@ -171,7 +183,7 @@ export default function RootLayout({
               name: 'Viet Ecotex',
               image: 'https://vietecotex.com/logo.png',
               description:
-                'Manufacturer of eco microfiber leather and sustainable furniture fabrics. Specializing in PU/PVC leather, automotive fabrics, and furniture textiles.',
+                'Vietnam-based manufacturer and supplier of eco microfiber leather and sustainable furniture fabrics. Premium alternative to Chinese manufacturing. Specializing in PU/PVC leather, automotive fabrics, and furniture textiles with small MOQs and US/EU compliance.',
               address: {
                 '@type': 'PostalAddress',
                 addressCountry: 'VN',
@@ -184,20 +196,36 @@ export default function RootLayout({
                 availableLanguage: ['en'],
               },
               areaServed: 'Worldwide',
-              makesOffer: {
-                '@type': 'Offer',
-                itemOffered: {
-                  '@type': 'Product',
-                  name: 'Eco Microfiber Leather',
-                  description:
-                    'Sustainable microfiber leather for automotive, fashion, and interior design applications',
-                  category: 'Textiles',
-                  brand: {
-                    '@type': 'Brand',
-                    name: 'Viet Ecotex',
+              makesOffer: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Product',
+                    name: 'Eco Microfiber Leather',
+                    description:
+                      'Vietnam-based supplier of sustainable microfiber leather — premium alternative to Chinese manufacturing for automotive, fashion, and interior design applications',
+                    category: 'Textiles',
+                    brand: {
+                      '@type': 'Brand',
+                      name: 'Viet Ecotex',
+                    },
                   },
                 },
-              },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Product',
+                    name: 'Furniture Textiles',
+                    description:
+                      'Vietnam-based supplier of sustainable furniture textiles — premium alternative to Chinese manufacturing for furniture and upholstery applications',
+                    category: 'Textiles',
+                    brand: {
+                      '@type': 'Brand',
+                      name: 'Viet Ecotex',
+                    },
+                  },
+                },
+              ],
             }),
           }}
         />
@@ -226,8 +254,9 @@ export default function RootLayout({
             <div>
               <div className="font-serif text-lg mb-2">Viet EcoTex</div>
               <p>
-                Microfiber (PU/PVC) leather & furniture fabrics. Vietnam + China
-                manufacturing.
+                Vietnam-based microfiber leather and furniture textile supplier
+                — premium alternative to Chinese manufacturing. Small MOQs, US/EU
+                compliant, custom solutions.
               </p>
               <p className="mt-2">
                 Phone: <a href="tel:+84976344224">+84 976 344 224</a> ·
@@ -259,8 +288,9 @@ export default function RootLayout({
             <div>
               <div className="font-semibold mb-2">For Buyers</div>
               <p className="text-neutral-600">
-                Small MOQs · Custom colors & grains · Fast lead times · US/EU
-                compliance · Alternative to China · Reliable warranty.
+                Premium alternative to Chinese manufacturing · Small MOQs · Custom
+                colors & grains · Fast lead times · US/EU compliance · Vietnam-based
+                supplier · Reliable warranty · Quality assurance.
               </p>
             </div>
           </div>

@@ -2,22 +2,31 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Our Commitment — Sustainable Microfiber Leather & Furniture Fabrics',
+  title:
+    'Vietnam Manufacturing — Alternative to China Supplier | Our Commitment',
   description:
-    'Viet Ecotex offers Vietnam-based manufacturing with China back-up. Small MOQs, customization, and US/EU-compliant certifications for eco microfiber leather and furniture fabrics.',
+    'Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Small MOQs, fast lead times, US/EU compliant certifications, custom solutions. Ideal for companies seeking reliable non-China suppliers.',
   keywords: [
-    'sustainable microfiber leather',
-    'eco furniture fabrics',
     'Vietnam manufacturing',
+    'alternative to China manufacturing',
+    'Vietnam supplier',
+    'non-China supplier',
+    'microfiber leather supplier Vietnam',
+    'furniture textile supplier Vietnam',
+    'alternative to Chinese suppliers',
+    'Vietnam manufacturing alternative',
     'small MOQ',
     'custom microfiber leather',
     'US EU compliant',
     'sustainable materials',
+    'Vietnam microfiber leather',
+    'non-China manufacturing',
   ],
   openGraph: {
-    title: 'Our Commitment — Sustainable Microfiber Leather & Furniture Fabrics',
+    title:
+      'Vietnam Manufacturing — Alternative to China Supplier | Our Commitment',
     description:
-      'Vietnam-based manufacturing with China back-up. Small MOQs, customization, and US/EU-compliant certifications.',
+      'Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Small MOQs, fast lead times, US/EU compliant.',
     url: 'https://vietecotex.com/our-commitment',
   },
   alternates: {
@@ -28,10 +37,15 @@ export const metadata: Metadata = {
 export default function OurCommitmentPage() {
   return (
     <section className="container-xl py-20 text-center">
-      <h1 className="display">Microfiber Leather & Furniture Fabrics</h1>
+      <h1 className="display">
+        Vietnam Supplier — Alternative to China Manufacturing
+      </h1>
       <p className="max-w-2xl mx-auto mt-5 text-neutral-700">
-        Vietnam-based manufacturing with China back-up. Small MOQs,
-        customization, and US/EU-compliant certifications.
+        Vietnam-based microfiber leather and furniture textile supplier offering
+        a premium alternative to Chinese manufacturing. Small MOQs, fast lead
+        times, customization, and US/EU-compliant certifications. Ideal for
+        companies seeking reliable non-China suppliers with flexible production
+        capabilities and quality assurance.
       </p>
       <div className="mt-8 flex items-center justify-center gap-3">
         <Link className="btn btn-primary" href="/contact">

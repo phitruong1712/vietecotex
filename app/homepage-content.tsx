@@ -105,12 +105,10 @@ export default function HomePageContent() {
               INSPIRATIONS
             </p>
             <h1 className="font-[Gilda_Display] text-4xl sm:text-5xl text-white leading-tight">
-              Eco Microfiber Leather for Future Innovation
+              Vietnam Microfiber Leather Supplier — Alternative to China
             </h1>
             <p className="text-neutral-200/90 mt-3 text-sm">
-              Technology, functionality, emotion, and sustainability — a curated
-              showcase of microfiber surfaces for automotive, fashion, and
-              interiors.
+              Premium eco microfiber leather and furniture textile supplier based in Vietnam. Small MOQs, US/EU compliant, custom solutions. Ideal alternative to Chinese manufacturing for automotive, fashion, and interior design industries.
             </p>
             <a
               href="#Catalog"
@@ -128,13 +126,10 @@ export default function HomePageContent() {
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div className="h-96 flex flex-col justify-center">
               <h2 className="text-xl tracking-[0.2em] text-neutral-600">
-                ECO LEATHER
+                VIETNAM SUPPLIER — ALTERNATIVE TO CHINA
               </h2>
               <p className="mt-4 text-neutral-700 leading-relaxed">
-                Each collection explores a palette and a craft: laser cut,
-                embossing, perforation, embroidery. We link fashion and
-                accessories with hi‑tech, automotive and interior design —
-                unlocking endless applications.
+                Vietnam-based manufacturing with China back-up capabilities. We offer a reliable alternative to Chinese suppliers with small MOQs, fast lead times, US/EU compliance, and custom solutions. Each collection explores a palette and a craft: laser cut, embossing, perforation, embroidery. Perfect for companies seeking non-China suppliers for microfiber leather and furniture textiles.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">

@@ -2,10 +2,19 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Product Catalog — Eco Microfiber Leather & Furniture Fabrics',
+  title:
+    'Microfiber Leather Catalog — Vietnam Supplier Alternative to China',
   description:
-    'Browse our catalog of eco microfiber leather and furniture fabrics. Automotive, fashion, and interior design materials. Custom colors, grains, and specifications available.',
+    'Browse our catalog of eco microfiber leather and furniture fabrics from Vietnam-based supplier. Premium alternative to Chinese manufacturing. Automotive, fashion, and interior design materials. Custom colors, grains, and specifications available. Small MOQs, US/EU compliant.',
   keywords: [
+    'microfiber leather supplier',
+    'furniture textile supplier',
+    'alternative to China manufacturing',
+    'Vietnam microfiber leather',
+    'microfiber leather catalog',
+    'furniture textile catalog',
+    'Vietnam supplier catalog',
+    'non-China supplier',
     'microfiber leather',
     'eco fabrics',
     'furniture textiles',
@@ -17,9 +26,10 @@ export const metadata: Metadata = {
     'eco-friendly materials',
   ],
   openGraph: {
-    title: 'Product Catalog — Eco Microfiber Leather & Furniture Fabrics',
+    title:
+      'Microfiber Leather Catalog — Vietnam Supplier Alternative to China',
     description:
-      'Browse our catalog of eco microfiber leather and furniture fabrics for automotive, fashion, and interior design applications.',
+      'Browse our catalog of eco microfiber leather and furniture fabrics from Vietnam-based supplier. Premium alternative to Chinese manufacturing for automotive, fashion, and interior design applications.',
     url: 'https://vietecotex.com/catalog',
   },
   alternates: {
@@ -127,12 +137,10 @@ function AlcantaraInspiredPage() {
               INSPIRATIONS
             </p>
             <h1 className="font-[Gilda_Display] text-4xl sm:text-5xl text-white leading-tight">
-              Eco Microfiber Leather for Future Innovation
+              Vietnam Microfiber Leather Supplier — Alternative to China
             </h1>
             <p className="text-neutral-200/90 mt-3 text-sm">
-              Technology, functionality, emotion, and sustainability — a curated
-              showcase of microfiber surfaces for automotive, fashion, and
-              interiors.
+              Premium eco microfiber leather and furniture textile supplier based in Vietnam. Small MOQs, US/EU compliant, custom solutions. Ideal alternative to Chinese manufacturing for automotive, fashion, and interior design industries.
             </p>
             <a
               href="#catalog"
@@ -150,13 +158,10 @@ function AlcantaraInspiredPage() {
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
               <h2 className="text-xl tracking-[0.2em] text-neutral-600">
-                ECO LEATHER
+                VIETNAM SUPPLIER — ALTERNATIVE TO CHINA
               </h2>
               <p className="mt-4 text-neutral-700 leading-relaxed">
-                Each collection explores a palette and a craft: laser cut,
-                embossing, perforation, embroidery. We link fashion and
-                accessories with hi‑tech, automotive and interior design —
-                unlocking endless applications.
+                Vietnam-based manufacturing with China back-up capabilities. We offer a reliable alternative to Chinese suppliers with small MOQs, fast lead times, US/EU compliance, and custom solutions. Each collection explores a palette and a craft: laser cut, embossing, perforation, embroidery. Perfect for companies seeking non-China suppliers for microfiber leather and furniture textiles.
               </p>
             </div>
             <div className="grid grid-cols-3 gap-4">

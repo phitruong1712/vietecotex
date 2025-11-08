@@ -2,21 +2,29 @@ import { Metadata } from 'next';
 import ContactForm from './contact-form';
 
 export const metadata: Metadata = {
-  title: 'Request Quote & Samples — Contact Viet Ecotex',
+  title:
+    'Request Quote — Vietnam Microfiber Leather Supplier | Contact Us',
   description:
-    'Request a quote or samples for eco microfiber leather and furniture fabrics. Contact Viet Ecotex for custom colors, grains, and specifications. Small MOQs available.',
+    'Request a quote or samples from Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Custom colors, grains, and specifications. Small MOQs, US/EU compliant. Fast response for companies seeking non-China suppliers.',
   keywords: [
     'microfiber leather quote',
     'furniture fabric samples',
-    'eco leather RFQ',
+    'Vietnam supplier quote',
+    'alternative to China quote',
+    'microfiber leather RFQ',
+    'furniture textile RFQ',
+    'Vietnam manufacturer contact',
+    'non-China supplier contact',
     'custom microfiber leather',
     'furniture textile samples',
     'sustainable material quote',
+    'Vietnam microfiber leather supplier',
   ],
   openGraph: {
-    title: 'Request Quote & Samples — Contact Viet Ecotex',
+    title:
+      'Request Quote — Vietnam Microfiber Leather Supplier | Contact Us',
     description:
-      'Get a quote or request samples for eco microfiber leather and furniture fabrics. Custom colors, grains, and specifications available.',
+      'Get a quote or request samples from Vietnam-based microfiber leather and furniture textile supplier. Premium alternative to Chinese manufacturing. Custom colors, grains, and specifications available.',
     url: 'https://vietecotex.com/contact',
   },
   alternates: {
@@ -28,11 +36,10 @@ export default function ContactPage() {
   return (
     <section className="container-xl py-10 md:py-14">
       <h1 className="font-serif text-3xl md:text-4xl">
-        Request for Quote & Samples
+        Request Quote — Vietnam Supplier Alternative to China
       </h1>
       <p className="text-neutral-700 max-w-3xl mt-2">
-        Fill the form below and we&apos;ll reply within 24 hours. You can also
-        reach us at{' '}
+        Get a quote or request samples from Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Fill the form below and we&apos;ll reply within 24 hours. Ideal for companies seeking reliable non-China suppliers. You can also reach us at{' '}
         <a className="underline" href="mailto:contact@vietecotex.com">
           contact@vietecotex.com
         </a>{' '}

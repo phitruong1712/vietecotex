@@ -3,10 +3,20 @@ import Link from 'next/link';
 import HomePageContent from './homepage-content';
 
 export const metadata: Metadata = {
-  title: 'Viet Ecotex — Eco Microfiber Leather & Sustainable Furniture Fabrics',
+  title:
+    'Microfiber Leather Supplier — Alternative to China Manufacturing | Viet Ecotex',
   description:
-    'Premium eco microfiber leather and sustainable furniture fabrics for automotive, fashion, and interior design. Custom colors, grains, and specifications. Small MOQs. US/EU compliant. Vietnam + China manufacturing.',
+    'Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Eco microfiber leather, sustainable furniture fabrics, PU/PVC leather. Small MOQs, custom colors, US/EU compliant certifications. Ideal for companies seeking reliable non-China suppliers for automotive, fashion, and interior design.',
   keywords: [
+    'microfiber leather supplier',
+    'furniture textile supplier',
+    'alternative to China manufacturing',
+    'Vietnam microfiber leather supplier',
+    'non-China supplier',
+    'microfiber leather manufacturer',
+    'furniture textile manufacturer',
+    'Vietnam manufacturing alternative',
+    'alternative to Chinese suppliers',
     'microfiber leather',
     'eco fabrics',
     'furniture textiles',
@@ -15,18 +25,15 @@ export const metadata: Metadata = {
     'PVC leather',
     'automotive fabrics',
     'furniture fabrics',
-    'eco-friendly materials',
-    'sustainable microfiber',
-    'furniture leather',
-    'eco textiles',
-    'green materials',
-    'sustainable furniture fabrics',
-    'microfiber fabric',
+    'Vietnam supplier',
+    'alternative supplier',
+    'non-China manufacturing',
   ],
   openGraph: {
-    title: 'Viet Ecotex — Eco Microfiber Leather & Sustainable Furniture Fabrics',
+    title:
+      'Microfiber Leather Supplier — Alternative to China Manufacturing | Viet Ecotex',
     description:
-      'Premium eco microfiber leather and sustainable furniture fabrics for automotive, fashion, and interior design. Custom colors, grains, and specifications.',
+      'Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Small MOQs, US/EU compliant, custom solutions for automotive, fashion, and interior design.',
     url: 'https://vietecotex.com',
   },
   alternates: {
