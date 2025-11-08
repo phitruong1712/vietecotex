@@ -38,14 +38,14 @@ export default function OurCommitmentPage() {
   return (
     <section className="container-xl py-20 text-center">
       <h1 className="display">
-        Vietnam Supplier — Alternative to China Manufacturing
+        Certified Vietnam Leather & Textile Supplier
       </h1>
       <p className="max-w-2xl mx-auto mt-5 text-neutral-700">
         Vietnam-based microfiber leather and furniture textile supplier offering
-        a premium alternative to Chinese manufacturing. Small MOQs, fast lead
-        times, customization, and US/EU-compliant certifications. Ideal for
-        companies seeking reliable non-China suppliers with flexible production
-        capabilities and quality assurance.
+        premium eco materials with US/EU certified compliance. Small MOQs, fast lead
+        times, customization, and comprehensive certification documentation. Trusted by
+        companies worldwide seeking reliable suppliers with flexible production
+        capabilities, quality assurance, and full compliance transparency.
       </p>
       <div className="mt-8 flex items-center justify-center gap-3">
         <Link className="btn btn-primary" href="/contact">

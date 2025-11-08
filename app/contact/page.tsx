@@ -36,10 +36,10 @@ export default function ContactPage() {
   return (
     <section className="container-xl py-10 md:py-14">
       <h1 className="font-serif text-3xl md:text-4xl">
-        Request Quote — Vietnam Supplier Alternative to China
+        Request Quote — Certified Vietnam Supplier
       </h1>
       <p className="text-neutral-700 max-w-3xl mt-2">
-        Get a quote or request samples from Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing. Fill the form below and we&apos;ll reply within 24 hours. Ideal for companies seeking reliable non-China suppliers. You can also reach us at{' '}
+        Get a quote or request samples from our Vietnam-based microfiber leather and furniture textile supplier. Premium eco materials with US/EU compliance, small MOQs, and custom solutions. Fill the form below and we&apos;ll reply within 24 hours. Trusted by companies worldwide. You can also reach us at{' '}
         <a className="underline" href="mailto:contact@vietecotex.com">
           contact@vietecotex.com
         </a>{' '}

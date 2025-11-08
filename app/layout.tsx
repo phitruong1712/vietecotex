@@ -254,9 +254,8 @@ export default function RootLayout({
             <div>
               <div className="font-serif text-lg mb-2">Viet EcoTex</div>
               <p>
-                Vietnam-based microfiber leather and furniture textile supplier
-                — premium alternative to Chinese manufacturing. Small MOQs, US/EU
-                compliant, custom solutions.
+                Certified Vietnam-based microfiber leather and furniture textile supplier.
+                Premium eco materials with US/EU compliance, small MOQs, and custom solutions.
               </p>
               <p className="mt-2">
                 Phone: <a href="tel:+84976344224">+84 976 344 224</a> ·
@@ -288,9 +287,9 @@ export default function RootLayout({
             <div>
               <div className="font-semibold mb-2">For Buyers</div>
               <p className="text-neutral-600">
-                Premium alternative to Chinese manufacturing · Small MOQs · Custom
-                colors & grains · Fast lead times · US/EU compliance · Vietnam-based
-                supplier · Reliable warranty · Quality assurance.
+                US/EU certified compliance · Small MOQs · Custom
+                colors & grains · Fast lead times · Vietnam-based
+                supplier · Reliable warranty · Quality assurance · Full certification transparency.
               </p>
             </div>
           </div>

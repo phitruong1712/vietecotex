@@ -66,15 +66,13 @@ export default function Certifications() {
   return (
     <section className="container-xl py-10 md:py-14">
       <h1 className="font-serif text-3xl md:text-4xl mb-2">
-        US/EU Certifications — Vietnam Supplier Alternative to China
+        US/EU Certified Vietnam Leather & Textile Supplier
       </h1>
       <p className="text-neutral-700 max-w-3xl">
-        As a Vietnam-based supplier offering an alternative to Chinese
-        manufacturing, we provide third-party testing and certificates as
+        As a Vietnam-based supplier, we provide comprehensive third-party testing and certificates as
         required for US/EU buyers. Full compliance documentation including REACH
         & RoHS chemical compliance, TB117/BS5852 flammability for upholstery,
-        OEKO-TEX®, and GRS support via partners. Ideal for companies seeking
-        non-China suppliers with complete certification transparency. Below is a
+        OEKO-TEX®, and GRS support via partners. Complete certification transparency for global buyers seeking trusted, compliant suppliers. Below is a
         sample of documents.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">

@@ -108,7 +108,7 @@ export default function HomePageContent() {
               Eco Microfiber Leather For Future Innovation
             </h1>
             <p className="text-neutral-200/90 mt-3 text-sm">
-              Vietnam Microfiber Leather Supplier — Alternative to China. Premium eco microfiber leather and furniture textile supplier based in Vietnam. Small MOQs, US/EU compliant, custom solutions. Ideal alternative to Chinese manufacturing for automotive, fashion, and interior design industries.
+              Certified Vietnam microfiber leather and furniture textile supplier. Premium eco materials with US/EU compliance, small MOQs, and custom solutions. Trusted by automotive, fashion, and interior design industries worldwide.
             </p>
             <a
               href="#Catalog"
@@ -126,10 +126,10 @@ export default function HomePageContent() {
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div className="h-96 flex flex-col justify-center">
               <h2 className="text-xl tracking-[0.2em] text-neutral-600">
-                VIETNAM SUPPLIER — ALTERNATIVE TO CHINA
+                CERTIFIED VIETNAM LEATHER & TEXTILE SUPPLIER
               </h2>
               <p className="mt-4 text-neutral-700 leading-relaxed">
-                Vietnam-based manufacturing with China back-up capabilities. We offer a reliable alternative to Chinese suppliers with small MOQs, fast lead times, US/EU compliance, and custom solutions. Each collection explores a palette and a craft: laser cut, embossing, perforation, embroidery. Perfect for companies seeking non-China suppliers for microfiber leather and furniture textiles.
+                Vietnam-based manufacturing with US/EU certified compliance. We offer premium microfiber leather and furniture textiles with small MOQs, fast lead times, full certification documentation, and custom solutions. Each collection explores a palette and a craft: laser cut, embossing, perforation, embroidery. Trusted supplier for automotive, fashion, and interior design industries worldwide.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
