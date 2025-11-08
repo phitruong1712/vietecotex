@@ -19,59 +19,75 @@ export default async function Image() {
     (
       <div
         style={{
-          width: "100%",
           height: "100%",
+          width: "100%",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          position: "relative",
           background:
             "radial-gradient(75% 75% at 50% 50%, #12362a 0%, #0b1f19 100%)",
         }}
       >
-        {/* Symbol/Logo */}
-        {/* Using an <img> tag is supported by @vercel/og */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={symbolUrl}
-          width={220}
-          height={220}
-          alt=""
-          style={{ opacity: 0.95 }}
-        />
-
-        {/* Headline */}
+        {/* Main Content Container */}
         <div
           style={{
-            position: "absolute",
-            bottom: 76,
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            color: "#E6E0CD",
-            fontSize: 52,
-            fontWeight: 700,
-            letterSpacing: 1,
-            lineHeight: 1.1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "50px",
+            paddingTop: "80px",
+            paddingBottom: "100px",
           }}
         >
-          Viet Ecotex
-        </div>
+          {/* Symbol/Logo - Centered */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={symbolUrl}
+            width={180}
+            height={180}
+            alt=""
+            style={{
+              opacity: 0.95,
+            }}
+          />
 
-        {/* Subheadline */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 28,
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            color: "#C9C2AC",
-            fontSize: 28,
-            letterSpacing: 0.5,
-          }}
-        >
-          Eco Microfiber Leather
+          {/* Text Container */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "16px",
+            }}
+          >
+            {/* Headline */}
+            <div
+              style={{
+                color: "#E6E0CD",
+                fontSize: 60,
+                fontWeight: 700,
+                letterSpacing: "3px",
+                lineHeight: "1.1",
+              }}
+            >
+              Viet Ecotex
+            </div>
+
+            {/* Subheadline */}
+            <div
+              style={{
+                color: "#C9C2AC",
+                fontSize: 36,
+                letterSpacing: "1.5px",
+                lineHeight: "1.2",
+              }}
+            >
+              Eco Microfiber Leather
+            </div>
+          </div>
         </div>
       </div>
     ),
