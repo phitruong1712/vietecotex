@@ -1,33 +1,7 @@
-import { Metadata } from 'next';
+'use client';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Product Catalog — Eco Microfiber Leather & Furniture Fabrics',
-  description:
-    'Browse our catalog of eco microfiber leather and furniture fabrics. Automotive, fashion, and interior design materials. Custom colors, grains, and specifications available.',
-  keywords: [
-    'microfiber leather',
-    'eco fabrics',
-    'furniture textiles',
-    'sustainable leather',
-    'PU leather',
-    'PVC leather',
-    'automotive fabrics',
-    'furniture fabrics',
-    'eco-friendly materials',
-  ],
-  openGraph: {
-    title: 'Product Catalog — Eco Microfiber Leather & Furniture Fabrics',
-    description:
-      'Browse our catalog of eco microfiber leather and furniture fabrics for automotive, fashion, and interior design applications.',
-    url: 'https://vietecotex.com/catalog',
-  },
-  alternates: {
-    canonical: '/catalog',
-  },
-};
-
-function AlcantaraInspiredPage() {
+export default function HomePageContent() {
   const collections = [
     {
       title: 'Automotive 2025',
@@ -45,7 +19,7 @@ function AlcantaraInspiredPage() {
         'https://www.alcantara.com/wp-content/uploads/2024/09/Alcantara-FW_26-27_02.jpg',
         'https://www.alcantara.com/wp-content/uploads/2024/09/Alcantara-FW_26-27_03.jpg',
         'https://www.alcantara.com/wp-content/uploads/2024/09/Alcantara-FW_26-27_09.jpg',
-        'https://www.alcantara.com/wp-content/uploads/2024/09/Alcantara-FW_26-27_11.jpg',
+        '/homepage-image-4.png',
         'https://www.alcantara.com/wp-content/uploads/2024/09/Alcantara-FW_26-27_13.jpg',
         'https://www.alcantara.com/wp-content/uploads/2024/09/Alcantara-FW_26-27_19.jpg',
       ],
@@ -53,7 +27,7 @@ function AlcantaraInspiredPage() {
     {
       title: 'Spring/Summer 2026',
       images: [
-        'https://www.alcantara.com/wp-content/uploads/2024/09/ALCANTARA_SS26_05.jpg',
+        '/homepage-image-5.png',
         'https://www.alcantara.com/wp-content/uploads/2024/09/ALCANTARA_SS26_09.jpg',
         'https://www.alcantara.com/wp-content/uploads/2024/09/ALCANTARA_SS26_11.jpg',
         'https://www.alcantara.com/wp-content/uploads/2024/09/ALCANTARA_SS26_03.jpg',
@@ -88,26 +62,30 @@ function AlcantaraInspiredPage() {
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-          <Link href="/" className="text-xl tracking-widest uppercase">
-            <span className="font-serif">Viet EcoTex</span>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="Viet Ecotex - Eco Microfiber Leather and Sustainable Furniture Fabrics"
+              className="h-28 w-auto object-contain"
+            />
           </Link>
           <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#catalog" className="hover:opacity-70">
-              Collections
-            </a>
             <a href="#moodboard" className="hover:opacity-70">
-              Moodboard
+              Eco Leather
             </a>
-            <a href="#contact" className="hover:opacity-70">
+            <a href="#Catalog" className="hover:opacity-70">
+              Catalog
+            </a>
+            <Link href="/contact" className="hover:opacity-70">
               Contact
-            </a>
+            </Link>
           </nav>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="text-sm px-3 py-1.5 rounded-xl border border-neutral-300 hover:bg-neutral-100"
           >
             Get in touch
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -135,7 +113,7 @@ function AlcantaraInspiredPage() {
               interiors.
             </p>
             <a
-              href="#catalog"
+              href="#Catalog"
               className="inline-block mt-6 border-b border-white/80 text-white text-sm pb-1 hover:opacity-80"
             >
               Explore
@@ -148,7 +126,7 @@ function AlcantaraInspiredPage() {
       <section id="moodboard" className="py-16 sm:py-24 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
-            <div>
+            <div className="h-96 flex flex-col justify-center">
               <h2 className="text-xl tracking-[0.2em] text-neutral-600">
                 ECO LEATHER
               </h2>
@@ -159,22 +137,48 @@ function AlcantaraInspiredPage() {
                 unlocking endless applications.
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <img
-                  src="https://www.alcantara.com/wp-content/uploads/2020/01/alcantara-suggestioni-infinite-2.jpg"
-                  alt="Eco microfiber leather texture detail for furniture and automotive applications"
-                  className="w-full h-64 object-cover rounded-2xl shadow-sm"
-                  loading="lazy"
-                />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="col-span-1 h-96 rounded-2xl overflow-hidden shadow-sm bg-neutral-100 relative">
+                <picture>
+                  <source
+                    srcSet="/homepage-image-2.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/homepage-image-2.jpg"
+                    alt="Eco microfiber leather texture detail for sustainable furniture and automotive applications"
+                    width={1024}
+                    height={1536}
+                    className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+                    style={{
+                      imageRendering: 'auto',
+                      willChange: 'auto',
+                    }}
+                    loading="eager"
+                    decoding="sync"
+                  />
+                </picture>
               </div>
-              <div className="col-span-2">
-                <img
-                  src="https://www.alcantara.com/wp-content/uploads/2020/01/alcantara-moodboard.jpg"
-                  alt="Sustainable microfiber leather moodboard showcasing eco fabrics and furniture textiles"
-                  className="w-full h-64 md:h-full object-cover rounded-2xl shadow-sm"
-                  loading="lazy"
-                />
+              <div className="col-span-1 h-96 rounded-2xl overflow-hidden shadow-sm bg-neutral-100 relative">
+                <picture>
+                  <source
+                    srcSet="/homepage-image-3.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/homepage-image-3.jpg"
+                    alt="Sustainable microfiber leather moodboard showcasing eco fabrics and furniture textiles"
+                    width={1024}
+                    height={1536}
+                    className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+                    style={{
+                      imageRendering: 'auto',
+                      willChange: 'auto',
+                    }}
+                    loading="eager"
+                    decoding="sync"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -182,17 +186,14 @@ function AlcantaraInspiredPage() {
       </section>
 
       {/* Collections / Textures */}
-      <section id="collections" className="py-16 sm:py-24">
+      <section id="Catalog" className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h3 className="text-xl tracking-[0.2em] text-neutral-600">
             THE TEXTURES
           </h3>
           <div className="mt-8 space-y-10">
             {collections.map((c, i) => (
-              <article
-                key={i}
-                className="rounded-2xl border border-neutral-200 p-4 sm:p-6"
-              >
+              <article key={i} className="rounded-2xl border border-neutral-200 p-4 sm:p-6">
                 <div className="flex items-center justify-between gap-6 flex-wrap">
                   <h4 className="text-lg font-medium">{c.title}</h4>
                   <div className="text-xs text-neutral-500">Scroll →</div>
@@ -226,17 +227,17 @@ function AlcantaraInspiredPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { label: 'CONTACTS', href: '#contact' },
-              { label: 'MATERIAL RANGE', href: '#collections' },
-              { label: 'FIND A DISTRIBUTOR', href: '#contact' },
+              { label: 'CONTACTS', href: '/contact' },
+              { label: 'MATERIAL RANGE', href: '#Catalog' },
+              { label: 'FIND A DISTRIBUTOR', href: '/contact' },
             ].map((b) => (
-              <a
+              <Link
                 key={b.label}
-                href={b.href}
+                href={b.href as any}
                 className="text-center py-3 rounded-xl border border-neutral-300 hover:bg-neutral-100"
               >
                 {b.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -297,6 +298,3 @@ function AlcantaraInspiredPage() {
   );
 }
 
-export default function Page() {
-  return <AlcantaraInspiredPage />;
-}

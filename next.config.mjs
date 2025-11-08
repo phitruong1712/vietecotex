@@ -107,17 +107,27 @@ const nextConfig = {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN',
           },
-          // start with a relaxed CSP; tighten later as needed
+          {
+            key: 'X-Permitted-Cross-Domain-Policies',
+            value: 'none',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          // Enhanced CSP for better security
           {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
               "img-src 'self' data: https:",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:",
-              "style-src 'self' 'unsafe-inline' https:",
-              "font-src 'self' data: https:",
-              "connect-src 'self' https:",
+              "script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "font-src 'self' data: https://fonts.gstatic.com",
+              "connect-src 'self' https://api.resend.com",
               "frame-ancestors 'self'",
+              "base-uri 'self'",
+              "form-action 'self'",
             ].join('; '),
           },
         ],

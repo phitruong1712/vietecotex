@@ -9,7 +9,28 @@ export const metadata: Metadata = {
     template: '%s | Viet Ecotex',
   },
   description:
-    'Eco microfiber leather for automotive, fashion, and interiors. Lightweight, durable, and sustainable materials from Viet Ecotex.',
+    'Premium eco microfiber leather and sustainable furniture fabrics for automotive, fashion, and interior design. Custom colors, grains, and specifications. Small MOQs. US/EU compliant certifications. Vietnam + China manufacturing. Specializing in PU/PVC leather, furniture textiles, and eco-friendly materials.',
+  keywords: [
+    'microfiber leather',
+    'eco fabrics',
+    'furniture textiles',
+    'sustainable leather',
+    'PU leather',
+    'PVC leather',
+    'automotive fabrics',
+    'furniture fabrics',
+    'eco-friendly materials',
+    'sustainable microfiber',
+    'furniture leather',
+    'eco textiles',
+    'green materials',
+    'sustainable furniture fabrics',
+    'microfiber fabric',
+    'eco leather',
+    'synthetic leather',
+    'vegan leather',
+    'sustainable materials',
+  ],
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
@@ -109,11 +130,18 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Viet Ecotex',
+              alternateName: 'Viet EcoTex',
               url: 'https://vietecotex.com',
               logo: 'https://vietecotex.com/logo.png',
               email: 'contact@vietecotex.com',
               telephone: '+84 976 344 224',
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'VN',
+              },
               sameAs: [],
+              description:
+                'Eco microfiber leather and sustainable furniture fabrics for automotive, fashion, and interior design. Vietnam + China manufacturing.',
             }),
           }}
         />
@@ -129,6 +157,46 @@ export default function RootLayout({
                 '@type': 'SearchAction',
                 target: 'https://vietecotex.com/search?q={search_term_string}',
                 'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Manufacturer',
+              '@id': 'https://vietecotex.com',
+              name: 'Viet Ecotex',
+              image: 'https://vietecotex.com/logo.png',
+              description:
+                'Manufacturer of eco microfiber leather and sustainable furniture fabrics. Specializing in PU/PVC leather, automotive fabrics, and furniture textiles.',
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'VN',
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+84-976-344-224',
+                contactType: 'customer service',
+                email: 'contact@vietecotex.com',
+                availableLanguage: ['en'],
+              },
+              areaServed: 'Worldwide',
+              makesOffer: {
+                '@type': 'Offer',
+                itemOffered: {
+                  '@type': 'Product',
+                  name: 'Eco Microfiber Leather',
+                  description:
+                    'Sustainable microfiber leather for automotive, fashion, and interior design applications',
+                  category: 'Textiles',
+                  brand: {
+                    '@type': 'Brand',
+                    name: 'Viet Ecotex',
+                  },
+                },
               },
             }),
           }}

@@ -1,1 +1,48 @@
-"use client";import { useState } from 'react';export default function ContactPage(){const[status,setStatus]=useState(null as null|"ok"|"error"|"sending");async function onSubmit(e:React.FormEvent<HTMLFormElement>){e.preventDefault();setStatus("sending");const payload=Object.fromEntries(new FormData(e.currentTarget).entries());try{const r=await fetch("/api/rfq",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const j=await r.json();if(r.ok)setStatus("ok");else throw new Error(j?.error||"Failed");e.currentTarget.reset();}catch{setStatus("error");}}return(<section className='container-xl py-10 md:py-14'><h1 className='font-serif text-3xl md:text-4xl'>Request for Quote & Samples</h1><p className='text-neutral-700 max-w-3xl mt-2'>Fill the form below and we'll reply within 24 hours. You can also reach us at <a className='underline' href='mailto:contact@vietecotex.com'>contact@vietecotex.com</a> or WhatsApp/Viber <a className='underline' href='tel:+84976344224'>+84 976 344 224</a>.</p><form onSubmit={onSubmit} className='mt-8 max-w-2xl grid grid-cols-1 gap-4'><input className='border rounded-lg px-4 py-2' name='name' required placeholder='Your name *'/><div className='grid md:grid-cols-2 gap-4'><input className='border rounded-lg px-4 py-2' name='email' type='email' required placeholder='Email *'/><input className='border rounded-lg px-4 py-2' name='phone' placeholder='Phone / WhatsApp'/></div><div className='grid md:grid-cols-2 gap-4'><input className='border rounded-lg px-4 py-2' name='company' placeholder='Company'/><input className='border rounded-lg px-4 py-2' name='country' placeholder='Country'/></div><div className='grid md:grid-cols-2 gap-4'><select className='border rounded-lg px-4 py-2' name='productLine'><option value='Microfiber Leather'>Microfiber Leather (PU/PVC)</option><option value='Furniture Fabrics'>Furniture Fabrics</option><option value='Both'>Both</option></select><input className='border rounded-lg px-4 py-2' name='application' placeholder='Application (auto, sofa, footwear, bags…)'/></div><div className='grid md:grid-cols-2 gap-4'><input className='border rounded-lg px-4 py-2' name='moq' placeholder='Target MOQ / trial qty'/><input className='border rounded-lg px-4 py-2' name='specs' placeholder='Thickness / width / backing'/></div><textarea className='border rounded-lg px-4 py-2' rows={5} name='message' placeholder='Notes, colors, standards needed (REACH, TB117, BS5852, OEKO-TEX®)…'></textarea><button className='btn btn-primary mt-2' type='submit' disabled={status==='sending'}>{status==='sending'?"Sending…":"Send Request"}</button>{status==='ok'&&<p className='text-green-700'>Thanks! We received your request.</p>}{status==='error'&&<p className='text-red-600'>Something went wrong. Please email contact@vietecotex.com.</p>}</form></section>)}
+import { Metadata } from 'next';
+import ContactForm from './contact-form';
+
+export const metadata: Metadata = {
+  title: 'Request Quote & Samples — Contact Viet Ecotex',
+  description:
+    'Request a quote or samples for eco microfiber leather and furniture fabrics. Contact Viet Ecotex for custom colors, grains, and specifications. Small MOQs available.',
+  keywords: [
+    'microfiber leather quote',
+    'furniture fabric samples',
+    'eco leather RFQ',
+    'custom microfiber leather',
+    'furniture textile samples',
+    'sustainable material quote',
+  ],
+  openGraph: {
+    title: 'Request Quote & Samples — Contact Viet Ecotex',
+    description:
+      'Get a quote or request samples for eco microfiber leather and furniture fabrics. Custom colors, grains, and specifications available.',
+    url: 'https://vietecotex.com/contact',
+  },
+  alternates: {
+    canonical: '/contact',
+  },
+};
+
+export default function ContactPage() {
+  return (
+    <section className="container-xl py-10 md:py-14">
+      <h1 className="font-serif text-3xl md:text-4xl">
+        Request for Quote & Samples
+      </h1>
+      <p className="text-neutral-700 max-w-3xl mt-2">
+        Fill the form below and we&apos;ll reply within 24 hours. You can also
+        reach us at{' '}
+        <a className="underline" href="mailto:contact@vietecotex.com">
+          contact@vietecotex.com
+        </a>{' '}
+        or WhatsApp/Viber{' '}
+        <a className="underline" href="tel:+84976344224">
+          +84 976 344 224
+        </a>
+        .
+      </p>
+      <ContactForm />
+    </section>
+  );
+}
