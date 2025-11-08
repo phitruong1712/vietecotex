@@ -16,13 +16,21 @@ export const metadata: Metadata = {
     url: 'https://vietecotex.com',
     title: 'Viet Ecotex — Eco Microfiber Leather',
     description: 'Sustainable microfiber leather for modern applications.',
-    images: ['/og-image.png'], // 1200x630 OG image
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Viet Ecotex — Eco Microfiber Leather',
+      },
+    ],
     siteName: 'Viet EcoTex',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@vietecotex', // update if you have it
+    // site: '@vietecotex', // Add your Twitter/X handle here when available
+    // creator: '@vietecotex', // Optional: Add your Twitter/X handle here
   },
   robots: { index: true, follow: true },
   // Favicon config - iPhone Chrome prefers ICO format, order matters
