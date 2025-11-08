@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
+  const host = 'https://vietecotex.com';
   return {
     rules: [
       {
@@ -9,6 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://vietecotex.com/sitemap.xml',
+    sitemap: `${host}/sitemap.xml`,
+    host,
   };
 }
