@@ -25,20 +25,26 @@ export const metadata: Metadata = {
     site: '@vietecotex', // update if you have it
   },
   robots: { index: true, follow: true },
-  // Favicon config - Next.js auto-serves app/favicon.ico
-  // Also provide explicit icons for maximum compatibility
+  // Favicon config - iPhone Chrome prefers ICO format, order matters
+  // Using absolute URLs from metadataBase for better iPhone Chrome compatibility
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
+      // ICO first for Chrome compatibility - absolute URL helps iPhone Chrome
+      { url: 'https://vietecotex.com/favicon.ico', sizes: 'any' },
+      { url: 'https://vietecotex.com/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: 'https://vietecotex.com/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+      { url: 'https://vietecotex.com/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: 'https://vietecotex.com/favicon.ico',
   },
   manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Viet Ecotex',
+  },
 };
 
 export default function RootLayout({
@@ -49,23 +55,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon links - iPhone Chrome may prefer PNG over ICO */}
-        {/* Try PNG first for iPhone Chrome compatibility */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        {/* ICO for other browsers */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        {/* Apple touch icons - critical for iOS */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        {/* Favicon links - iPhone Chrome requires favicon.ico FIRST and prefers ICO format */}
+        {/* Order matters: ICO must come before PNG for Chrome compatibility */}
+        {/* iPhone Chrome is very picky - must be first, must be ICO, must have correct MIME type */}
+        <link rel="icon" type="image/x-icon" href="https://vietecotex.com/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="https://vietecotex.com/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://vietecotex.com/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="https://vietecotex.com/favicon-16x16.png" />
+        {/* Apple Touch Icon - critical for iOS Safari and Chrome - MUST be 180x180 */}
+        <link rel="apple-touch-icon" sizes="180x180" href="https://vietecotex.com/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="https://vietecotex.com/apple-touch-icon.png" />
+        {/* Precomposed version for older iOS devices */}
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://vietecotex.com/apple-touch-icon.png" />
+        {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
+        {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#1A6B6B" />
-        <meta name="msapplication-TileImage" content="/favicon.png" />
         <meta name="msapplication-TileColor" content="#1A6B6B" />
+        <meta name="msapplication-TileImage" content="/icon-192x192.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
