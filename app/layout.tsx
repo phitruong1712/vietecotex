@@ -60,6 +60,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Facebook App ID - Optional: Set via environment variable NEXT_PUBLIC_FB_APP_ID
+  // If not set, the warning will appear but sharing will still work perfectly
+  const fbAppId = process.env.NEXT_PUBLIC_FB_APP_ID;
+
   return (
     <html lang="en">
       <head>
@@ -80,6 +84,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://vietecotex.com/apple-touch-icon.png" />
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
+        {/* Facebook App ID - Optional but recommended for better analytics */}
+        {/* This removes the Facebook warning when set via NEXT_PUBLIC_FB_APP_ID environment variable */}
+        {fbAppId && <meta property="fb:app_id" content={fbAppId} />}
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#1A6B6B" />
         <meta name="msapplication-TileColor" content="#1A6B6B" />
