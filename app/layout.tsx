@@ -58,6 +58,9 @@ export default function RootLayout({
         {/* Favicon links - iPhone Chrome requires favicon.ico FIRST and prefers ICO format */}
         {/* Order matters: ICO must come before PNG for Chrome compatibility */}
         {/* iPhone Chrome is very picky - must be first, must be ICO, must have correct MIME type */}
+        {/* Try multiple approaches for maximum compatibility */}
+        <link rel="icon" href="https://vietecotex.com/favicon.ico" />
+        <link rel="shortcut icon" href="https://vietecotex.com/favicon.ico" />
         <link rel="icon" type="image/x-icon" href="https://vietecotex.com/favicon.ico" />
         <link rel="shortcut icon" type="image/x-icon" href="https://vietecotex.com/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://vietecotex.com/favicon-32x32.png" />
