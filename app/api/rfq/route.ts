@@ -10,6 +10,8 @@ const schema = z.object({
   country: z.string().max(100).optional(),
   productLine: z.string().max(100).optional(),
   application: z.string().max(200).optional(),
+  customerType: z.string().max(100).optional(),
+  manufacturingLocation: z.string().max(100).optional(),
   moq: z.string().max(100).optional(),
   specs: z.string().max(500).optional(),
   message: z.string().max(2000).optional(),
@@ -62,6 +64,8 @@ Company: ${data.company || ''}
 Country: ${data.country || ''}
 Product Line: ${data.productLine || ''}
 Application: ${data.application || ''}
+Customer Type: ${data.customerType || ''}
+Preferred Manufacturing Location: ${data.manufacturingLocation || ''}
 MOQ: ${data.moq || ''}
 Specs: ${data.specs || ''}
 

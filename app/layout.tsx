@@ -183,7 +183,7 @@ export default function RootLayout({
               name: 'Viet Ecotex',
               image: 'https://vietecotex.com/logo.png',
               description:
-                'Dual manufacturing capabilities: 8 factories in China for cost competitiveness, 6 factories in Vietnam for non-China alternatives with enhanced US/EU compliance. Manufacturer and supplier of eco microfiber leather and sustainable furniture fabrics. Specializing in PU/PVC leather, automotive fabrics, and furniture textiles with small MOQs and flexible sourcing options.',
+                'Serving 1500+ customers worldwide. Manufacturer of microfiber leather (PU/PVC) and furniture fabrics. 80% microfiber leather, 20% furniture fabrics. Applications: car seats, sofas, shoes, bags, construction. Advantages: customization, small MOQs, timely delivery, reliability, high warranty, competitive pricing. 8 factories in China, 6 factories in Vietnam.',
               address: [
                 {
                   '@type': 'PostalAddress',
@@ -211,7 +211,7 @@ export default function RootLayout({
                     '@type': 'Product',
                     name: 'Eco Microfiber Leather',
                     description:
-                      'Dual manufacturing: Available from 8 factories in China (cost-competitive) or 6 factories in Vietnam (enhanced US/EU compliance). Sustainable microfiber leather for automotive, fashion, and interior design applications',
+                      'Microfiber leather (PU/PVC) for car seats, sofas, shoes, bags, and construction. Available from 8 factories in China or 6 factories in Vietnam. Customization, small MOQs, competitive pricing.',
                     category: 'Textiles',
                     brand: {
                       '@type': 'Brand',
@@ -225,7 +225,7 @@ export default function RootLayout({
                     '@type': 'Product',
                     name: 'Furniture Textiles',
                     description:
-                      'Dual manufacturing: Available from 8 factories in China (cost-competitive) or 6 factories in Vietnam (enhanced US/EU compliance). Sustainable furniture textiles for furniture and upholstery applications',
+                      'Furniture fabrics for sofas, chairs, and upholstery. Available from 8 factories in China or 6 factories in Vietnam. Customization, small MOQs, competitive pricing.',
                     category: 'Textiles',
                     brand: {
                       '@type': 'Brand',
@@ -245,8 +245,11 @@ export default function RootLayout({
             <span className="font-serif">Viet EcoTex</span>
           </Link>
           <nav className="flex items-center gap-6">
-            <Link className="nav-link" href="/our-commitment">
-              Our Commitment
+            <Link className="nav-link" href="/applications">
+              Applications
+            </Link>
+            <Link className="nav-link" href="/advantages">
+              Advantages
             </Link>
             <Link className="nav-link" href="/certifications">
               Certifications
@@ -281,24 +284,32 @@ export default function RootLayout({
               <div className="font-semibold mb-2">Explore</div>
               <ul className="space-y-1">
                 <li>
-                  <Link href="/our-commitment">Our Commitment</Link>
+                  <Link href="/applications">Applications</Link>
                 </li>
                 <li>
-                  <Link href="/certifications">
-                    Manufacturing Certifications
-                  </Link>
+                  <Link href="/advantages">Our Advantages</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Request a Quote / Samples</Link>
+                  <Link href="/catalog">Product Catalog</Link>
+                </li>
+                <li>
+                  <Link href="/certifications">Certifications</Link>
+                </li>
+                <li>
+                  <Link href="/distributors">Distributors & Partners</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Request Quote / Samples</Link>
                 </li>
               </ul>
             </div>
             <div>
               <div className="font-semibold mb-2">For Buyers</div>
               <p className="text-neutral-600">
-                US/EU certified compliance · Small MOQs · Custom
-                colors & grains · Fast lead times · Vietnam-based
-                supplier · Reliable warranty · Quality assurance · Full certification transparency.
+                Serving 1500+ customers worldwide · 80% microfiber leather, 20% furniture fabrics · 
+                Applications: car seats, sofas, shoes, bags, construction · 
+                Customization · Small MOQs · Timely delivery · Reliability · 
+                High warranty · Competitive pricing · Dual manufacturing (China & Vietnam).
               </p>
             </div>
           </div>

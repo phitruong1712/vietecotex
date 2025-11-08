@@ -75,19 +75,57 @@ export default function ContactForm() {
           className="border rounded-lg px-4 py-2"
           name="productLine"
           aria-label="Product line"
+          required
         >
+          <option value="">Select Product Line *</option>
           <option value="Microfiber Leather">
-            Microfiber Leather (PU/PVC)
+            Microfiber Leather (PU/PVC) - 80%
           </option>
-          <option value="Furniture Fabrics">Furniture Fabrics</option>
+          <option value="Furniture Fabrics">
+            Furniture Fabrics - 20%
+          </option>
           <option value="Both">Both</option>
+          <option value="Curtains/Rugs">Curtains / Rugs</option>
         </select>
-        <input
+        <select
           className="border rounded-lg px-4 py-2"
           name="application"
-          placeholder="Application (auto, sofa, footwear, bags…)"
           aria-label="Application"
-        />
+          required
+        >
+          <option value="">Select Application *</option>
+          <option value="Car Seats">Car Seats (Automotive)</option>
+          <option value="Sofa">Sofa (Furniture)</option>
+          <option value="Shoes">Shoes (Footwear)</option>
+          <option value="Bags">Bags (Fashion)</option>
+          <option value="Construction Tender">Construction Tender (Hotels/Resorts/Apartments)</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div className="grid md:grid-cols-2 gap-4">
+        <select
+          className="border rounded-lg px-4 py-2"
+          name="customerType"
+          aria-label="Customer type"
+        >
+          <option value="">Customer Type</option>
+          <option value="Manufacturer">Manufacturer</option>
+          <option value="Distributor/Reseller">Distributor / Reseller</option>
+          <option value="Agency Partner">Agency Partner</option>
+          <option value="Construction/Tender">Construction / Tender</option>
+          <option value="Online Store">Online Store (Amazon/Shopify)</option>
+          <option value="Other">Other</option>
+        </select>
+        <select
+          className="border rounded-lg px-4 py-2"
+          name="manufacturingLocation"
+          aria-label="Preferred manufacturing location"
+        >
+          <option value="">Preferred Manufacturing Location</option>
+          <option value="China">China (Cost Competitive)</option>
+          <option value="Vietnam">Vietnam (Enhanced Compliance)</option>
+          <option value="Either">Either / Flexible</option>
+        </select>
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         <input

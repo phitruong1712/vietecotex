@@ -70,12 +70,15 @@ export default function HomePageContent() {
             />
           </Link>
           <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#moodboard" className="hover:opacity-70">
-              Eco Leather
-            </a>
+            <Link href="/applications" className="hover:opacity-70">
+              Applications
+            </Link>
             <a href="#Catalog" className="hover:opacity-70">
               Catalog
             </a>
+            <Link href="/advantages" className="hover:opacity-70">
+              Advantages
+            </Link>
             <Link href="/contact" className="hover:opacity-70">
               Contact
             </Link>
@@ -108,7 +111,7 @@ export default function HomePageContent() {
               Eco Microfiber Leather For Future Innovation
             </h1>
             <p className="text-neutral-200/90 mt-3 text-sm">
-              Certified Vietnam microfiber leather and furniture textile supplier. Premium eco materials with US/EU compliance, small MOQs, and custom solutions. Trusted by automotive, fashion, and interior design industries worldwide.
+              Serving 1500+ customers worldwide. Premium microfiber leather (PU/PVC) and furniture fabrics manufacturer. 80% microfiber leather, 20% furniture fabrics. Customization, small MOQs, timely delivery, and competitive pricing. Trusted by automotive, furniture, footwear, fashion, and construction industries.
             </p>
             <a
               href="#Catalog"
@@ -126,10 +129,10 @@ export default function HomePageContent() {
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div className="h-96 flex flex-col justify-center">
               <h2 className="text-xl tracking-[0.2em] text-neutral-600">
-                DUAL MANUFACTURING — CHINA & VIETNAM
+                1500+ CUSTOMERS WORLDWIDE
               </h2>
               <p className="mt-4 text-neutral-700 leading-relaxed">
-                Flexible manufacturing across 8 factories in China and 6 factories in Vietnam. Choose China-based production for cost competitiveness, or Vietnam-based manufacturing for non-China alternatives with enhanced US/EU compliance and certification. Small MOQs, fast lead times, and custom solutions available from both locations. Each collection explores a palette and a craft: laser cut, embossing, perforation, embroidery. Trusted supplier for automotive, fashion, and interior design industries worldwide.
+                Serving 1500+ customers with 80% microfiber leather and 20% furniture fabrics. 70-80% of our customers produce car seats, sofas, shoes, and bags. 20% come from construction tenders (hotels, resorts, apartments). Our advantages: customization, tailor-made solutions, timely delivery, reliability, high warranty, small MOQs, high quality, and competitive pricing. Dual manufacturing across 8 factories in China and 6 in Vietnam gives you flexibility to choose.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -220,11 +223,12 @@ export default function HomePageContent() {
       {/* CTA buttons */}
       <section className="py-12 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: 'CONTACTS', href: '/contact' },
-              { label: 'MATERIAL RANGE', href: '#Catalog' },
-              { label: 'FIND A DISTRIBUTOR', href: '/contact' },
+              { label: 'REQUEST QUOTE', href: '/contact' },
+              { label: 'APPLICATIONS', href: '/applications' },
+              { label: 'OUR ADVANTAGES', href: '/advantages' },
+              { label: 'BECOME A PARTNER', href: '/distributors' },
             ].map((b) => (
               <Link
                 key={b.label}
