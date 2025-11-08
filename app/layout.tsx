@@ -183,11 +183,19 @@ export default function RootLayout({
               name: 'Viet Ecotex',
               image: 'https://vietecotex.com/logo.png',
               description:
-                'Vietnam-based manufacturer and supplier of eco microfiber leather and sustainable furniture fabrics. Premium alternative to Chinese manufacturing. Specializing in PU/PVC leather, automotive fabrics, and furniture textiles with small MOQs and US/EU compliance.',
-              address: {
-                '@type': 'PostalAddress',
-                addressCountry: 'VN',
-              },
+                'Dual manufacturing capabilities: 8 factories in China for cost competitiveness, 6 factories in Vietnam for non-China alternatives with enhanced US/EU compliance. Manufacturer and supplier of eco microfiber leather and sustainable furniture fabrics. Specializing in PU/PVC leather, automotive fabrics, and furniture textiles with small MOQs and flexible sourcing options.',
+              address: [
+                {
+                  '@type': 'PostalAddress',
+                  addressCountry: 'VN',
+                  name: 'Vietnam Manufacturing',
+                },
+                {
+                  '@type': 'PostalAddress',
+                  addressCountry: 'CN',
+                  name: 'China Manufacturing',
+                },
+              ],
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+84-976-344-224',
@@ -203,7 +211,7 @@ export default function RootLayout({
                     '@type': 'Product',
                     name: 'Eco Microfiber Leather',
                     description:
-                      'Vietnam-based supplier of sustainable microfiber leather — premium alternative to Chinese manufacturing for automotive, fashion, and interior design applications',
+                      'Dual manufacturing: Available from 8 factories in China (cost-competitive) or 6 factories in Vietnam (enhanced US/EU compliance). Sustainable microfiber leather for automotive, fashion, and interior design applications',
                     category: 'Textiles',
                     brand: {
                       '@type': 'Brand',
@@ -217,7 +225,7 @@ export default function RootLayout({
                     '@type': 'Product',
                     name: 'Furniture Textiles',
                     description:
-                      'Vietnam-based supplier of sustainable furniture textiles — premium alternative to Chinese manufacturing for furniture and upholstery applications',
+                      'Dual manufacturing: Available from 8 factories in China (cost-competitive) or 6 factories in Vietnam (enhanced US/EU compliance). Sustainable furniture textiles for furniture and upholstery applications',
                     category: 'Textiles',
                     brand: {
                       '@type': 'Brand',
@@ -254,8 +262,9 @@ export default function RootLayout({
             <div>
               <div className="font-serif text-lg mb-2">Viet EcoTex</div>
               <p>
-                Certified Vietnam-based microfiber leather and furniture textile supplier.
-                Premium eco materials with US/EU compliance, small MOQs, and custom solutions.
+                Dual manufacturing capabilities: 8 factories in China, 6 factories in Vietnam.
+                Flexible sourcing for cost competitiveness or enhanced US/EU compliance.
+                Premium eco materials, small MOQs, and custom solutions.
               </p>
               <p className="mt-2">
                 Phone: <a href="tel:+84976344224">+84 976 344 224</a> ·

@@ -158,10 +158,10 @@ function AlcantaraInspiredPage() {
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
               <h2 className="text-xl tracking-[0.2em] text-neutral-600">
-                CERTIFIED VIETNAM LEATHER & TEXTILE SUPPLIER
+                DUAL MANUFACTURING — CHINA & VIETNAM
               </h2>
               <p className="mt-4 text-neutral-700 leading-relaxed">
-                Vietnam-based manufacturing with US/EU certified compliance. We offer premium microfiber leather and furniture textiles with small MOQs, fast lead times, full certification documentation, and custom solutions. Each collection explores a palette and a craft: laser cut, embossing, perforation, embroidery. Trusted supplier for automotive, fashion, and interior design industries worldwide.
+                Flexible manufacturing across 8 factories in China and 6 factories in Vietnam. Choose China-based production for cost competitiveness, or Vietnam-based manufacturing for non-China alternatives with enhanced US/EU compliance and certification. Small MOQs, fast lead times, and custom solutions available from both locations. Each collection explores a palette and a craft: laser cut, embossing, perforation, embroidery. Trusted supplier for automotive, fashion, and interior design industries worldwide.
               </p>
             </div>
             <div className="grid grid-cols-3 gap-4">
