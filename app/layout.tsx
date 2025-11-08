@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: 'Sustainable microfiber leather for modern applications.',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://vietecotex.com/opengraph-image', // Dynamic OG image route (1200x630)
         width: 1200,
         height: 630,
         alt: 'Viet Ecotex — Eco Microfiber Leather',
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://vietecotex.com/twitter-image'], // Dynamic Twitter image route (1200x628)
     // site: '@vietecotex', // Add your Twitter/X handle here when available
     // creator: '@vietecotex', // Optional: Add your Twitter/X handle here
   },
