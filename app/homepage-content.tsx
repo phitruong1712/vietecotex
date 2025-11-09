@@ -220,6 +220,24 @@ export default function HomePageContent() {
         </div>
       </section>
 
+      {/* Learn More Section */}
+      <section className="py-12 bg-white border-y border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-lg font-semibold mb-2">Learn More</h3>
+            <p className="text-neutral-600 text-sm mb-4">
+              Curious about the difference between faux leather and microfiber leather?
+            </p>
+            <Link
+              href="/faux-leather"
+              className="inline-block px-6 py-2 rounded-lg border border-neutral-300 hover:bg-neutral-50 text-sm font-medium transition-colors"
+            >
+              Faux vs Microfiber Leather Guide →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA buttons */}
       <section className="py-12 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
