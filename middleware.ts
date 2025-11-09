@@ -1,8 +1,23 @@
-import type { NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
 
-const APEXES = new Set(['vietecotex.com', 'vinaleather.com', 'vinafabrics.com']);
+/** Apex domains we own and force www -> apex */
+const APEX = new Set(['vietecotex.com', 'vinaleather.com', 'vinafabrics.com']);
+
 const PRIMARY = 'vietecotex.com';
+
+/** Basic, safe security headers (no preload yet) */
+function applySecurityHeaders(res: NextResponse) {
+  res.headers.set('Strict-Transport-Security', 'max-age=15552000'); // ~180 days
+  res.headers.set('X-Content-Type-Options', 'nosniff');
+  res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  res.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  // CSP tuned for Next.js defaults; adjust if you add external scripts.
+  res.headers.set(
+    'Content-Security-Policy',
+    "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; font-src 'self' data: https:; connect-src 'self' https:;"
+  );
+}
 
 export function middleware(req: NextRequest) {
   const url = new URL(req.url);
@@ -20,24 +35,28 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // www -> apex for all three brands
+  // 1) Redirect www -> apex for our domains
   if (host.startsWith('www.')) {
     const apex = host.slice(4);
-    if (APEXES.has(apex)) {
+    if (APEX.has(apex)) {
       url.hostname = apex;
       return NextResponse.redirect(url.toString(), 308);
     }
   }
 
-  // Any subdomain of vietecotex.com (that reaches Vercel) -> apex
+  // 2) Redirect any subdomain of vietecotex.com -> apex
   if (host !== PRIMARY && host.endsWith(`.${PRIMARY}`)) {
     url.hostname = PRIMARY;
     return NextResponse.redirect(url.toString(), 308);
   }
 
-  return NextResponse.next();
+  // 3) Pass through + add security headers
+  const res = NextResponse.next();
+  applySecurityHeaders(res);
+  return res;
 }
 
+// Skip static assets/Next internals
 export const config = {
   matcher: [
     /*
