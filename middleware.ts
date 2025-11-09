@@ -1,15 +1,11 @@
-import { NextResponse, type NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
-/** Hosts that should force www -> apex */
-const APEX_HOSTS = new Set([
-  'vietecotex.com',
-  'vinaleather.com',
-  'vinafabrics.com',
-]);
+const PRIMARY_APEX = 'vietecotex.com';
 
 export function middleware(req: NextRequest) {
   const url = new URL(req.url);
-  const host = url.hostname;
+  const host = url.hostname.toLowerCase();
   const pathname = url.pathname;
 
   // Skip static assets and Next.js internals
@@ -23,13 +19,10 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Redirect www -> apex
-  if (host.startsWith('www.')) {
-    const apex = host.slice(4);
-    if (APEX_HOSTS.has(apex)) {
-      url.hostname = apex;
-      return NextResponse.redirect(url.toString(), 308);
-    }
+  // Redirect any *.vietecotex.com (including www.) to the apex
+  if (host === `www.${PRIMARY_APEX}` || host.endsWith(`.${PRIMARY_APEX}`)) {
+    url.hostname = PRIMARY_APEX;
+    return NextResponse.redirect(url.toString(), 308);
   }
 
   return NextResponse.next();
