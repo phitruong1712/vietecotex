@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Faux Leather vs Microfiber Leather — What's the Difference? | Viet Ecotex',
+  title: "Faux Leather vs Microfiber Leather - What's the Difference? | Viet Ecotex",
   description:
     'Learn what people mean by faux leather (vegan/synthetic/PU) and how microfiber leather compares on durability, feel, and sustainability. Premium eco microfiber leather for automotive, furniture, and fashion applications.',
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'microfiber leather manufacturer',
   ],
   openGraph: {
-    title: 'Faux Leather vs Microfiber Leather — What's the Difference?',
+    title: "Faux Leather vs Microfiber Leather - What's the Difference?",
     description:
       'Learn what people mean by faux leather and how microfiber leather compares on durability, feel, and sustainability.',
     url: 'https://vietecotex.com/faux-leather',
