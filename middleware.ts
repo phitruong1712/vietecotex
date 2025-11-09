@@ -7,6 +7,9 @@ const PRIMARY = 'vietecotex.com';
 
 /** Basic, safe security headers (no preload yet) */
 function applySecurityHeaders(res: NextResponse) {
+  // HSTS: Currently set to ~180 days (no preload)
+  // TODO: Once all subdomains use HTTPS reliably, upgrade to:
+  // res.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   res.headers.set('Strict-Transport-Security', 'max-age=15552000'); // ~180 days
   res.headers.set('X-Content-Type-Options', 'nosniff');
   res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
