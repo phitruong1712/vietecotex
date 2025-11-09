@@ -217,6 +217,12 @@ export default function RootLayout({
                       '@type': 'Brand',
                       name: 'Viet Ecotex',
                     },
+                    offers: {
+                      '@type': 'Offer',
+                      availability: 'https://schema.org/InStock',
+                      url: 'https://vietecotex.com/contact',
+                      priceCurrency: 'USD',
+                    },
                   },
                 },
                 {
@@ -230,6 +236,12 @@ export default function RootLayout({
                     brand: {
                       '@type': 'Brand',
                       name: 'Viet Ecotex',
+                    },
+                    offers: {
+                      '@type': 'Offer',
+                      availability: 'https://schema.org/InStock',
+                      url: 'https://vietecotex.com/contact',
+                      priceCurrency: 'USD',
                     },
                   },
                 },
