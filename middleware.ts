@@ -1,7 +1,8 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-const PRIMARY_APEX = 'vietecotex.com';
+const APEXES = new Set(['vietecotex.com', 'vinaleather.com', 'vinafabrics.com']);
+const PRIMARY = 'vietecotex.com';
 
 export function middleware(req: NextRequest) {
   const url = new URL(req.url);
@@ -19,9 +20,18 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Redirect any *.vietecotex.com (including www.) to the apex
-  if (host === `www.${PRIMARY_APEX}` || host.endsWith(`.${PRIMARY_APEX}`)) {
-    url.hostname = PRIMARY_APEX;
+  // www -> apex for all three brands
+  if (host.startsWith('www.')) {
+    const apex = host.slice(4);
+    if (APEXES.has(apex)) {
+      url.hostname = apex;
+      return NextResponse.redirect(url.toString(), 308);
+    }
+  }
+
+  // Any subdomain of vietecotex.com (that reaches Vercel) -> apex
+  if (host !== PRIMARY && host.endsWith(`.${PRIMARY}`)) {
+    url.hostname = PRIMARY;
     return NextResponse.redirect(url.toString(), 308);
   }
 
