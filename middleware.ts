@@ -5,12 +5,12 @@ const APEX = new Set(['vietecotex.com', 'vinaleather.com', 'vinafabrics.com']);
 
 const PRIMARY = 'vietecotex.com';
 
-/** Basic, safe security headers (no preload yet) */
+/** Security headers with HSTS preload enabled */
 function applySecurityHeaders(res: NextResponse) {
-  // HSTS: Currently set to ~180 days (no preload)
-  // TODO: Once all subdomains use HTTPS reliably, upgrade to:
-  // res.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
-  res.headers.set('Strict-Transport-Security', 'max-age=15552000'); // ~180 days
+  // HSTS: 1 year with includeSubDomains and preload
+  // This tells browsers to always use HTTPS for this domain and all subdomains
+  // and includes the domain in browser preload lists for even faster security
+  res.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   res.headers.set('X-Content-Type-Options', 'nosniff');
   res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
