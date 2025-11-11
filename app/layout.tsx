@@ -222,59 +222,10 @@ export default function RootLayout({
                     },
                     offers: {
                       '@type': 'Offer',
-                      price: 12.50, // Required field: Must be a number, not a string
+                      price: 12.50,
                       priceCurrency: 'USD',
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
-                      priceValidUntil: '2026-12-31', // TODO: Update with actual price validity date
-                      priceSpecification: {
-                        '@type': 'UnitPriceSpecification',
-                        priceCurrency: 'USD',
-                        price: 12.50, // Representative price (average of $10-$15 range)
-                        minPrice: 10.00, // Minimum price per meter
-                        maxPrice: 15.00, // Maximum price per meter
-                        unitText: 'meter',
-                      },
-                      hasMerchantReturnPolicy: {
-                        '@type': 'MerchantReturnPolicy',
-                        applicableCountry: 'Worldwide',
-                        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-                        merchantReturnDays: 30, // TODO: Update with actual return policy days
-                        returnMethod: 'https://schema.org/ReturnByMail',
-                        returnFees: 'https://schema.org/FreeReturn',
-                      },
-                      shippingDetails: {
-                        '@type': 'OfferShippingDetails',
-                        shippingRate: {
-                          '@type': 'MonetaryAmount',
-                          value: '0', // TODO: Update with actual shipping cost or "Contact for shipping quote"
-                          currency: 'USD',
-                        },
-                        shippingDestination: {
-                          '@type': 'DefinedRegion',
-                          addressCountry: 'Worldwide',
-                        },
-                        deliveryTime: {
-                          '@type': 'ShippingDeliveryTime',
-                          businessDays: {
-                            '@type': 'OpeningHoursSpecification',
-                            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                          },
-                          cutoffTime: '14:00', // TODO: Update with actual cutoff time
-                          handlingTime: {
-                            '@type': 'QuantitativeValue',
-                            minValue: 7, // TODO: Update with actual handling days
-                            maxValue: 14,
-                            unitCode: 'DAY',
-                          },
-                          transitTime: {
-                            '@type': 'QuantitativeValue',
-                            minValue: 14, // TODO: Update with actual transit days
-                            maxValue: 30,
-                            unitCode: 'DAY',
-                          },
-                        },
-                      },
                     },
                   },
                 },
@@ -295,59 +246,10 @@ export default function RootLayout({
                     },
                     offers: {
                       '@type': 'Offer',
-                      price: 12.50, // Required field: Must be a number, not a string
+                      price: 12.50,
                       priceCurrency: 'USD',
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
-                      priceValidUntil: '2026-12-31', // TODO: Update with actual price validity date
-                      priceSpecification: {
-                        '@type': 'UnitPriceSpecification',
-                        priceCurrency: 'USD',
-                        price: 12.50, // Representative price (average of $10-$15 range)
-                        minPrice: 10.00, // Minimum price per meter
-                        maxPrice: 15.00, // Maximum price per meter
-                        unitText: 'meter',
-                      },
-                      hasMerchantReturnPolicy: {
-                        '@type': 'MerchantReturnPolicy',
-                        applicableCountry: 'Worldwide',
-                        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-                        merchantReturnDays: 30, // TODO: Update with actual return policy days
-                        returnMethod: 'https://schema.org/ReturnByMail',
-                        returnFees: 'https://schema.org/FreeReturn',
-                      },
-                      shippingDetails: {
-                        '@type': 'OfferShippingDetails',
-                        shippingRate: {
-                          '@type': 'MonetaryAmount',
-                          value: '0', // TODO: Update with actual shipping cost or "Contact for shipping quote"
-                          currency: 'USD',
-                        },
-                        shippingDestination: {
-                          '@type': 'DefinedRegion',
-                          addressCountry: 'Worldwide',
-                        },
-                        deliveryTime: {
-                          '@type': 'ShippingDeliveryTime',
-                          businessDays: {
-                            '@type': 'OpeningHoursSpecification',
-                            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                          },
-                          cutoffTime: '14:00', // TODO: Update with actual cutoff time
-                          handlingTime: {
-                            '@type': 'QuantitativeValue',
-                            minValue: 7, // TODO: Update with actual handling days
-                            maxValue: 14,
-                            unitCode: 'DAY',
-                          },
-                          transitTime: {
-                            '@type': 'QuantitativeValue',
-                            minValue: 14, // TODO: Update with actual transit days
-                            maxValue: 30,
-                            unitCode: 'DAY',
-                          },
-                        },
-                      },
                     },
                   },
                 },
