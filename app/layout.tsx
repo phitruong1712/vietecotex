@@ -213,6 +213,9 @@ export default function RootLayout({
                     description:
                       'Microfiber leather (PU/PVC) for car seats, sofas, shoes, bags, and construction. Available from 8 factories in China or 6 factories in Vietnam. Customization, small MOQs, competitive pricing.',
                     category: 'Textiles',
+                    image: [
+                      'https://vietecotex.com/logo.png', // TODO: Replace with actual product image URL
+                    ],
                     brand: {
                       '@type': 'Brand',
                       name: 'Viet Ecotex',
@@ -222,6 +225,55 @@ export default function RootLayout({
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
                       priceCurrency: 'USD',
+                      priceSpecification: {
+                        '@type': 'UnitPriceSpecification',
+                        priceCurrency: 'USD',
+                        price: '12.50', // Representative price (average of $10-$15 range)
+                        minPrice: '10.00', // Minimum price per meter
+                        maxPrice: '15.00', // Maximum price per meter
+                        unitText: 'meter',
+                      },
+                      priceValidUntil: '2026-12-31', // TODO: Update with actual price validity date
+                      hasMerchantReturnPolicy: {
+                        '@type': 'MerchantReturnPolicy',
+                        applicableCountry: 'Worldwide',
+                        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+                        merchantReturnDays: 30, // TODO: Update with actual return policy days
+                        returnMethod: 'https://schema.org/ReturnByMail',
+                        returnFees: 'https://schema.org/FreeReturn',
+                      },
+                      shippingDetails: {
+                        '@type': 'OfferShippingDetails',
+                        shippingRate: {
+                          '@type': 'MonetaryAmount',
+                          value: '0', // TODO: Update with actual shipping cost or "Contact for shipping quote"
+                          currency: 'USD',
+                        },
+                        shippingDestination: {
+                          '@type': 'DefinedRegion',
+                          addressCountry: 'Worldwide',
+                        },
+                        deliveryTime: {
+                          '@type': 'ShippingDeliveryTime',
+                          businessDays: {
+                            '@type': 'OpeningHoursSpecification',
+                            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                          },
+                          cutoffTime: '14:00', // TODO: Update with actual cutoff time
+                          handlingTime: {
+                            '@type': 'QuantitativeValue',
+                            minValue: 7, // TODO: Update with actual handling days
+                            maxValue: 14,
+                            unitCode: 'DAY',
+                          },
+                          transitTime: {
+                            '@type': 'QuantitativeValue',
+                            minValue: 14, // TODO: Update with actual transit days
+                            maxValue: 30,
+                            unitCode: 'DAY',
+                          },
+                        },
+                      },
                     },
                   },
                 },
@@ -233,6 +285,9 @@ export default function RootLayout({
                     description:
                       'Furniture fabrics for sofas, chairs, and upholstery. Available from 8 factories in China or 6 factories in Vietnam. Customization, small MOQs, competitive pricing.',
                     category: 'Textiles',
+                    image: [
+                      'https://vietecotex.com/logo.png', // TODO: Replace with actual product image URL
+                    ],
                     brand: {
                       '@type': 'Brand',
                       name: 'Viet Ecotex',
@@ -242,6 +297,55 @@ export default function RootLayout({
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
                       priceCurrency: 'USD',
+                      priceSpecification: {
+                        '@type': 'UnitPriceSpecification',
+                        priceCurrency: 'USD',
+                        price: '12.50', // Representative price (average of $10-$15 range)
+                        minPrice: '10.00', // Minimum price per meter
+                        maxPrice: '15.00', // Maximum price per meter
+                        unitText: 'meter',
+                      },
+                      priceValidUntil: '2026-12-31', // TODO: Update with actual price validity date
+                      hasMerchantReturnPolicy: {
+                        '@type': 'MerchantReturnPolicy',
+                        applicableCountry: 'Worldwide',
+                        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+                        merchantReturnDays: 30, // TODO: Update with actual return policy days
+                        returnMethod: 'https://schema.org/ReturnByMail',
+                        returnFees: 'https://schema.org/FreeReturn',
+                      },
+                      shippingDetails: {
+                        '@type': 'OfferShippingDetails',
+                        shippingRate: {
+                          '@type': 'MonetaryAmount',
+                          value: '0', // TODO: Update with actual shipping cost or "Contact for shipping quote"
+                          currency: 'USD',
+                        },
+                        shippingDestination: {
+                          '@type': 'DefinedRegion',
+                          addressCountry: 'Worldwide',
+                        },
+                        deliveryTime: {
+                          '@type': 'ShippingDeliveryTime',
+                          businessDays: {
+                            '@type': 'OpeningHoursSpecification',
+                            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                          },
+                          cutoffTime: '14:00', // TODO: Update with actual cutoff time
+                          handlingTime: {
+                            '@type': 'QuantitativeValue',
+                            minValue: 7, // TODO: Update with actual handling days
+                            maxValue: 14,
+                            unitCode: 'DAY',
+                          },
+                          transitTime: {
+                            '@type': 'QuantitativeValue',
+                            minValue: 14, // TODO: Update with actual transit days
+                            maxValue: 30,
+                            unitCode: 'DAY',
+                          },
+                        },
+                      },
                     },
                   },
                 },
