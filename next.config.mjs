@@ -23,19 +23,13 @@ const nextConfig = {
         ],
       },
       // Prevent caching of HTML pages to ensure Google sees fresh content
+      // This helps Google Search Console see updated pages without Product schemas
       {
-        source: '/:path*',
-        has: [
-          {
-            type: 'header',
-            key: 'accept',
-            value: 'text/html',
-          },
-        ],
+        source: '/:path((?!_next|api|favicon|.*\\.(ico|png|jpg|jpeg|svg|webp|css|js|woff|woff2)).*)',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
+            value: 'no-cache, no-store, must-revalidate, max-age=0',
           },
         ],
       },
