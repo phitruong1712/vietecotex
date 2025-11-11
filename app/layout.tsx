@@ -225,6 +225,7 @@ export default function RootLayout({
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
                       priceCurrency: 'USD',
+                      price: '12.50', // Representative average price
                       priceSpecification: {
                         '@type': 'UnitPriceSpecification',
                         priceCurrency: 'USD',
@@ -297,6 +298,7 @@ export default function RootLayout({
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
                       priceCurrency: 'USD',
+                      price: '12.50', // Representative average price
                       priceSpecification: {
                         '@type': 'UnitPriceSpecification',
                         priceCurrency: 'USD',
