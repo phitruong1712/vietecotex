@@ -222,7 +222,7 @@ export default function RootLayout({
                     },
                     offers: {
                       '@type': 'Offer',
-                      price: '12.50', // Required field: Representative average price per meter
+                      price: 12.50, // Required field: Must be a number, not a string
                       priceCurrency: 'USD',
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
@@ -230,9 +230,9 @@ export default function RootLayout({
                       priceSpecification: {
                         '@type': 'UnitPriceSpecification',
                         priceCurrency: 'USD',
-                        price: '12.50', // Representative price (average of $10-$15 range)
-                        minPrice: '10.00', // Minimum price per meter
-                        maxPrice: '15.00', // Maximum price per meter
+                        price: 12.50, // Representative price (average of $10-$15 range)
+                        minPrice: 10.00, // Minimum price per meter
+                        maxPrice: 15.00, // Maximum price per meter
                         unitText: 'meter',
                       },
                       hasMerchantReturnPolicy: {
@@ -295,7 +295,7 @@ export default function RootLayout({
                     },
                     offers: {
                       '@type': 'Offer',
-                      price: '12.50', // Required field: Representative average price per meter
+                      price: 12.50, // Required field: Must be a number, not a string
                       priceCurrency: 'USD',
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
@@ -303,9 +303,9 @@ export default function RootLayout({
                       priceSpecification: {
                         '@type': 'UnitPriceSpecification',
                         priceCurrency: 'USD',
-                        price: '12.50', // Representative price (average of $10-$15 range)
-                        minPrice: '10.00', // Minimum price per meter
-                        maxPrice: '15.00', // Maximum price per meter
+                        price: 12.50, // Representative price (average of $10-$15 range)
+                        minPrice: 10.00, // Minimum price per meter
+                        maxPrice: 15.00, // Maximum price per meter
                         unitText: 'meter',
                       },
                       hasMerchantReturnPolicy: {
