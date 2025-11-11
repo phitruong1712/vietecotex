@@ -22,24 +22,25 @@ const nextConfig = {
           },
         ],
       },
-      // Prevent caching of HTML pages to ensure Google sees fresh content
-      // This helps Google Search Console see updated pages without Product schemas
-      {
-        source: '/:path((?!_next|api|favicon|.*\\.(ico|png|jpg|jpeg|svg|webp|css|js|woff|woff2)).*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate, max-age=0',
-          },
-        ],
-      },
-      // Long cache for static assets (excluding favicons)
+      // Long cache for static assets (excluding favicons) - MUST come before general rule
       {
         source: '/:all*(svg|png|jpg|jpeg|webp|css|js|woff|woff2)',
         headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Prevent caching of HTML pages to ensure Google sees fresh content
+      // This helps Google Search Console see updated pages without Product schemas
+      // This general rule applies to all other routes (HTML pages)
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate, max-age=0',
           },
         ],
       },
