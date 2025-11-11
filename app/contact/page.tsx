@@ -33,8 +33,30 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  // Explicit WebPage schema to prevent Google from inferring Product schemas
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Request Quote — Vietnam Microfiber Leather Supplier | Contact Us',
+    description:
+      'Request a quote or samples from Vietnam-based microfiber leather and furniture textile supplier — premium alternative to Chinese manufacturing.',
+    url: 'https://vietecotex.com/contact',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Viet Ecotex',
+      url: 'https://vietecotex.com',
+    },
+  };
+
   return (
-    <section className="container-xl py-10 md:py-14">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageSchema),
+        }}
+      />
+      <section className="container-xl py-10 md:py-14">
       <h1 className="font-serif text-3xl md:text-4xl">
         Request Quote — Certified Vietnam Supplier
       </h1>
@@ -51,5 +73,6 @@ export default function ContactPage() {
       </p>
       <ContactForm />
     </section>
+    </>
   );
 }

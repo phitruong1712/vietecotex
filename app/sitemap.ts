@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://vietecotex.com';
   // Use current timestamp to signal Google that pages have been updated
+  // Force fresh timestamp to trigger immediate re-crawl
   const now = new Date();
   
   return [

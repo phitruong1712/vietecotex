@@ -42,8 +42,30 @@ export const metadata: Metadata = {
 };
 
 export default function OurCommitmentPage() {
+  // Explicit WebPage schema to prevent Google from inferring Product schemas
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Vietnam Manufacturing — Alternative to China Supplier | Our Commitment',
+    description:
+      'Dual manufacturing capabilities: 8 factories in China for cost competitiveness, 6 factories in Vietnam for non-China alternatives with enhanced US/EU compliance.',
+    url: 'https://vietecotex.com/our-commitment',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Viet Ecotex',
+      url: 'https://vietecotex.com',
+    },
+  };
+
   return (
-    <section className="container-xl py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageSchema),
+        }}
+      />
+      <section className="container-xl py-20">
       <div className="text-center mb-16">
         <h1 className="display">
           Dual Manufacturing Capabilities — China & Vietnam
@@ -146,5 +168,6 @@ export default function OurCommitmentPage() {
         </Link>
       </div>
     </section>
+    </>
   );
 }

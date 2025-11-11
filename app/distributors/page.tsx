@@ -26,8 +26,30 @@ export const metadata: Metadata = {
 };
 
 export default function DistributorsPage() {
+  // Explicit WebPage schema to prevent Google from inferring Product schemas
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Distributors & Partners — Vietnam Microfiber Leather Supplier',
+    description:
+      'Become an authorized distributor or partner with Viet Ecotex. Access our full product range, competitive pricing, and comprehensive support for microfiber leather and furniture fabrics.',
+    url: 'https://vietecotex.com/distributors',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Viet Ecotex',
+      url: 'https://vietecotex.com',
+    },
+  };
+
   return (
-    <section className="container-xl py-10 md:py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageSchema),
+        }}
+      />
+      <section className="container-xl py-10 md:py-20">
       <div className="text-center mb-16">
         <h1 className="font-serif text-4xl md:text-5xl mb-4">
           Distributors & Partners
@@ -128,6 +150,7 @@ export default function DistributorsPage() {
         </Link>
       </div>
     </section>
+    </>
   );
 }
 
