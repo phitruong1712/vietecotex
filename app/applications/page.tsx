@@ -111,30 +111,10 @@ const applications = [
 ];
 
 export default function ApplicationsPage() {
-  // Explicit WebPage schema to prevent Google from inferring Product schemas
-  const webPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Applications — Microfiber Leather for Automotive, Furniture, Fashion & Construction',
-    description:
-      'Viet Ecotex microfiber leather and furniture fabrics for car seats, sofas, shoes, bags, and construction projects. Serving 1500+ customers in automotive (70-80%), furniture, footwear, fashion, and construction tenders.',
-    url: 'https://vietecotex.com/applications',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Viet Ecotex',
-      url: 'https://vietecotex.com',
-    },
-  };
-
+  // ALL STRUCTURED DATA REMOVED - This page is informational only, NOT a product page
+  // Google must re-crawl to see pages without any Product schemas
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webPageSchema),
-        }}
-      />
-      <section className="container-xl py-10 md:py-20">
+    <section className="container-xl py-10 md:py-20">
       <div className="text-center mb-16">
         <h1 className="font-serif text-4xl md:text-5xl mb-4">
           Applications & Industries
@@ -206,7 +186,6 @@ export default function ApplicationsPage() {
         </div>
       </div>
     </section>
-    </>
   );
 }
 

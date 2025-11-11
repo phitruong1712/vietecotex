@@ -38,21 +38,7 @@ export const metadata: Metadata = {
 };
 
 function AlcantaraInspiredPage() {
-  // Explicit WebPage schema to prevent Google from inferring Product schemas
-  const webPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Microfiber Leather Catalog — Vietnam Supplier Alternative to China',
-    description:
-      'Browse our catalog of eco microfiber leather and furniture fabrics from Vietnam-based supplier. Premium alternative to Chinese manufacturing.',
-    url: 'https://vietecotex.com/catalog',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Viet Ecotex',
-      url: 'https://vietecotex.com',
-    },
-  };
-
+  // ALL STRUCTURED DATA REMOVED - This page is informational only, NOT a product page
   const collections = [
     {
       title: 'Automotive 2025',
@@ -109,14 +95,7 @@ function AlcantaraInspiredPage() {
   ];
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webPageSchema),
-        }}
-      />
-      <div className="min-h-screen bg-white text-neutral-900">
+    <div className="min-h-screen bg-white text-neutral-900">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
@@ -321,7 +300,6 @@ function AlcantaraInspiredPage() {
       {/* Contact anchor */}
       <div id="contact" className="sr-only" />
     </div>
-    </>
   );
 }
 

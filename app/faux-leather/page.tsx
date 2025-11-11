@@ -29,70 +29,10 @@ export const metadata: Metadata = {
 };
 
 export default function FauxLeatherPage() {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Is faux leather the same as microfiber leather?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Faux leather is a broad term for non-animal leather alternatives (PU, PVC, microfiber). Microfiber leather is a premium type engineered with ultra-fine fibers for better feel and durability.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is microfiber leather vegan?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. Microfiber leather is animal-free and is often chosen as a vegan leather option.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Where is microfiber leather used?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Automotive interiors, furniture upholstery, and fashion accessories where consistent appearance, light weight, and durability are important.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Can you supply samples and color cards?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. Contact Viet Ecotex for swatches, technical data, MOQ, and lead time. We serve 1500+ customers worldwide with small MOQs and custom solutions.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the difference between PU leather and microfiber leather?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'PU leather is a basic synthetic leather made from polyurethane. Microfiber leather is a premium engineered material with ultra-fine fibers that creates a more natural leather-like feel, better durability, and superior consistency.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is microfiber leather suitable for automotive applications?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. Microfiber leather is widely used in automotive interiors for seats, door panels, dashboards, and steering wheels due to its durability, consistent appearance, and premium feel. 70-80% of our customers use our materials for automotive applications.',
-        },
-      },
-    ],
-  };
-
+  // ALL STRUCTURED DATA REMOVED - Including FAQPage to prevent any Product inference
+  // This page is informational only, NOT a product page
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
-      <section className="container-xl py-10 md:py-20">
+    <section className="container-xl py-10 md:py-20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="font-serif text-4xl md:text-5xl mb-4">

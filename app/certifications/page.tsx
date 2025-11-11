@@ -63,30 +63,9 @@ const certs = [
 ];
 
 export default function Certifications() {
-  // Explicit WebPage schema to prevent Google from inferring Product schemas
-  const webPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'US/EU Certifications — Vietnam Supplier Alternative to China | Certifications',
-    description:
-      'Vietnam-based microfiber leather and furniture textile supplier with US/EU compliant certifications. REACH, RoHS, TB117, BS5852, OEKO-TEX®, and GRS support.',
-    url: 'https://vietecotex.com/certifications',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Viet Ecotex',
-      url: 'https://vietecotex.com',
-    },
-  };
-
+  // ALL STRUCTURED DATA REMOVED - This page is informational only, NOT a product page
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webPageSchema),
-        }}
-      />
-      <section className="container-xl py-10 md:py-14">
+    <section className="container-xl py-10 md:py-14">
       <h1 className="font-serif text-3xl md:text-4xl mb-2">
         US/EU Certified Vietnam Leather & Textile Supplier
       </h1>
@@ -115,6 +94,5 @@ export default function Certifications() {
         ))}
       </div>
     </section>
-    </>
   );
 }

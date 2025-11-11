@@ -135,44 +135,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Viet Ecotex',
-              alternateName: 'Viet EcoTex',
-              url: 'https://vietecotex.com',
-              logo: 'https://vietecotex.com/logo.png',
-              email: 'contact@vietecotex.com',
-              telephone: '+84 976 344 224',
-              address: {
-                '@type': 'PostalAddress',
-                addressCountry: 'VN',
-              },
-              sameAs: [],
-              description:
-                'Vietnam-based supplier of eco microfiber leather and sustainable furniture fabrics. Premium alternative to Chinese manufacturing for automotive, fashion, and interior design industries.',
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: 'Viet Ecotex',
-              url: 'https://vietecotex.com',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: 'https://vietecotex.com/search?q={search_term_string}',
-                'query-input': 'required name=search_term_string',
-              },
-            }),
-          }}
-        />
+        {/* TEMPORARILY REMOVED ALL STRUCTURED DATA TO CLEAR GOOGLE'S CACHE */}
+        {/* This forces Google to re-crawl pages without any Product schemas */}
+        {/* Will re-add Organization and WebSite schemas after Google validates */}
+        {/* Explicitly prevent product snippet detection */}
+        <meta name="google" content="notranslate" />
+        <meta name="robots" content="index, follow, noimageindex" />
       </head>
       <body>
         <div className="topbar" />
