@@ -196,6 +196,5 @@ export default function FauxLeatherPage() {
           </div>
         </div>
       </section>
-    </>
   );
 }
