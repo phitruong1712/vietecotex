@@ -84,12 +84,39 @@ export default function FauxLeatherPage() {
     ],
   };
 
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Furniture Textiles',
+    description:
+      'Furniture fabrics for sofas, chairs, and upholstery. Available from 8 factories in China or 6 factories in Vietnam. Customization, small MOQs, competitive pricing.',
+    category: 'Textiles',
+    image: 'https://vietecotex.com/logo.png',
+    brand: {
+      '@type': 'Brand',
+      name: 'Viet Ecotex',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: 12.50,
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: 'https://vietecotex.com/contact',
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productSchema),
         }}
       />
       <section className="container-xl py-10 md:py-20">
