@@ -22,6 +22,23 @@ const nextConfig = {
           },
         ],
       },
+      // Prevent caching of HTML pages to ensure Google sees fresh content
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'header',
+            key: 'accept',
+            value: 'text/html',
+          },
+        ],
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
       // Long cache for static assets (excluding favicons)
       {
         source: '/:all*(svg|png|jpg|jpeg|webp|css|js|woff|woff2)',
