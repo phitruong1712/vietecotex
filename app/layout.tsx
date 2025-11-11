@@ -222,10 +222,11 @@ export default function RootLayout({
                     },
                     offers: {
                       '@type': 'Offer',
+                      price: '12.50', // Required field: Representative average price per meter
+                      priceCurrency: 'USD',
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
-                      priceCurrency: 'USD',
-                      price: '12.50', // Representative average price
+                      priceValidUntil: '2026-12-31', // TODO: Update with actual price validity date
                       priceSpecification: {
                         '@type': 'UnitPriceSpecification',
                         priceCurrency: 'USD',
@@ -234,7 +235,6 @@ export default function RootLayout({
                         maxPrice: '15.00', // Maximum price per meter
                         unitText: 'meter',
                       },
-                      priceValidUntil: '2026-12-31', // TODO: Update with actual price validity date
                       hasMerchantReturnPolicy: {
                         '@type': 'MerchantReturnPolicy',
                         applicableCountry: 'Worldwide',
@@ -295,10 +295,11 @@ export default function RootLayout({
                     },
                     offers: {
                       '@type': 'Offer',
+                      price: '12.50', // Required field: Representative average price per meter
+                      priceCurrency: 'USD',
                       availability: 'https://schema.org/InStock',
                       url: 'https://vietecotex.com/contact',
-                      priceCurrency: 'USD',
-                      price: '12.50', // Representative average price
+                      priceValidUntil: '2026-12-31', // TODO: Update with actual price validity date
                       priceSpecification: {
                         '@type': 'UnitPriceSpecification',
                         priceCurrency: 'USD',
@@ -307,7 +308,6 @@ export default function RootLayout({
                         maxPrice: '15.00', // Maximum price per meter
                         unitText: 'meter',
                       },
-                      priceValidUntil: '2026-12-31', // TODO: Update with actual price validity date
                       hasMerchantReturnPolicy: {
                         '@type': 'MerchantReturnPolicy',
                         applicableCountry: 'Worldwide',
