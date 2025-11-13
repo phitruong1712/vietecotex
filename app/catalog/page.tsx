@@ -37,6 +37,29 @@ export const metadata: Metadata = {
   },
 };
 
+// Explicit WebPage schema to tell Google this is informational, NOT a product page
+const catalogWebpageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://vietecotex.com/catalog#webpage',
+  url: 'https://vietecotex.com/catalog',
+  name: 'Microfiber Leather Catalog — Vietnam Supplier Alternative to China',
+  description:
+    'Informational catalog page showing microfiber leather materials. Visual inspiration gallery, not a product listing page with prices or offers.',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': 'https://vietecotex.com/#website',
+    name: 'Viet Ecotex',
+    url: 'https://vietecotex.com',
+  },
+  about: {
+    '@type': 'Thing',
+    name: 'Microfiber Leather Catalog',
+    description: 'Visual inspiration gallery of microfiber leather materials, not a product listing',
+  },
+  // Explicitly NOT a Product or Offer - this is an informational catalog/inspiration gallery
+};
+
 function AlcantaraInspiredPage() {
   // ALL STRUCTURED DATA REMOVED - This page is informational only, NOT a product page
   const collections = [
@@ -304,5 +327,15 @@ function AlcantaraInspiredPage() {
 }
 
 export default function Page() {
-  return <AlcantaraInspiredPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(catalogWebpageSchema),
+        }}
+      />
+      <AlcantaraInspiredPage />
+    </>
+  );
 }

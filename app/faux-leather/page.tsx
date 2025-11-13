@@ -31,8 +31,38 @@ export const metadata: Metadata = {
 export default function FauxLeatherPage() {
   // ALL STRUCTURED DATA REMOVED - Including FAQPage to prevent any Product inference
   // This page is informational only, NOT a product page
+  // Explicit WebPage schema to tell Google this is informational, NOT a product page
+  const webpageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': 'https://vietecotex.com/faux-leather#webpage',
+    url: 'https://vietecotex.com/faux-leather',
+    name: "Faux Leather vs Microfiber Leather - What's the Difference?",
+    description:
+      'Informational guide about faux leather and microfiber leather. Educational content about materials, not a product listing page.',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': 'https://vietecotex.com/#website',
+      name: 'Viet Ecotex',
+      url: 'https://vietecotex.com',
+    },
+    about: {
+      '@type': 'Thing',
+      name: 'Faux Leather Information',
+      description: 'Educational content about faux leather and microfiber leather materials',
+    },
+    // Explicitly NOT a Product or Offer - this is informational content only
+  };
+
   return (
-    <section className="container-xl py-10 md:py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webpageSchema),
+        }}
+      />
+      <section className="container-xl py-10 md:py-20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl mb-4">
@@ -196,5 +226,6 @@ export default function FauxLeatherPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -12,11 +12,11 @@ Google Search Console is showing "Missing field 'price' (in 'offers')" errors fo
 
 ### Step 1: Verify Live Site Has Zero Product Schemas ✅
 **Status: DONE** - All Product schemas have been removed from:
-- `app/layout.tsx` (removed Organization/WebSite schemas)
-- All page files (removed WebPage schemas)
-- All structured data removed
+- `app/layout.tsx` (removed Manufacturer/Product schemas, added WebPage schema)
+- All page files (removed Product schemas, added explicit WebPage schemas)
+- WebPage schemas explicitly declare pages as "informational, NOT product pages"
 
-**Verify:** Visit `https://vietecotex.com/applications` → View Page Source → Search for "Product" or "offers" → Should find ZERO results
+**Verify:** Visit `https://vietecotex.com/applications` → View Page Source → Search for `"@type": "Product"` or `"offers"` → Should find ZERO results. You should only see `"@type": "WebPage"` schemas.
 
 ### Step 2: Use Google Search Console URL Removal Tool (CRITICAL)
 
@@ -101,11 +101,14 @@ After following steps above, verify:
 ## Current Code Status ✅
 
 - ✅ Zero Product schemas in codebase
-- ✅ Zero structured data on any page
+- ✅ Zero Offer schemas in codebase
+- ✅ Explicit WebPage schemas added to key pages (homepage, faux-leather, applications, catalog)
+- ✅ WebPage schemas explicitly declare pages as "informational, NOT product pages"
+- ✅ Enhanced meta tags to prevent product snippet detection
 - ✅ No-cache headers force fresh content
 - ✅ Sitemap updated with fresh timestamps
 
-**The code is correct. The issue is Google's cache. Follow the steps above to clear it.**
+**The code is correct. We've added explicit WebPage schemas to tell Google these are informational pages, not product pages. The issue is Google's cache still has old Product/Offer data. Follow the steps above to clear it.**
 
 ## Expected Timeline
 

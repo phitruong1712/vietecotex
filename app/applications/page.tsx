@@ -32,6 +32,29 @@ export const metadata: Metadata = {
   },
 };
 
+// Explicit WebPage schema to tell Google this is informational, NOT a product page
+const webpageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://vietecotex.com/applications#webpage',
+  url: 'https://vietecotex.com/applications',
+  name: 'Applications — Microfiber Leather for Automotive, Furniture, Fashion & Construction',
+  description:
+    'Informational page about applications of microfiber leather. Educational content about material uses, not a product listing page.',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': 'https://vietecotex.com/#website',
+    name: 'Viet Ecotex',
+    url: 'https://vietecotex.com',
+  },
+  about: {
+    '@type': 'Thing',
+    name: 'Microfiber Leather Applications',
+    description: 'Educational content about applications of microfiber leather materials',
+  },
+  // Explicitly NOT a Product or Offer - this is informational content only
+};
+
 const applications = [
   {
     title: 'Automotive — Car Seats',
@@ -113,8 +136,16 @@ const applications = [
 export default function ApplicationsPage() {
   // ALL STRUCTURED DATA REMOVED - This page is informational only, NOT a product page
   // Google must re-crawl to see pages without any Product schemas
+  // Explicit WebPage schema to tell Google this is informational, NOT a product page
   return (
-    <section className="container-xl py-10 md:py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webpageSchema),
+        }}
+      />
+      <section className="container-xl py-10 md:py-20">
       <div className="text-center mb-16">
         <h1 className="font-serif text-4xl md:text-5xl mb-4">
           Applications & Industries
@@ -186,6 +217,7 @@ export default function ApplicationsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
