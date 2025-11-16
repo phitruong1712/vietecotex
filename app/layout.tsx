@@ -135,41 +135,42 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
-        {/* ALL STRUCTURED DATA REMOVED TO CLEAR GOOGLE'S CACHE */}
-        {/* This forces Google to re-crawl pages without any Product schemas */}
-        {/* Will re-add Organization and WebSite schemas after Google validates */}
-        {/* EXPLICITLY PREVENT PRODUCT SNIPPET DETECTION */}
-        <meta name="google" content="notranslate" />
-        <meta name="robots" content="index, follow, noimageindex" />
-        {/* Explicitly tell Google this is NOT an e-commerce site */}
-        <meta name="googlebot" content="index, follow, noimageindex, notranslate" />
-        {/* Cache-busting: Force Google to re-fetch immediately */}
-        <meta name="revisit-after" content="0 days" />
-        {/* Explicit WebPage schema to declare this is informational, NOT a product page */}
+        {/* Organization and WebSite schemas - SAFE, non-product structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'WebPage',
-              '@id': 'https://vietecotex.com/#webpage',
+              '@type': 'Organization',
+              name: 'Viet Ecotex',
+              alternateName: 'Viet EcoTex',
               url: 'https://vietecotex.com',
-              name: 'Viet Ecotex — Eco Microfiber Leather Supplier',
+              logo: 'https://vietecotex.com/logo.png',
+              email: 'contact@vietecotex.com',
+              telephone: '+84 976 344 224',
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'VN',
+              },
+              sameAs: [],
               description:
-                'Vietnam-based supplier of eco microfiber leather and sustainable furniture fabrics. Informational website about materials and services.',
-              isPartOf: {
-                '@type': 'WebSite',
-                '@id': 'https://vietecotex.com/#website',
-                name: 'Viet Ecotex',
-                url: 'https://vietecotex.com',
+                'Vietnam-based supplier of eco microfiber leather and sustainable furniture fabrics. Premium alternative to Chinese manufacturing for automotive, fashion, and interior design industries.',
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Viet Ecotex',
+              url: 'https://vietecotex.com',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: 'https://vietecotex.com/search?q={search_term_string}',
+                'query-input': 'required name=search_term_string',
               },
-              about: {
-                '@type': 'Thing',
-                name: 'Microfiber Leather Information',
-                description: 'Informational content about microfiber leather materials and applications',
-              },
-              // Explicitly NOT a Product or Offer
-              // This tells Google this page is informational only
             }),
           }}
         />
