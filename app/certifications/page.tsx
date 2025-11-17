@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title:
@@ -233,7 +232,7 @@ export default function Certifications() {
           <p className="text-neutral-600 mb-4 text-sm">{category.description}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {category.certs.map((cert, certIdx) => (
-              <Link
+              <a
                 key={certIdx}
                 href={cert.file}
                 target="_blank"
@@ -277,7 +276,7 @@ export default function Certifications() {
                     />
                   </svg>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
