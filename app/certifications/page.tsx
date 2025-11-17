@@ -203,6 +203,147 @@ export default function Certifications() {
         OEKO-TEX®, GRS, ISO9001, and fire resistance certifications. Complete certification transparency for global buyers seeking trusted, compliant suppliers.
       </p>
 
+      {/* Summary Table for US and Europe Standards */}
+      <div className="mb-12">
+        <h2 className="font-serif text-2xl mb-6">Key Certifications by Region</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* US Standards */}
+          <div className="card p-6">
+            <div className="flex items-center mb-4">
+              <svg
+                className="w-6 h-6 text-blue-600 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
+                />
+              </svg>
+              <h3 className="font-serif text-xl font-semibold">US Standards</h3>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">TB117</strong>
+                  <p className="text-xs text-neutral-600">Flammability test for upholstered furniture</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">US Flammability Test</strong>
+                  <p className="text-xs text-neutral-600">Fire resistance certification for leather products</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">Fire Proof Certification</strong>
+                  <p className="text-xs text-neutral-600">Outdoor fabric fire resistance (AJHL2502000697FT)</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">REACH Compliance</strong>
+                  <p className="text-xs text-neutral-600">Chemical safety for leather products</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">Lightfastness Grade 4</strong>
+                  <p className="text-xs text-neutral-600">1000 hours exposure test for outdoor fabrics</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">VKF517 TB117</strong>
+                  <p className="text-xs text-neutral-600">Fabric flammability compliance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Europe Standards */}
+          <div className="card p-6">
+            <div className="flex items-center mb-4">
+              <svg
+                className="w-6 h-6 text-blue-600 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <h3 className="font-serif text-xl font-semibold">Europe Standards</h3>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">REACH</strong>
+                  <p className="text-xs text-neutral-600">EU chemical regulation compliance</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">RoHS</strong>
+                  <p className="text-xs text-neutral-600">Restriction of Hazardous Substances directive</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">OEKO-TEX Standard 100</strong>
+                  <p className="text-xs text-neutral-600">Textile safety and harmful substances testing</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">GRS (Global Recycled Standard)</strong>
+                  <p className="text-xs text-neutral-600">Recycled content verification for sustainability</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">ISO9001</strong>
+                  <p className="text-xs text-neutral-600">Quality management system certification</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">BS5852</strong>
+                  <p className="text-xs text-neutral-600">British standard for furniture flammability</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <div>
+                  <strong className="text-sm">OEKO-TEX Annex.6</strong>
+                  <p className="text-xs text-neutral-600">Outdoor fabric safety standard (2024)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Image-based Certifications */}
       <div className="mb-12">
         <h2 className="font-serif text-2xl mb-4">General Certifications</h2>
