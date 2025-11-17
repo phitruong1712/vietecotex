@@ -189,8 +189,8 @@ export default function RootLayout({
             <Link className="nav-link" href="/applications">
               Applications
             </Link>
-            <Link className="nav-link" href="/advantages">
-              Advantages
+            <Link className="nav-link" href="/our-commitment">
+              Our Commitments
             </Link>
             <Link className="nav-link" href="/certifications">
               Certifications
@@ -233,7 +233,7 @@ export default function RootLayout({
                   <Link href="/applications">Applications</Link>
                 </li>
                 <li>
-                  <Link href="/advantages">Our Advantages</Link>
+                  <Link href="/our-commitment">Our Commitments</Link>
                 </li>
                 <li>
                   <Link href="/catalog">Product Catalog</Link>
