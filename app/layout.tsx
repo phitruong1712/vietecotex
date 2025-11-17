@@ -150,10 +150,10 @@ export default function RootLayout({
               telephone: '+84 976 344 224',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Khu, Lô M7, đường Nội/29 Phú Mỹ Hưng, Midtown',
-                addressLocality: 'Quận 7',
-                addressRegion: 'Thành phố Hồ Chí Minh',
-                postalCode: '100000',
+                streetAddress: 'Midtown M7, Block A, Tan Phu, Phu My Hung',
+                addressLocality: 'District 7',
+                addressRegion: 'Ho Chi Minh City',
+                postalCode: '700000',
                 addressCountry: 'VN',
               },
               sameAs: [],
@@ -211,9 +211,9 @@ export default function RootLayout({
                 Premium eco materials, small MOQs, and custom solutions.
               </p>
               <p className="mt-2">
-                <strong>Address:</strong><br />
-                Khu, Lô M7, đường Nội/29 Phú Mỹ Hưng, Midtown<br />
-                Quận 7, Thành phố Hồ Chí Minh 100000, Vietnam
+                <strong>Office Address:</strong><br />
+                Midtown M7, Block A, Tan Phu, Phu My Hung<br />
+                District 7, Ho Chi Minh City, Vietnam
               </p>
               <p className="mt-2">
                 Phone: <a href="tel:+84976344224">+84 976 344 224</a> ·
