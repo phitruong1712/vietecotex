@@ -51,6 +51,95 @@ export default function ContactPage() {
         .
       </p>
       <ContactForm />
+      
+      {/* Office Address and Map Section */}
+      <div className="mt-16">
+        <h2 className="font-serif text-2xl mb-8">Our Locations</h2>
+        
+        {/* Office */}
+        <div className="mb-12 grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="font-serif text-xl mb-4">Office</h3>
+            <div className="space-y-3 text-neutral-700">
+              <p>
+                <strong>Viet Ecotex</strong><br />
+                Midtown M7, Block A, Tan Phu, Phu My Hung<br />
+                District 7, Ho Chi Minh City, Vietnam
+              </p>
+              <p>
+                <strong>Phone:</strong>{' '}
+                <a className="underline" href="tel:+84976344224">
+                  +84 976 344 224
+                </a>
+              </p>
+              <p>
+                <strong>Email:</strong>{' '}
+                <a className="underline" href="mailto:contact@vietecotex.com">
+                  contact@vietecotex.com
+                </a>
+              </p>
+              <p className="mt-4">
+                <a
+                  className="text-blue-600 hover:underline"
+                  href="https://www.google.com/maps/search/Midtown+M7+Block+A+Tan+Phu+Phu+My+Hung+District+7+Ho+Chi+Minh+City+Vietnam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on Google Maps →
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="w-full h-[450px] rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps?q=Midtown+M7+Block+A+Tan+Phu+Phu+My+Hung+District+7+Ho+Chi+Minh+City+Vietnam&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Viet Ecotex Office Location"
+            />
+          </div>
+        </div>
+
+        {/* Warehouse */}
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="font-serif text-xl mb-4">Warehouse</h3>
+            <div className="space-y-3 text-neutral-700">
+              <p>
+                <strong>Viet Ecotex Warehouse</strong><br />
+                533/8 Nguyen Tri Phuong Street<br />
+                Dien Hong Ward, Ho Chi Minh City, Vietnam
+              </p>
+              <p className="mt-4">
+                <a
+                  className="text-blue-600 hover:underline"
+                  href="https://www.google.com/maps/search/533/8+Nguyen+Tri+Phuong+Street+Dien+Hong+Ward+Ho+Chi+Minh+City+Vietnam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on Google Maps →
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="w-full h-[450px] rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps?q=533/8+Nguyen+Tri+Phuong+Street,+Dien+Hong+Ward,+Ho+Chi+Minh+City,+Vietnam&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Viet Ecotex Warehouse Location"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

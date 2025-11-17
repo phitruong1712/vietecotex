@@ -15,11 +15,8 @@ function applySecurityHeaders(res: NextResponse) {
   res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   res.headers.set('X-Frame-Options', 'SAMEORIGIN');
-  // CSP tuned for Next.js defaults; adjust if you add external scripts.
-  res.headers.set(
-    'Content-Security-Policy',
-    "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; font-src 'self' data: https:; connect-src 'self' https:;"
-  );
+  // NOTE: We set a single, stricter Content-Security-Policy in next.config.mjs
+  // to avoid duplicate CSP headers with different values.
 }
 
 export function middleware(req: NextRequest) {
