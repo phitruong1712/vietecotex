@@ -211,17 +211,31 @@ export default function Certifications() {
           <div className="card p-6">
             <div className="flex items-center mb-4">
               <svg
-                className="w-6 h-6 text-blue-600 mr-2"
+                className="w-7 h-7 mr-2"
+                viewBox="0 0 24 18"
                 fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
-                />
+                <rect width="24" height="18" fill="#B22234"/>
+                <rect y="2" width="24" height="2" fill="#fff"/>
+                <rect y="6" width="24" height="2" fill="#fff"/>
+                <rect y="10" width="24" height="2" fill="#fff"/>
+                <rect y="14" width="24" height="2" fill="#fff"/>
+                <rect x="0" y="0" width="9.6" height="9.6" fill="#3C3B6E"/>
+                <circle cx="1.8" cy="1.8" r="0.6" fill="#fff"/>
+                <circle cx="3.6" cy="1.8" r="0.6" fill="#fff"/>
+                <circle cx="5.4" cy="1.8" r="0.6" fill="#fff"/>
+                <circle cx="7.2" cy="1.8" r="0.6" fill="#fff"/>
+                <circle cx="2.7" cy="3.6" r="0.6" fill="#fff"/>
+                <circle cx="4.5" cy="3.6" r="0.6" fill="#fff"/>
+                <circle cx="6.3" cy="3.6" r="0.6" fill="#fff"/>
+                <circle cx="1.8" cy="5.4" r="0.6" fill="#fff"/>
+                <circle cx="3.6" cy="5.4" r="0.6" fill="#fff"/>
+                <circle cx="5.4" cy="5.4" r="0.6" fill="#fff"/>
+                <circle cx="7.2" cy="5.4" r="0.6" fill="#fff"/>
+                <circle cx="2.7" cy="7.2" r="0.6" fill="#fff"/>
+                <circle cx="4.5" cy="7.2" r="0.6" fill="#fff"/>
+                <circle cx="6.3" cy="7.2" r="0.6" fill="#fff"/>
               </svg>
               <h3 className="font-serif text-xl font-semibold">US Standards</h3>
             </div>
@@ -275,17 +289,27 @@ export default function Certifications() {
           <div className="card p-6">
             <div className="flex items-center mb-4">
               <svg
-                className="w-6 h-6 text-blue-600 mr-2"
+                className="w-7 h-7 mr-2"
+                viewBox="0 0 24 18"
                 fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
+                <rect width="24" height="18" fill="#003399"/>
+                <circle cx="12" cy="9" r="2.5" fill="#FFCC00"/>
+                <circle cx="8.5" cy="6.5" r="1.2" fill="#FFCC00"/>
+                <circle cx="15.5" cy="6.5" r="1.2" fill="#FFCC00"/>
+                <circle cx="8.5" cy="11.5" r="1.2" fill="#FFCC00"/>
+                <circle cx="15.5" cy="11.5" r="1.2" fill="#FFCC00"/>
+                <circle cx="6.5" cy="9" r="1.2" fill="#FFCC00"/>
+                <circle cx="17.5" cy="9" r="1.2" fill="#FFCC00"/>
+                <circle cx="10" cy="5" r="1.2" fill="#FFCC00"/>
+                <circle cx="14" cy="5" r="1.2" fill="#FFCC00"/>
+                <circle cx="10" cy="13" r="1.2" fill="#FFCC00"/>
+                <circle cx="14" cy="13" r="1.2" fill="#FFCC00"/>
+                <circle cx="7" cy="7.5" r="1.2" fill="#FFCC00"/>
+                <circle cx="17" cy="7.5" r="1.2" fill="#FFCC00"/>
+                <circle cx="7" cy="10.5" r="1.2" fill="#FFCC00"/>
+                <circle cx="17" cy="10.5" r="1.2" fill="#FFCC00"/>
               </svg>
               <h3 className="font-serif text-xl font-semibold">Europe Standards</h3>
             </div>
