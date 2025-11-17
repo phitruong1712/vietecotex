@@ -150,6 +150,10 @@ export default function RootLayout({
               telephone: '+84 976 344 224',
               address: {
                 '@type': 'PostalAddress',
+                streetAddress: 'Khu, Lô M7, đường Nội/29 Phú Mỹ Hưng, Midtown',
+                addressLocality: 'Quận 7',
+                addressRegion: 'Thành phố Hồ Chí Minh',
+                postalCode: '100000',
                 addressCountry: 'VN',
               },
               sameAs: [],
@@ -205,6 +209,11 @@ export default function RootLayout({
                 Dual manufacturing capabilities: 8 factories in China, 6 factories in Vietnam.
                 Flexible sourcing for cost competitiveness or enhanced US/EU compliance.
                 Premium eco materials, small MOQs, and custom solutions.
+              </p>
+              <p className="mt-2">
+                <strong>Address:</strong><br />
+                Khu, Lô M7, đường Nội/29 Phú Mỹ Hưng, Midtown<br />
+                Quận 7, Thành phố Hồ Chí Minh 100000, Vietnam
               </p>
               <p className="mt-2">
                 Phone: <a href="tel:+84976344224">+84 976 344 224</a> ·
