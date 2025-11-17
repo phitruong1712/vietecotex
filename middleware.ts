@@ -5,19 +5,8 @@ const APEX = new Set(['vietecotex.com', 'vinaleather.com', 'vinafabrics.com']);
 
 const PRIMARY = 'vietecotex.com';
 
-/** Security headers with HSTS preload enabled */
-function applySecurityHeaders(res: NextResponse) {
-  // HSTS: 1 year with includeSubDomains and preload
-  // This tells browsers to always use HTTPS for this domain and all subdomains
-  // and includes the domain in browser preload lists for even faster security
-  res.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
-  res.headers.set('X-Content-Type-Options', 'nosniff');
-  res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-  res.headers.set('X-Frame-Options', 'SAMEORIGIN');
-  // NOTE: We set a single, stricter Content-Security-Policy in next.config.mjs
-  // to avoid duplicate CSP headers with different values.
-}
+/** Security headers are configured in next.config.mjs to avoid duplicates */
+/** This middleware focuses on redirects only */
 
 export function middleware(req: NextRequest) {
   const url = new URL(req.url);
@@ -50,10 +39,8 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(url.toString(), 308);
   }
 
-  // 3) Pass through + add security headers
-  const res = NextResponse.next();
-  applySecurityHeaders(res);
-  return res;
+  // 3) Pass through (security headers are handled by next.config.mjs)
+  return NextResponse.next();
 }
 
 // Skip static assets/Next internals
