@@ -398,7 +398,7 @@ export default function Certifications() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {category.certs.map((cert, certIdx) => {
               // CO certificates are confidential - no PDF links
-              if (!cert.file) {
+              if (!('file' in cert) || !cert.file) {
                 return (
                   <div
                     key={certIdx}
