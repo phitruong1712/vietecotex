@@ -142,8 +142,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Viet Ecotex',
-              alternateName: 'Viet EcoTex',
+              name: 'VIET KAI ECOTECH',
+              alternateName: 'Viet Ecotex',
+              legalName: 'VIET KAI ECOTECH',
+              taxID: '0315588177',
               url: 'https://vietecotex.com',
               logo: 'https://vietecotex.com/logo.png',
               email: 'contact@vietecotex.com',
@@ -204,7 +206,10 @@ export default function RootLayout({
         <footer className="mt-24 border-t">
           <div className="container-xl py-10 grid md:grid-cols-3 gap-8 text-sm">
             <div>
-              <div className="font-serif text-lg mb-2">Viet EcoTex</div>
+              <div className="font-serif text-lg mb-2">VIET KAI ECOTECH</div>
+              <p className="text-xs text-neutral-600 mb-2">
+                VAT: 0315588177
+              </p>
               <p>
                 Dual manufacturing capabilities: 8 factories in China, 6 factories in Vietnam.
                 Flexible sourcing for cost competitiveness or enhanced US/EU compliance.

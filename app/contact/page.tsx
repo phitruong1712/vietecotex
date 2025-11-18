@@ -62,7 +62,8 @@ export default function ContactPage() {
             <h3 className="font-serif text-xl mb-4">Office</h3>
             <div className="space-y-3 text-neutral-700">
               <p>
-                <strong>Viet Ecotex</strong><br />
+                <strong>VIET KAI ECOTECH</strong><br />
+                VAT: 0315588177<br />
                 Midtown M7, Block A, Tan Phu, Phu My Hung<br />
                 District 7, Ho Chi Minh City, Vietnam
               </p>
@@ -99,7 +100,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Viet Ecotex Office Location"
+              title="VIET KAI ECOTECH Office Location"
             />
           </div>
         </div>
@@ -110,7 +111,7 @@ export default function ContactPage() {
             <h3 className="font-serif text-xl mb-4">Warehouse</h3>
             <div className="space-y-3 text-neutral-700">
               <p>
-                <strong>Viet Ecotex Warehouse</strong><br />
+                <strong>VIET KAI ECOTECH Warehouse</strong><br />
                 533/8 Nguyen Tri Phuong Street<br />
                 Dien Hong Ward, Ho Chi Minh City, Vietnam
               </p>
@@ -135,7 +136,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Viet Ecotex Warehouse Location"
+              title="VIET KAI ECOTECH Warehouse Location"
             />
           </div>
         </div>
