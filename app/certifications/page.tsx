@@ -66,7 +66,7 @@ const imageCerts = [
   },
 ];
 
-// PDF-based certifications organized by category
+// PDF-based certifications organized by category (certificates are confidential - names only)
 const pdfCertCategories = [
   {
     title: 'Certificate of Origin (CO)',
@@ -74,12 +74,10 @@ const pdfCertCategories = [
     certs: [
       {
         name: 'CO VKF Fabric',
-        file: '/certifications/co/CO VKF FABRIC.pdf',
         type: 'Certificate of Origin',
       },
       {
         name: 'CO VK Leather',
-        file: '/certifications/co/CO VKLEATHER.pdf',
         type: 'Certificate of Origin',
       },
     ],
@@ -90,32 +88,26 @@ const pdfCertCategories = [
     certs: [
       {
         name: 'GRS - VKF Fabric',
-        file: '/certifications/cq-fabric/GRS  - VKF .pdf',
         type: 'GRS Certification',
       },
       {
         name: 'OEKO-TEX Standard 100 - VKF',
-        file: '/certifications/cq-fabric/OEKO STANDARD 100  - VKF.pdf',
         type: 'OEKO-TEX Certification',
       },
       {
         name: 'OEKO-TEX Standard 100 VKF Fabric',
-        file: '/certifications/cq-fabric/OEKO TEX STANDARD 100 VKF FABRIC .pdf',
         type: 'OEKO-TEX Certification',
       },
       {
         name: 'VKF517 TB117',
-        file: '/certifications/cq-fabric/VKF517 TB117.pdf',
         type: 'US Flammability Test',
       },
       {
         name: 'Test Report VKF Fabric',
-        file: '/certifications/cq-fabric/Test Report VKF Fabric.pdf',
         type: 'Test Report',
       },
       {
         name: 'VKF642 Product Specification',
-        file: '/certifications/cq-fabric/VKF642 PRODUCT SPEC.pdf',
         type: 'Product Specification',
       },
     ],
@@ -126,27 +118,22 @@ const pdfCertCategories = [
     certs: [
       {
         name: 'GRS - VK Leather',
-        file: '/certifications/cq-leather/GRS-VK LEATHER .pdf',
         type: 'GRS Certification',
       },
       {
         name: 'OEKO-TEX Standard 100 - VK Leather',
-        file: '/certifications/cq-leather/OEKE TEX100 VK LEATHER.pdf',
         type: 'OEKO-TEX Certification',
       },
       {
         name: 'REACH - VK Leather',
-        file: '/certifications/cq-leather/REACH VK LEATHER.pdf',
         type: 'REACH Compliance',
       },
       {
         name: 'US Flammability Test - VK Leather',
-        file: '/certifications/cq-leather/Tieu chuan chong chay US Flammability Test.pdf',
         type: 'US Flammability Test',
       },
       {
         name: 'Test Report VK Leather',
-        file: '/certifications/cq-leather/Test report VK Leather..pdf',
         type: 'Test Report',
       },
     ],
@@ -157,32 +144,26 @@ const pdfCertCategories = [
     certs: [
       {
         name: 'Outdoor Fire Proof Certification',
-        file: '/certifications/cq-fabric-outdoor/OUTDOOR FIRE PROOF AJHL2502000697FT.pdf',
         type: 'Fire Resistance',
       },
       {
         name: 'Outdoor GRS Certification',
-        file: '/certifications/cq-fabric-outdoor/OUTDOOR GRS - 1.pdf',
         type: 'GRS Certification',
       },
       {
         name: 'Outdoor ISO9001 Certification',
-        file: '/certifications/cq-fabric-outdoor/OUTDOOR ISO9001-1.pdf',
         type: 'ISO9001 Quality Management',
       },
       {
         name: 'Outdoor OEKO-TEX Annex.6 2024',
-        file: '/certifications/cq-fabric-outdoor/OUTDOOR OEKO-TEX Annex.6 2024 -1.pdf',
         type: 'OEKO-TEX Certification',
       },
       {
         name: 'Outdoor Olefin Lightfastness Grade 4 (1000hrs)',
-        file: '/certifications/cq-fabric-outdoor/OUTDOOR Olefin Lighfastness Grade4 1000hrs-1.pdf',
         type: 'Lightfastness Test',
       },
       {
         name: 'Outdoor Polyester Lightfastness Grade 4 (1000hrs)',
-        file: '/certifications/cq-fabric-outdoor/OUTDOOR Polyester Lightfastness Grade4 1000hrs-1.pdf',
         type: 'Lightfastness Test',
       },
     ],
@@ -397,22 +378,19 @@ export default function Certifications() {
           <p className="text-neutral-600 mb-4 text-sm">{category.description}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {category.certs.map((cert, certIdx) => (
-              <a
+              <div
                 key={certIdx}
-                href={cert.file}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card p-4 hover:shadow-lg transition-shadow group"
+                className="card p-4"
               >
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex-1">
-                    <h3 className="font-semibold text-sm group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-semibold text-sm">
                       {cert.name}
                     </h3>
                     <p className="text-xs text-neutral-500 mt-1">{cert.type}</p>
                   </div>
                   <svg
-                    className="w-5 h-5 text-neutral-400 group-hover:text-blue-600 transition-colors flex-shrink-0 ml-2"
+                    className="w-5 h-5 text-neutral-400 flex-shrink-0 ml-2"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -425,23 +403,7 @@ export default function Certifications() {
                     />
                   </svg>
                 </div>
-                <div className="text-xs text-blue-600 mt-2 flex items-center">
-                  View PDF
-                  <svg
-                    className="w-3 h-3 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
