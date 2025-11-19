@@ -186,3 +186,6 @@ If you don't have product images ready yet:
 The current setup with `logo.png` will work fine for Google Search Console validation. You can update it anytime.
 
 
+
+
+

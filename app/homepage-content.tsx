@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import EcoLeatherCycle from './components/eco-leather-cycle';
 
 export default function HomePageContent() {
   const collections = [
@@ -122,6 +123,9 @@ export default function HomePageContent() {
           </div>
         </div>
       </section>
+
+      {/* Eco-Leather Circular Mission */}
+      <EcoLeatherCycle />
 
       {/* Moodboard */}
       <section id="moodboard" className="py-16 sm:py-24 bg-neutral-50">
