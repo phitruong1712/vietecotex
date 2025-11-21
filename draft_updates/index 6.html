@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VietKai Eco-Leather Circular Mission</title>
+  <style>
+    :root {
+      --green-dark: #18452b;
+      --green-main: #259b4a;
+      --green-soft: #e3f4e8;
+      --green-soft-2: #f3fbf5;
+      --text-main: #243122;
+      --text-muted: #4a5a4a;
+      --border-soft: rgba(37, 155, 74, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #f0fff4 0, #f5f7f4 40%, #e8f5ec 100%);
+      color: var(--text-main);
+    }
+
+    .eco-leather-cycle {
+      padding: 60px 20px 80px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .elc-intro {
+      max-width: 780px;
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+
+    .elc-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      background: rgba(37, 155, 74, 0.08);
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+
+    .elc-tagline span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid var(--green-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .elc-intro h1 {
+      font-size: 2.3rem;
+      margin: 0 0 10px;
+      color: var(--green-dark);
+    }
+
+    .elc-intro p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .elc-intro p strong {
+      color: var(--green-main);
+    }
+
+    .elc-advantages {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .elc-adv {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(37,155,74,0.25);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      font-size: 0.86rem;
+      color: var(--green-dark);
+      white-space: nowrap;
+    }
+
+    .elc-adv-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(37,155,74,0.08);
+      border: 1px solid rgba(37,155,74,0.35);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .elc-adv span.label-strong {
+      font-weight: 600;
+      color: var(--green-main);
+    }
+
+    .elc-wheel {
+      position: relative;
+      margin: 0 auto;
+      width: 520px;
+      height: 520px;
+      max-width: 100%;
+      max-height: 100vw;
+    }
+
+    .elc-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 230px;
+      height: 230px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffffff, var(--green-soft));
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+      text-align: center;
+      padding: 34px 26px;
+      box-sizing: border-box;
+      border: 2px solid rgba(37, 155, 74, 0.35);
+    }
+
+    .elc-center h3 {
+      font-size: 1.05rem;
+      margin: 0 0 8px;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .elc-center p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .elc-center p span {
+      font-weight: 600;
+      color: var(--green-main);
+    }
+
+    .elc-center-badge {
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--green-main);
+    }
+
+    .elc-step {
+      position: absolute;
+      width: 190px;
+      height: 130px;
+      transform-origin: 50% 50%;
+    }
+
+    .elc-step-inner {
+      background: linear-gradient(135deg, #ffffff, var(--green-soft-2));
+      border-radius: 16px;
+      padding: 14px 16px 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-soft);
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .elc-step-inner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, rgba(37,155,74,0.7), rgba(24,69,43,0.7)) border-box;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .elc-step-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .elc-step-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--green-main);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      box-shadow: 0 0 0 3px rgba(37,155,74,0.25);
+      flex-shrink: 0;
+    }
+
+    .elc-step-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(37,155,74,0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(37,155,74,0.35);
+    }
+
+    .elc-step-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .elc-step h4 {
+      font-size: 0.9rem;
+      margin: 0;
+      color: var(--green-dark);
+    }
+
+    .elc-step p {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .elc-step-inner::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid var(--green-main);
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(45deg);
+      right: 10px;
+      bottom: 10px;
+      opacity: 0.7;
+    }
+
+    .elc-step-inner:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+      border-color: rgba(37,155,74,0.55);
+    }
+
+    .elc-step-inner:hover::before {
+      opacity: 0.7;
+    }
+
+    /* Positions around circle (desktop) */
+    .elc-step-1 { top: 0; left: 50%; transform: translate(-50%, 0); }
+    .elc-step-2 { top: 70px; right: 0; transform: translate(0, 0); }
+    .elc-step-3 { top: 210px; right: 0; transform: translate(0, -50%); }
+    .elc-step-4 { bottom: 70px; right: 0; transform: translate(0, 0); }
+    .elc-step-5 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+    .elc-step-6 { bottom: 70px; left: 0; transform: translate(0, 0); }
+    .elc-step-7 { top: 210px; left: 0; transform: translate(0, -50%); }
+    .elc-step-8 { top: 70px; left: 0; transform: translate(0, 0); }
+
+    .elc-residual {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 420px;
+    }
+
+    .elc-residual strong {
+      color: var(--green-main);
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .eco-leather-cycle {
+        padding-top: 40px;
+        padding-bottom: 60px;
+      }
+
+      .elc-intro h1 {
+        font-size: 1.8rem;
+      }
+
+      .elc-wheel {
+        width: 100%;
+        height: auto;
+        padding-top: 10px;
+      }
+
+      .elc-center {
+        position: static;
+        margin: 0 auto 20px;
+        transform: none;
+      }
+
+      .elc-step {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin: 8px 0;
+        transform: none !important;
+      }
+
+      .elc-residual {
+        position: static;
+        margin-top: 10px;
+        transform: none;
+      }
+
+      .elc-advantages {
+        justify-content: flex-start;
+      }
+
+      .elc-adv {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="eco-leather-cycle">
+    <div class="elc-intro">
+      <div class="elc-tagline">
+        <span class="icon">♻</span>
+        <span>Animal-Free · Eco-Leather · Closed Loop</span>
+      </div>
+      <h1>Our Eco-Leather Circular Mission</h1>
+      <p>
+        We create microfiber <strong>eco-leather</strong> that protects animals, lowers environmental impact,
+        and keeps interiors <strong>low in chemicals</strong> for healthier homes, offices, and public spaces.
+      </p>
+    </div>
+
+    <div class="elc-advantages">
+      <div class="elc-adv">
+        <span class="elc-adv-icon" aria-hidden="true">💧</span>
+        <span>
+          <span class="label-strong">Water-based eco manufacturing</span>
+          &nbsp;for cleaner air, safer workers and reduced emissions.
+        </span>
+      </div>
+      <div class="elc-adv">
+        <span class="elc-adv-icon" aria-hidden="true">✅</span>
+        <span>
+          <span class="label-strong">DMF-free microfiber leather</span>
+          &nbsp;for healthier interiors and peace of mind for our partners.
+        </span>
+      </div>
+    </div>
+
+    <div class="elc-wheel">
+      <div class="elc-center">
+        <div class="elc-center-badge">VietKai Eco-Leather</div>
+        <h3>Circular by design</h3>
+        <p>
+          <span>Animal-free</span> · <span>Low-impact chemistry</span> · <span>Long-lasting use</span>
+        </p>
+      </div>
+
+      <!-- 1. Responsible Raw Materials -->
+      <div class="elc-step elc-step-1">
+        <div class="elc-step-inner">
+          <div class="elc-step-top">
+            <span class="elc-step-label">01</span>
+            <span class="elc-step-icon" aria-hidden="true">🌱</span>
+            <div class="elc-step-text">
+              <h4>Responsible raw materials</h4>
+            </div>
+          </div>
+          <p>Recycled fibers, water-based systems, and plant-linked inputs instead of animal hides.</p>
+        </div>
+      </div>
+
+      <!-- 2. Eco-conscious Design -->
+      <div class="elc-step elc-step-2">
+        <div class="elc-step-inner">
+          <div class="elc-step-top">
+            <span class="elc-step-label">02</span>
+            <span class="elc-step-icon" aria-hidden="true">💡</span>
+            <div class="elc-step-text">
+              <h4>Eco-conscious design</h4>
+            </div>
+          </div>
+          <p>Engineered for durability, easy cleaning and disassembly to reduce waste over time.</p>
+        </div>
+      </div>
+
+      <!-- 3. Clean Production -->
+      <div class="elc-step elc-step-3">
+        <div class="elc-step-inner">
+          <div class="elc-step-top">
+            <span class="elc-step-label">03</span>
+            <span class="elc-step-icon" aria-hidden="true">🏭</span>
+            <div class="elc-step-text">
+              <h4>Clean, efficient production</h4>
+            </div>
+          </div>
+          <p>Modern lines with reduced VOCs and controlled wastewater to protect workers & nature.</p>
+        </div>
+      </div>
+
+      <!-- 4. Conscious Retail -->
+      <div class="elc-step elc-step-4">
+        <div class="elc-step-inner">
+          <div class="elc-step-top">
+            <span class="elc-step-label">04</span>
+            <span class="elc-step-icon" aria-hidden="true">🛍️</span>
+            <div class="elc-step-text">
+              <h4>Conscious retail partners</h4>
+            </div>
+          </div>
+          <p>We team with brands committed to transparency, traceability and greener materials.</p>
+        </div>
+      </div>
+
+      <!-- 5. Healthy & Safe Use -->
+      <div class="elc-step elc-step-5">
+        <div class="elc-step-inner">
+          <div class="elc-step-top">
+            <span class="elc-step-label">05</span>
+            <span class="elc-step-icon" aria-hidden="true">🏡</span>
+            <div class="elc-step-text">
+              <h4>Healthy & safe use</h4>
+            </div>
+          </div>
+          <p>Low-odor, skin-friendly surfaces designed to meet strict chemical and safety standards.</p>
+        </div>
+      </div>
+
+      <!-- 6. Reuse & Repair -->
+      <div class="elc-step elc-step-6">
+        <div class="elc-step-inner">
+          <div class="elc-step-top">
+            <span class="elc-step-label">06</span>
+            <span class="elc-step-icon" aria-hidden="true">🛠️</span>
+            <div class="elc-step-text">
+              <h4>Reuse & repair</h4>
+            </div>
+          </div>
+          <p>High tear strength and easy re-upholstery extend furniture life instead of landfill.</p>
+        </div>
+      </div>
+
+      <!-- 7. Collection & Sorting -->
+      <div class="elc-step elc-step-7">
+        <div class="elc-step-inner">
+          <div class="elc-step-top">
+            <span class="elc-step-label">07</span>
+            <span class="elc-step-icon" aria-hidden="true">🗑️</span>
+            <div class="elc-step-text">
+              <h4>Collection & sorting</h4>
+            </div>
+          </div>
+          <p>Off-cuts and end-of-life pieces are collected and separated for material recovery.</p>
+        </div>
+      </div>
+
+      <!-- 8. Recycling & Upcycling -->
+      <div class="elc-step elc-step-8">
+        <div class="elc-step-inner">
+          <div class="elc-step-top">
+            <span class="elc-step-label">08</span>
+            <span class="elc-step-icon" aria-hidden="true">♻️</span>
+            <div class="elc-step-text">
+              <h4>Recycling & upcycling</h4>
+            </div>
+          </div>
+          <p>Recovered material feeds into new backing layers and next-generation eco-leather.</p>
+        </div>
+      </div>
+
+      <div class="elc-residual">
+        <strong>Residual waste is minimized</strong> and treated responsibly, closing the loop wherever possible.
+      </div>
+    </div>
+  </section>
+</body>
+</html>
