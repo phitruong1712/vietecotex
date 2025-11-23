@@ -13,12 +13,63 @@ export default function OurCommitmentPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-neutral-50 py-20">
-        <div className="container-xl text-center">
-          <h1 className="display mb-6">Our Commitment to Sustainability</h1>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            We are dedicated to providing the highest quality sourcing solutions, tailored to your specific needs with unmatched flexibility and support.
-          </p>
+      {/* Hero Section - Side by Side */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-xl px-4">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Column: Text */}
+            <div className="order-2 lg:order-1">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 font-bold tracking-tight text-neutral-900">
+                Pioneering Sustainable Materials
+              </h1>
+
+              <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
+                <p>
+                  Founded in 2016, <strong className="text-neutral-900">Viet Kai Ecotech</strong> is redefining the future of upholstery through sustainable innovation.
+                  We engineer advanced, eco-friendly materials using net-zero convergence technology, ensuring that every product we create honors our commitment to the planet without compromising on quality.
+                </p>
+
+                <p>
+                  Our mission is simple: to protect the global environment while enhancing daily life. We take an eco-centric approach to manufacturing,
+                  ensuring our materials are free from harmful chemicals and produced with minimal environmental impact.
+                </p>
+
+                <p>
+                  We believe in balancing present needs with future preservation. By pursuing the highest standards of quality, we have established ourselves
+                  as a leader in the automotive and furniture upholstery markets, driving growth through responsible innovation.
+                </p>
+              </div>
+
+              <div className="mt-10">
+                <h3 className="font-serif text-xl font-bold mb-4 text-neutral-900">Our Core Applications</h3>
+                <ul className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    'Automotive Upholstery',
+                    'Interior & Furniture Upholstery',
+                    'Materials for Shoes & Bags',
+                    'Interior Fabrics for Sofas'
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center text-neutral-700">
+                      <span className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-3"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="order-1 lg:order-2 relative h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/laboratory_optimized.png"
+                alt="Viet Kai Ecotech Laboratory - Sustainable Innovation"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -37,8 +88,8 @@ export default function OurCommitmentPage() {
             </div>
             <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/sourcing_map_placeholder_1763700413518.png"
-                alt="Sourcing Map Visualization"
+                src="/sourcing_map_pins.png"
+                alt="Sourcing Map Visualization - Vietnam, China, Korea"
                 fill
                 className="object-cover"
               />
@@ -47,8 +98,52 @@ export default function OurCommitmentPage() {
         </div>
       </section>
 
+      {/* Responsible Manufacturing Section */}
+      <section className="py-16 md:py-24 bg-neutral-50">
+        <div className="container-xl px-4">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Column: Image */}
+            <div className="relative h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/factory_optimized.png"
+                alt="Viet Kai Ecotech Factory - Responsible Manufacturing"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+
+            {/* Right Column: Text */}
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-8 font-bold tracking-tight text-neutral-900">
+                Responsible Manufacturing & Ethical Sourcing
+              </h2>
+
+              <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
+                <p>
+                  Since 2016, <strong className="text-neutral-900">Viet Kai Ecotech</strong> has championed a culture of sustainability that extends far beyond our own walls.
+                  We are deeply committed to responsible sourcing, ensuring that every link in our supply chain upholds the highest standards of human rights,
+                  environmental stewardship, and ethical labor practices.
+                </p>
+
+                <p>
+                  We enforce strict environmental and social criteria for all our partners, validated through rigorous on-site audits and risk assessments.
+                  Every supplier is required to sign our Code of Ethics and adhere to the principles of the <strong className="text-neutral-900">SA8000® standard</strong>.
+                  We actively collaborate with them to improve energy efficiency, reduce emissions, and prioritize the use of recycled and low-impact materials.
+                </p>
+
+                <p>
+                  Our commitment to transparency is evolving. We have expanded our monitoring programs to include comprehensive CO₂ emission calculations
+                  and offsetting initiatives across our supplier network, driving us closer to a fully sustainable and transparent supply chain.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Tailored Solutions */}
-      <section className="py-16 bg-neutral-50">
+      <section className="py-16 bg-white">
         <div className="container-xl">
           <h2 className="text-3xl font-serif font-bold mb-12 text-center">Tailored to Your Requirements</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">

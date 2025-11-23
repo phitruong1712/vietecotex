@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import EcoLeatherCycle from './components/eco-leather-cycle';
+import { TrustBar } from './components/trust-bar';
 
 export default function HomePageContent() {
   const collections = [
@@ -97,11 +98,13 @@ export default function HomePageContent() {
       <section className="relative isolate">
         <div className="absolute inset-0 -z-10">
           <div
-            className="h-[60vh] w-full bg-center bg-cover"
-            style={{ backgroundImage: 'url(/catalog-banner.png)' }}
-            aria-hidden="true"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
+            style={{
+              backgroundImage: "url('/images/hero-banner-new.png')",
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+          </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[60vh] grid content-end pb-16">
           <div className="max-w-xl">
@@ -109,7 +112,7 @@ export default function HomePageContent() {
               INSPIRATIONS
             </p>
             <h1 className="font-[Gilda_Display] text-4xl sm:text-5xl text-white leading-tight">
-              Eco Microfiber Leather For Future Innovation
+              Modern Eco Leather for Environmental Protection
             </h1>
             <p className="text-neutral-200/90 mt-3 text-sm">
               Serving 1500+ customers worldwide. Premium microfiber leather (PU/PVC) and furniture fabrics manufacturer. 80% microfiber leather, 20% furniture fabrics. Customization, small MOQs, timely delivery, and competitive pricing. Trusted by automotive, furniture, footwear, fashion, and construction industries.
@@ -127,8 +130,11 @@ export default function HomePageContent() {
       {/* Eco-Leather Circular Mission */}
       <EcoLeatherCycle />
 
+      {/* Trust Bar */}
+      <TrustBar />
+
       {/* Moodboard */}
-      <section id="moodboard" className="py-16 sm:py-24 bg-neutral-50">
+      <section id="Global Sourcing Advantage" className="py-16 sm:py-24 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div className="h-96 flex flex-col justify-center">

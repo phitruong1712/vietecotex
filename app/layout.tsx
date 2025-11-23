@@ -191,11 +191,11 @@ export default function RootLayout({
             <Link className="nav-link" href="/applications">
               Applications
             </Link>
-            <Link className="nav-link" href="/our-commitment">
-              Our Commitments
+            <Link className="nav-link" href="/compliance">
+              Compliance
             </Link>
-            <Link className="nav-link" href="/certifications">
-              Certifications
+            <Link className="nav-link" href="/our-commitment">
+              Our Commitment
             </Link>
             <Link className="nav-link" href="/contact">
               RFQ / Samples
@@ -238,13 +238,10 @@ export default function RootLayout({
                   <Link href="/applications">Applications</Link>
                 </li>
                 <li>
-                  <Link href="/our-commitment">Our Commitments</Link>
+                  <Link href="/our-commitment">Our Commitment</Link>
                 </li>
                 <li>
                   <Link href="/catalog">Product Catalog</Link>
-                </li>
-                <li>
-                  <Link href="/certifications">Certifications</Link>
                 </li>
                 <li>
                   <Link href="/distributors">Distributors & Partners</Link>
@@ -256,12 +253,21 @@ export default function RootLayout({
             </div>
             <div>
               <div className="font-semibold mb-2">For Buyers</div>
-              <p className="text-neutral-600">
-                Serving 1500+ customers worldwide · 80% microfiber leather, 20% furniture fabrics · 
-                Applications: car seats, sofas, shoes, bags, construction · 
-                Customization · Small MOQs · Timely delivery · Reliability · 
+              <p className="text-neutral-600 mb-4">
+                Serving 1500+ customers worldwide · 80% microfiber leather, 20% furniture fabrics ·
+                Applications: car seats, sofas, shoes, bags, construction ·
+                Customization · Small MOQs · Timely delivery · Reliability ·
                 High warranty · Competitive pricing · Dual manufacturing (China & Vietnam).
               </p>
+              <div className="pt-4 border-t border-neutral-100">
+                <div className="text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-2">Certified Trust</div>
+                <div className="flex gap-3 opacity-60 grayscale">
+                  {/* Placeholder for small footer logos - using text for now as per plan */}
+                  <span className="border border-neutral-300 rounded px-1.5 py-0.5 text-[10px] font-bold text-neutral-600">ISO 9001</span>
+                  <span className="border border-neutral-300 rounded px-1.5 py-0.5 text-[10px] font-bold text-neutral-600">WRAP</span>
+                  <span className="border border-neutral-300 rounded px-1.5 py-0.5 text-[10px] font-bold text-neutral-600">Prop 65</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="text-center text-xs text-neutral-500 py-4">
@@ -269,6 +275,6 @@ export default function RootLayout({
           </div>
         </footer>
       </body>
-    </html>
+    </html >
   );
 }

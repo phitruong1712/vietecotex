@@ -87,18 +87,20 @@ export default function EcoLeatherCycle() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-brand-teal/25 shadow-sm text-sm text-neutral-800">
+        <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/90 border border-brand-teal/25 shadow-sm text-sm text-neutral-800 text-center h-full">
             <span className="text-base">💧</span>
             <span>
               <strong className="text-brand-teal">Water-based eco manufacturing</strong>
+              <br className="hidden sm:block" />
               {' '}for cleaner air, safer workers and reduced emissions.
             </span>
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-brand-teal/25 shadow-sm text-sm text-neutral-800">
+          <div className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/90 border border-brand-teal/25 shadow-sm text-sm text-neutral-800 text-center h-full">
             <span className="text-base">✅</span>
             <span>
               <strong className="text-brand-teal">DMF-free microfiber leather</strong>
+              <br className="hidden sm:block" />
               {' '}for healthier interiors and peace of mind for our partners.
             </span>
           </div>
@@ -107,13 +109,13 @@ export default function EcoLeatherCycle() {
         {/* Circular Diagram */}
         <div className="relative max-w-5xl mx-auto">
           {/* Desktop: Circular Layout */}
-          <div className="hidden lg:block relative w-full aspect-square max-w-[700px] mx-auto">
+          <div className="hidden lg:block relative w-full aspect-square max-w-[900px] mx-auto">
             {/* Center Circle */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-br from-white via-green-50 to-emerald-50 border-2 border-brand-teal/30 shadow-lg flex flex-col items-center justify-center p-6 z-10">
-              <div className="text-xs font-semibold text-brand-teal uppercase tracking-wider2 mb-2">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-gradient-to-br from-white via-green-50 to-emerald-50 border-2 border-brand-teal/30 shadow-lg flex flex-col items-center justify-center p-8 z-10">
+              <div className="text-xs font-semibold text-brand-teal uppercase tracking-wider2 mb-3">
                 VIET KAI ECOTECH
               </div>
-              <h3 className="font-serif text-xl font-semibold text-neutral-900 mb-2 uppercase tracking-wider2">
+              <h3 className="font-serif text-2xl font-semibold text-neutral-900 mb-3 uppercase tracking-wider2 text-center">
                 Circular by design
               </h3>
               <p className="text-xs text-neutral-600 text-center leading-relaxed">
@@ -123,7 +125,7 @@ export default function EcoLeatherCycle() {
 
             {/* Steps positioned around the circle - evenly spaced */}
             {steps.map((step, index) => {
-              const { x, y } = calculatePosition(index, 300);
+              const { x, y } = calculatePosition(index, 340); // Increased radius for better spacing
 
               return (
                 <div
@@ -133,19 +135,19 @@ export default function EcoLeatherCycle() {
                     transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                   }}
                 >
-                  <div className="w-52 bg-white/95 backdrop-blur-sm rounded-xl p-4 border border-brand-teal/25 shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
-                    <div className="flex items-start gap-2 mb-2">
-                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-teal text-white text-xs font-semibold flex items-center justify-center shadow-sm">
+                  <div className="w-60 bg-white/95 backdrop-blur-sm rounded-xl p-5 border border-brand-teal/25 shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+                    <div className="flex items-start gap-3 mb-3">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-teal text-white text-sm font-semibold flex items-center justify-center shadow-sm">
                         {step.number}
                       </span>
-                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-base">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-lg">
                         {step.icon}
                       </span>
-                      <h4 className="font-semibold text-sm text-neutral-900 leading-tight">
+                      <h4 className="font-semibold text-sm text-neutral-900 leading-tight pt-1">
                         {step.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-neutral-600 leading-relaxed ml-[4.5rem]">
+                    <p className="text-xs text-neutral-600 leading-relaxed pl-[3.25rem]">
                       {step.description}
                     </p>
                   </div>
