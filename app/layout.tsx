@@ -1,6 +1,7 @@
 import './globals.css';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vietecotex.com'),
@@ -184,12 +185,20 @@ export default function RootLayout({
       <body>
         <div className="topbar" />
         <header className="container-xl py-5 flex items-center justify-between">
-          <Link href="/" className="text-xl tracking-widest uppercase">
+          <Link href="/" className="flex items-center gap-3 text-xl tracking-widest uppercase">
+            <div className="relative h-10 w-10">
+              <Image
+                src="/logo.png"
+                alt="Viet Ecotex Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
             <span className="font-serif">Viet EcoTex</span>
           </Link>
           <nav className="flex items-center gap-6">
-            <Link className="nav-link" href="/applications">
-              Applications
+            <Link className="nav-link" href="/clients">
+              Clients & Partners
             </Link>
             <Link className="nav-link" href="/compliance">
               Compliance
