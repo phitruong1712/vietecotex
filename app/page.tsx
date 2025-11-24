@@ -1,57 +1,84 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
-import HomePageContent from './homepage-content';
+'use client';
 
-export const metadata: Metadata = {
-  title:
-    'Microfiber Leather Supplier — Alternative to China Manufacturing | Viet Ecotex',
-  description:
-    'Serving 1500+ customers worldwide. Premium microfiber leather (PU/PVC) and furniture fabrics manufacturer. 80% microfiber leather, 20% furniture fabrics. Applications: car seats, sofas, shoes, bags, construction. Advantages: customization, small MOQs, timely delivery, reliability, high warranty, competitive pricing. 8 factories in China, 6 factories in Vietnam.',
-  keywords: [
-    'microfiber leather supplier',
-    'faux leather manufacturer',
-    'PU leather supplier',
-    'PVC leather manufacturer',
-    'furniture textile supplier',
-    'car seat leather',
-    'sofa leather supplier',
-    'shoe leather manufacturer',
-    'bag leather supplier',
-    'construction textiles',
-    'hotel furniture fabrics',
-    'resort textiles',
-    '1500 customers',
-    'microfiber leather Vietnam',
-    'furniture fabrics China',
-    'dual manufacturing China Vietnam',
-    'China manufacturing microfiber leather',
-    'Vietnam manufacturing microfiber leather',
-    'alternative to China manufacturing',
-    'Vietnam microfiber leather supplier',
-    'non-China supplier',
-    'microfiber leather manufacturer',
-    'furniture textile manufacturer',
-    'small MOQ leather',
-    'custom leather supplier',
-    'eco leather',
-    'sustainable microfiber',
-    'competitive pricing leather',
-    'reliable leather supplier',
-    'Vietnam supplier',
-    'China supplier',
-  ],
-  openGraph: {
-    title:
-      'Microfiber Leather Supplier — Alternative to China Manufacturing | Viet Ecotex',
-    description:
-      'Serving 1500+ customers worldwide. Premium microfiber leather (80%) and furniture fabrics (20%) for car seats, sofas, shoes, bags, and construction. Customization, small MOQs, timely delivery, reliability, competitive pricing.',
-    url: 'https://vietecotex.com',
-  },
-  alternates: {
-    canonical: '/',
-  },
-};
+import Link from 'next/link';
+import Image from 'next/image';
+import ProductEvolution from './components/ProductEvolution';
+import HeroSlider from './components/HeroSlider';
+import InspirationsCarousel from './components/InspirationsCarousel';
 
 export default function Page() {
-  return <HomePageContent />;
+  return (
+    <div className="bg-white min-h-screen">
+      {/* Hero Section - Motion Image Play */}
+      {/* Hero Section - Motion Image Play */}
+      <HeroSlider />
+
+      {/* Product Evolution Section */}
+      <ProductEvolution />
+
+      {/* Latest News Section */}
+      <section className="py-24 container-xl">
+        <div className="flex justify-between items-end mb-12">
+          <h2 className="text-4xl font-serif font-bold">LATEST NEWS</h2>
+          <Link href="/news" className="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 hover:opacity-60 transition-opacity">
+            View All News
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* News Card 1 */}
+          <article className="group cursor-pointer">
+            <div className="relative aspect-[4/3] overflow-hidden mb-6 bg-neutral-100">
+              {/* Placeholder */}
+              <div className="absolute inset-0 bg-neutral-200 group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="space-y-3">
+              <span className="text-xs font-bold text-neutral-500 uppercase tracking-widest">Automotive</span>
+              <h3 className="text-xl font-serif font-bold group-hover:text-neutral-600 transition-colors">
+                Redefining Interior Luxury for 2025
+              </h3>
+              <p className="text-sm text-neutral-600 line-clamp-2">
+                Discover how Viet Ecotex is partnering with leading automotive brands to create sustainable, high-performance interiors.
+              </p>
+            </div>
+          </article>
+
+          {/* News Card 2 */}
+          <article className="group cursor-pointer">
+            <div className="relative aspect-[4/3] overflow-hidden mb-6 bg-neutral-100">
+              <div className="absolute inset-0 bg-neutral-300 group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="space-y-3">
+              <span className="text-xs font-bold text-neutral-500 uppercase tracking-widest">Fashion</span>
+              <h3 className="text-xl font-serif font-bold group-hover:text-neutral-600 transition-colors">
+                Spring/Summer Collection Preview
+              </h3>
+              <p className="text-sm text-neutral-600 line-clamp-2">
+                A first look at our lightweight, breathable microfiber textures designed for the next generation of fashion.
+              </p>
+            </div>
+          </article>
+
+          {/* News Card 3 */}
+          <article className="group cursor-pointer">
+            <div className="relative aspect-[4/3] overflow-hidden mb-6 bg-neutral-100">
+              <div className="absolute inset-0 bg-neutral-400 group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="space-y-3">
+              <span className="text-xs font-bold text-neutral-500 uppercase tracking-widest">Sustainability</span>
+              <h3 className="text-xl font-serif font-bold group-hover:text-neutral-600 transition-colors">
+                Achieving Carbon Neutrality Goals
+              </h3>
+              <p className="text-sm text-neutral-600 line-clamp-2">
+                Our latest report on reducing carbon footprint through innovative manufacturing processes in Vietnam.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section >
+
+      {/* Get Inspired Section */}
+      <InspirationsCarousel />
+    </div >
+  );
 }

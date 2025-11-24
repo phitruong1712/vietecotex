@@ -1,2 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-module.exports={content:["./app/**/*.{js,ts,jsx,tsx}"],theme:{extend:{colors:{brand:{teal:"#0b6b67",charcoal:"#0d0d0d"}},fontFamily:{serif:["var(--font-serif)"],sans:["var(--font-sans)"]},letterSpacing:{wider2:".2em"}}},plugins:[]}
+module.exports = {
+    content: ["./app/**/*.{js,ts,jsx,tsx}"],
+    theme: {
+        extend: {
+            colors: {
+                brand: {
+                    black: "#000000",
+                    white: "#ffffff",
+                    grey: "#333333",
+                    lightGrey: "#f4f4f4",
+                    accent: "#e6e6e6", // Light grey accent often used in backgrounds
+                },
+            },
+            fontFamily: {
+                serif: ["var(--font-serif)", "serif"],
+                sans: ["var(--font-sans)", "sans-serif"],
+            },
+            letterSpacing: {
+                wider2: ".2em",
+            },
+        },
+    },
+    plugins: [],
+};

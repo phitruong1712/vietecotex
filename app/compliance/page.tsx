@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { Icons } from '../components/icons';
 import { PillarCard } from '../components/compliance-pillar';
+import OldHomepageSection from '../homepage-content';
 
 export const metadata: Metadata = {
     title: 'Compliance & Sustainability | Viet Ecotex',
@@ -195,8 +196,11 @@ export default function CompliancePage() {
 
     return (
         <div className="min-h-screen bg-white">
-            {/* Hero Section */}
-            <section className="bg-neutral-50 py-20 border-b border-neutral-200">
+            {/* Old Homepage Content as Banner */}
+            <OldHomepageSection />
+
+            {/* Original Hero Section (Removed/Replaced) */}
+            {/* <section className="bg-neutral-50 py-20 border-b border-neutral-200">
                 <div className="container-xl text-center max-w-4xl mx-auto px-4">
                     <h1 className="font-serif text-4xl md:text-5xl mb-6 text-neutral-900">
                         The Architecture of Trust
@@ -207,7 +211,7 @@ export default function CompliancePage() {
                         of safety, sustainability, and quality for global markets.
                     </p>
                 </div>
-            </section>
+            </section> */}
 
             {/* Pillars Grid */}
             <section className="py-20">
