@@ -1,7 +1,7 @@
 import './globals.css';
 import { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
+import Header from './components/header';
+import Footer from './components/footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vietecotex.com'),
@@ -183,106 +183,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="topbar" />
-        <header className="container-xl py-5 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 text-xl tracking-widest uppercase">
-            <div className="relative h-10 w-10">
-              <Image
-                src="/logo.png"
-                alt="Viet Ecotex Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <span className="font-serif">Viet EcoTex</span>
-          </Link>
-          <nav className="flex items-center gap-6">
-            <Link className="nav-link" href="/clients">
-              Clients & Partners
-            </Link>
-            <Link className="nav-link" href="/compliance">
-              Compliance
-            </Link>
-            <Link className="nav-link" href="/our-commitment">
-              Our Commitment
-            </Link>
-            <Link className="nav-link" href="/contact">
-              RFQ / Samples
-            </Link>
-          </nav>
-        </header>
-        <main>{children}</main>
-        <footer className="mt-24 border-t">
-          <div className="container-xl py-10 grid md:grid-cols-3 gap-8 text-sm">
-            <div>
-              <div className="font-serif text-lg mb-2">VIET KAI ECOTECH</div>
-              <p className="text-xs text-neutral-600 mb-2">
-                VAT: 0315588177
-              </p>
-              <p>
-                Dual manufacturing capabilities: 8 factories in China, 6 factories in Vietnam.
-                Flexible sourcing for cost competitiveness or enhanced US/EU compliance.
-                Premium eco materials, small MOQs, and custom solutions.
-              </p>
-              <p className="mt-2">
-                <strong>Office Address:</strong><br />
-                Midtown M7, Block A, Tan Phu, Phu My Hung<br />
-                District 7, Ho Chi Minh City, Vietnam
-              </p>
-              <p className="mt-2">
-                Phone: <a href="tel:+84976344224">+84 976 344 224</a> ·
-                WhatsApp/Viber
-              </p>
-              <p>
-                Email:{' '}
-                <a href="mailto:contact@vietecotex.com">
-                  contact@vietecotex.com
-                </a>
-              </p>
-            </div>
-            <div>
-              <div className="font-semibold mb-2">Explore</div>
-              <ul className="space-y-1">
-                <li>
-                  <Link href="/applications">Applications</Link>
-                </li>
-                <li>
-                  <Link href="/our-commitment">Our Commitment</Link>
-                </li>
-                <li>
-                  <Link href="/catalog">Product Catalog</Link>
-                </li>
-                <li>
-                  <Link href="/distributors">Distributors & Partners</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Request Quote / Samples</Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div className="font-semibold mb-2">For Buyers</div>
-              <p className="text-neutral-600 mb-4">
-                Serving 1500+ customers worldwide · 80% microfiber leather, 20% furniture fabrics ·
-                Applications: car seats, sofas, shoes, bags, construction ·
-                Customization · Small MOQs · Timely delivery · Reliability ·
-                High warranty · Competitive pricing · Dual manufacturing (China & Vietnam).
-              </p>
-              <div className="pt-4 border-t border-neutral-100">
-                <div className="text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-2">Certified Trust</div>
-                <div className="flex gap-3 opacity-60 grayscale">
-                  {/* Placeholder for small footer logos - using text for now as per plan */}
-                  <span className="border border-neutral-300 rounded px-1.5 py-0.5 text-[10px] font-bold text-neutral-600">ISO 9001</span>
-                  <span className="border border-neutral-300 rounded px-1.5 py-0.5 text-[10px] font-bold text-neutral-600">WRAP</span>
-                  <span className="border border-neutral-300 rounded px-1.5 py-0.5 text-[10px] font-bold text-neutral-600">Prop 65</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="text-center text-xs text-neutral-500 py-4">
-            © {new Date().getFullYear()} Viet EcoTex. All rights reserved.
-          </div>
-        </footer>
+        <Header />
+        <main className="pt-20">{children}</main>
+        <Footer />
       </body>
     </html >
   );

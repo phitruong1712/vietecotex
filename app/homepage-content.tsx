@@ -3,7 +3,7 @@ import Link from 'next/link';
 import EcoLeatherCycle from './components/eco-leather-cycle';
 import { TrustBar } from './components/trust-bar';
 
-export default function HomePageContent() {
+export default function OldHomepageSection() {
   const collections = [
     {
       title: 'Automotive 2025',
@@ -60,10 +60,7 @@ export default function HomePageContent() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
-      {/* Header */}
-
-
+    <div className="bg-white text-neutral-900">
       {/* Hero */}
       <section className="relative isolate">
         <div className="absolute inset-0 -z-10">
@@ -305,55 +302,6 @@ export default function HomePageContent() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-          <div className="flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
-            <p className="text-sm text-neutral-500">
-              © {new Date().getFullYear()} VietEcoTex — Microfiber materials
-            </p>
-            <ul className="flex gap-4 text-neutral-500 text-lg">
-              <li>
-                <a aria-label="X" href="#" className="hover:text-neutral-800">
-                  ✕
-                </a>
-              </li>
-              <li>
-                <a
-                  aria-label="Instagram"
-                  href="#"
-                  className="hover:text-neutral-800"
-                >
-                  ◎
-                </a>
-              </li>
-              <li>
-                <a
-                  aria-label="YouTube"
-                  href="#"
-                  className="hover:text-neutral-800"
-                >
-                  ▶︎
-                </a>
-              </li>
-              <li>
-                <a
-                  aria-label="LinkedIn"
-                  href="#"
-                  className="hover:text-neutral-800"
-                >
-                  in
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="text-xs text-neutral-400 mt-2">
-            Built with accessibility, performance, and zero‑jQuery carousels
-            (scroll‑snap).
-          </div>
-        </div>
-      </footer>
 
       {/* Contact anchor */}
       <div id="contact" className="sr-only" />
