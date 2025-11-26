@@ -119,31 +119,7 @@ function AlcantaraInspiredPage() {
 
   return (
     <div className="min-h-screen bg-white text-neutral-900">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-          <Link href="/" className="text-xl tracking-widest uppercase">
-            <span className="font-serif">Viet EcoTex</span>
-          </Link>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#catalog" className="hover:opacity-70">
-              Collections
-            </a>
-            <a href="#moodboard" className="hover:opacity-70">
-              Moodboard
-            </a>
-            <a href="#contact" className="hover:opacity-70">
-              Contact
-            </a>
-          </nav>
-          <a
-            href="#contact"
-            className="text-sm px-3 py-1.5 rounded-xl border border-neutral-300 hover:bg-neutral-100"
-          >
-            Get in touch
-          </a>
-        </div>
-      </header>
+
 
       {/* Hero */}
       <section className="relative isolate">

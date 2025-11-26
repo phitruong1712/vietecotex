@@ -133,7 +133,7 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         {/* Organization and WebSite schemas - SAFE, non-product structured data */}
@@ -184,7 +184,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        <main className="pt-20">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html >

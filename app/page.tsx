@@ -10,7 +10,6 @@ export default function Page() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section - Motion Image Play */}
-      {/* Hero Section - Motion Image Play */}
       <HeroSlider />
 
       {/* Product Evolution Section */}

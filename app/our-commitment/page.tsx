@@ -14,7 +14,7 @@ export default function OurCommitmentPage() {
     <main>
       {/* Hero Section */}
       {/* Hero Section - Side by Side */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-32 pb-16 md:pb-24 bg-white">
         <div className="container-xl px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Column: Text */}

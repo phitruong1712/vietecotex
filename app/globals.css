@@ -3,18 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --font-serif: 'Times New Roman', Times, serif; /* Alcantara uses a classic serif */
-  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean sans-serif */
+  --font-serif: 'Gilda Display', 'Times New Roman', Times, serif; /* Alcantara-style serif */
+  --font-sans: 'Source Sans 3', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean sans-serif */
 }
 
 html,
 body {
   @apply bg-white text-brand-black antialiased;
   font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .container-xl {
@@ -22,7 +26,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link {
-  @apply uppercase tracking-widest text-xs font-bold text-brand-black hover:text-brand-grey transition-colors duration-300;
+  @apply uppercase tracking-widest text-xs font-bold transition-colors duration-300;
+}
+
+/* Alcantara-style animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.slide-in-from-top-2 {
+  animation: slideInFromTop 0.3s ease-out forwards;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .btn {
