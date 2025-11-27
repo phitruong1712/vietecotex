@@ -57,31 +57,32 @@ export default function HeroSlider() {
 
     return (
         <section className="relative h-screen w-full overflow-hidden bg-black group">
-            {/* Background Images - Simplified Rendering for Crossfade */}
+            {/* Video Background */}
             <div className="absolute inset-0 z-0">
-                {slides.map((slide, index) => (
-                    <div
-                        key={slide.id}
-                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                        }`}
-                    >
-                        {/* Ken Burns Effect Container */}
-                        <div className={`w-full h-full ${index === currentSlide ? 'animate-ken-burns' : ''}`}>
-                            <Image
-                                src={slide.image}
-                                alt={slide.alt}
-                                fill
-                                priority={index === 0}
-                                className="object-cover"
-                                sizes="100vw"
-                                quality={90}
-                            />
-                        </div>
-                        {/* Overlay */}
-                        <div className="absolute inset-0 bg-black/30" />
-                    </div>
-                ))}
+                <div className="absolute inset-0 bg-black/30 z-10" />
+                {/* Note: Since we cannot generate video files in this environment without ffmpeg, 
+                    we are using the structure that supports video. 
+                    For the demo, please replace 'hero-banner.webm' with your actual video file. 
+                */}
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="object-cover w-full h-full opacity-80"
+                    poster="/images/banner_eco_leather.png"
+                >
+                    {/* Intentionally commented out until real video is available to prevent 404 errors in console
+                    <source src="/videos/hero-banner.webm" type="video/webm" />
+                    <source src="/videos/hero-banner.mp4" type="video/mp4" />
+                    */}
+                    {/* Fallback to Ken Burns Image if video fails or is missing */}
+                    <img 
+                        src="/images/banner_eco_leather.png" 
+                        alt="Hero Background" 
+                        className="w-full h-full object-cover animate-ken-burns"
+                    />
+                </video>
             </div>
 
             {/* Content */}
@@ -90,22 +91,31 @@ export default function HeroSlider() {
                     <motion.div
                         key={slides[currentSlide].id}
                         className="flex flex-col items-center justify-center pointer-events-auto"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.5 }}
                     >
-                        <motion.h1
-                            className="font-serif text-6xl md:text-8xl font-bold tracking-wider mb-6"
+                        <h1
+                            className={`font-serif text-6xl md:text-8xl font-bold tracking-wider mb-6 ${
+                                slides[currentSlide].id ? 'animate-letter-spacing' : ''
+                            }`}
                         >
                             {slides[currentSlide].title}
-                        </motion.h1>
+                        </h1>
                         <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
                             className="text-lg md:text-xl tracking-widest uppercase mb-10"
                         >
                             {slides[currentSlide].subtitle}
                         </motion.p>
-                        <motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.7 }}
+                        >
                             <Link
                                 href="/catalog"
                                 className="btn btn-outline border-white text-white hover:bg-white hover:text-black transition-colors duration-300 px-8 py-3 rounded-none uppercase tracking-widest text-sm font-bold"
@@ -117,38 +127,20 @@ export default function HeroSlider() {
                 </AnimatePresence>
             </div>
 
-            {/* Navigation Arrows */}
-            <button
-                onClick={() => { prevSlide(); handleInteraction(); }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white transition-colors p-2 opacity-0 group-hover:opacity-100 duration-300"
-            >
-                <ChevronLeft size={48} strokeWidth={1} />
-            </button>
-            <button
-                onClick={() => { nextSlide(); handleInteraction(); }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white transition-colors p-2 opacity-0 group-hover:opacity-100 duration-300"
-            >
-                <ChevronRight size={48} strokeWidth={1} />
-            </button>
+            {/* Navigation Arrows (Hidden for video mode, can be re-enabled if multiple videos) */}
+            {/* ... */}
 
-            {/* Indicators */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
-                {slides.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => { setCurrentSlide(index); handleInteraction(); }}
-                        className={`h-1 transition-all duration-300 ${index === currentSlide ? 'bg-white w-12' : 'bg-white/30 w-6 hover:bg-white/60'}`}
-                    />
-                ))}
-            </div>
+            {/* Indicators (Hidden for video mode) */}
+            {/* ... */}
             
             <style jsx global>{`
-                @keyframes ken-burns {
-                    0% { transform: scale(1); }
-                    100% { transform: scale(1.1); }
+                @keyframes letterSpacing {
+                    0% { opacity: 0; letter-spacing: 1em; }
+                    20% { opacity: 1; letter-spacing: 1em; }
+                    100% { opacity: 1; letter-spacing: 0.1em; }
                 }
-                .animate-ken-burns {
-                    animation: ken-burns 10s ease-out forwards;
+                .animate-letter-spacing {
+                    animation: letterSpacing 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
                 }
             `}</style>
         </section>

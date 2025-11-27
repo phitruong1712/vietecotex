@@ -45,4 +45,6 @@ Thumbs.db
 # Archives
 *.zip
 
-
+# Legacy / Reference folders (ignored to keep repo clean, except active migration source)
+Alcatara-mockup/
+new-website/

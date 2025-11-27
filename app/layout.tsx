@@ -1,7 +1,7 @@
 import './globals.css';
 import { Metadata } from 'next';
-import Header from './components/header';
-import Footer from './components/footer';
+import HeaderNew from './components/header-new';
+import FooterNew from './components/footer-new';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vietecotex.com'),
@@ -133,7 +133,7 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Work+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         {/* Organization and WebSite schemas - SAFE, non-product structured data */}
@@ -158,7 +158,7 @@ export default function RootLayout({
                 addressRegion: 'Ho Chi Minh City',
                 postalCode: '700000',
                 addressCountry: 'VN',
-              },
+                },
               sameAs: [],
               description:
                 'Vietnam-based supplier of eco microfiber leather and sustainable furniture fabrics. Premium alternative to Chinese manufacturing for automotive, fashion, and interior design industries.',
@@ -183,9 +183,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <HeaderNew />
+        <main className="pt-[8rem]">{children}</main>
+        <FooterNew />
       </body>
     </html >
   );
