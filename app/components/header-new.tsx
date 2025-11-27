@@ -9,7 +9,20 @@ const MENU_ITEMS = [
   {
     label: 'Brand',
     href: '/brand',
-    description: 'Alcantara embodies all the uniqueness and excellence of a 100% Italian brand. It is an extremely versatile company nourished by continual dialogue with the creative universe, making it a landmark for global organisations in every field of application. These are the values that drive our daily commitment to the future.',
+    description: (
+      <>
+        <span className="block text-[1.6rem] font-bold mb-2 uppercase tracking-wider">VIET ECOTEX, a premium brand under VIET KAI</span>
+        <span className="block text-[1.2rem] tracking-[0.2em] mb-4 uppercase font-semibold">BASED IN VIET NAM</span>
+        <span className="block text-[1.4rem] leading-relaxed text-[#333]">
+          Where design meets intention.<br/>
+          Where aesthetics shape experience.<br/>
+          Where performance and sustainability stand as one.<br/><br/>
+          We create materials for spaces that speak softly,<br/>
+          yet leave a lasting presence—<br/>
+          defined by texture, refined by detail.
+        </span>
+      </>
+    ),
     submenu: [
       { label: 'Vietnam-Based Company', href: '/brand/about', image: '/images/menu/corporate_menu.webp' },
       { label: 'Viet Kai Values', href: '/brand/our-commitment', image: '/images/menu/alcantara-creazioni-global-menu-1.webp' },
@@ -19,7 +32,12 @@ const MENU_ITEMS = [
   {
     label: 'Material',
     href: '/material',
-    description: 'We have always believed that Safety and Sustainability are not merely standards, but the core values of our materials brand',
+    description: (
+      <>
+        <span className="block text-[1.4rem] leading-relaxed text-[#333] mb-3">We have always believed that</span>
+        <span className="block text-[1.8rem] font-bold leading-snug">Safety and Sustainability are not merely standards, but the core values of our materials brand</span>
+      </>
+    ),
     submenu: [
       { label: 'ECO Synthetic Leather', href: '/material/catalog', image: '/images/menu/alcantara-material-menu.webp' },
       { label: 'Natural Textiles', href: '/material/vegan-nappa', image: '/images/menu/alcantara-materiale-made-in-italy-poltrona-orig-1.webp' },
@@ -54,11 +72,11 @@ export default function HeaderNew() {
           <div className="w-[18rem] flex-shrink-0">
             <Link href="/">
               <Image 
-                src="/images/logo-new.svg" 
+                src="/images/vietecotex-logo.png" 
                 alt="Viet Ecotex" 
                 width={180} 
-                height={30} 
-                className="w-full h-auto"
+                height={32} 
+                className="w-auto h-[32px]"
               />
             </Link>
           </div>
@@ -144,9 +162,9 @@ export default function HeaderNew() {
                 {/* Left: Description */}
                 <div className="w-1/4 pr-[4rem] border-r border-gray-100">
                   <h3 className="text-[4rem] font-serif leading-tight mb-[2rem]">{item.label}</h3>
-                  <p className="text-[1.4rem] leading-relaxed text-gray-600 font-light">
+                  <div className="text-[1.4rem] leading-relaxed text-gray-600 font-light">
                     {item.description}
-                  </p>
+                  </div>
                 </div>
 
                 {/* Right: Grid */}
