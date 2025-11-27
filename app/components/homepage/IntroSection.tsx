@@ -37,26 +37,32 @@ export default function IntroSection() {
 
   return (
     <section ref={containerRef} className="py-[8rem] lg:py-[12rem]">
-      <div className="container-xl">
+      <div className="container">
+        {/* align--right: padding-left: 50%, width: 90% on desktop */}
         <div className="flex flex-col lg:flex-row lg:justify-end">
-          <div ref={textRef} className="lg:w-2/3">
-            <h1 className="text-[4rem] lg:text-[6rem] leading-tight mb-[4rem] font-serif uppercase font-normal">
-              VIET ECOTEX
-            </h1>
+          <div ref={textRef} className="intro-inner lg:w-[40%] lg:pl-[50%]">
+            {/* title--normal: font-size: 40px, line-height: 1.1, uppercase */}
+            <div className="title title--normal mb-[2rem]">
+              <h1 className="text-[2.8rem] lg:text-[4rem] leading-[1.1] font-serif uppercase font-normal">
+                VIET ECOTEX
+              </h1>
+            </div>
             
-            <h2 className="text-[2.4rem] leading-snug font-serif mb-[3rem] font-normal">
+            {/* lead: font-size: 20px, line-height: 1.4, font-weight: 200 */}
+            <h2 className="lead text-[1.8rem] lg:text-[2rem] leading-[1.4] font-light mb-[2rem]">
               The Art of Everyday Luxury
             </h2>
 
-            <div className="text-[1.6rem] leading-relaxed text-gray-600 space-y-6 font-light">
-              <p>
+            {/* text p: font-size: 16px, line-height: 1.7 */}
+            <div className="text">
+              <p className="text-[1.6rem] leading-[1.7] mb-[2rem]">
                 Premium eco microfiber leather and furniture fabrics. The sustainable alternative to traditional manufacturing.
               </p>
-              <p>
+              <p className="text-[1.6rem] leading-[1.7] mb-[2rem]">
                 From traditional synthetics to our latest Vegan Nappa technology, we continuously innovate to define the future of sustainable materials. We are committed to creating materials that not only look and feel luxurious but also respect our planet.
               </p>
-              <p>
-                <Link href="/material/catalog" className="btn-underline inline-block border-b border-black pb-1 text-black uppercase tracking-widest font-bold text-[1.2rem] hover:text-gray-600 hover:border-gray-600 transition-all">
+              <p className="mb-0">
+                <Link href="/material/catalog" className="btn-underline inline-block border-b border-black pb-1 text-black uppercase tracking-widest font-bold text-[1.4rem] hover:text-gray-600 hover:border-gray-600 transition-all">
                   Discover More
                 </Link>
               </p>
