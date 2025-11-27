@@ -1,4 +1,5 @@
 import './globals.css';
+import './styles/alcantara.css';
 import { Metadata } from 'next';
 import HeaderNew from './components/header-new';
 import FooterNew from './components/footer-new';
