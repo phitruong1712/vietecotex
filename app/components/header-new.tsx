@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Search, ChevronDown } from 'lucide-react';
@@ -62,22 +62,55 @@ const MENU_ITEMS = [
 export default function HeaderNew() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change state if scrolled more than 50px
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Header is transparent ONLY if at top, no menu active, and search closed
+  const isTransparent = !isScrolled && !activeMenu && !isSearchOpen;
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white transition-all duration-300">
+    <header 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isTransparent 
+          ? 'bg-transparent text-white' 
+          : 'bg-white text-black shadow-sm'
+      }`}
+    >
       {/* Main Header Bar */}
-      <div className="border-b border-gray-100">
+      <div className={`border-b transition-colors duration-300 ${
+        isTransparent ? 'border-white/20' : 'border-gray-100'
+      }`}>
         <div className="container-xl h-[8rem] flex items-center justify-between">
           {/* Logo */}
           <div className="w-[18rem] flex-shrink-0">
             <Link href="/">
-              <Image 
-                src="/images/vietecotex-logo.png" 
-                alt="Viet Ecotex" 
-                width={180} 
-                height={32} 
-                className="w-auto h-[32px]"
-              />
+              {isTransparent ? (
+                <Image 
+                  src="/images/logo-new-white.svg" 
+                  alt="Viet Ecotex" 
+                  width={180} 
+                  height={32} 
+                  className="w-auto h-[32px]"
+                />
+              ) : (
+                <Image 
+                  src="/images/vietecotex-logo.png" 
+                  alt="Viet Ecotex" 
+                  width={180} 
+                  height={32} 
+                  className="w-auto h-[32px]"
+                />
+              )}
             </Link>
           </div>
 
@@ -93,12 +126,16 @@ export default function HeaderNew() {
                 >
                   <Link 
                     href={item.href}
-                    className="text-[1.2rem] font-bold uppercase tracking-widest hover:text-gray-600 transition-colors relative"
+                    className={`text-[1.2rem] font-bold uppercase tracking-widest transition-colors relative ${
+                      isTransparent ? 'hover:text-gray-300' : 'hover:text-gray-600'
+                    }`}
                   >
                     {item.label}
-                    {/* Underline effect if needed */}
+                    {/* Underline effect */}
                     {activeMenu === item.label && (
-                      <span className="absolute -bottom-[3.2rem] left-0 w-full h-[2px] bg-black" />
+                      <span className={`absolute -bottom-[3.2rem] left-0 w-full h-[2px] ${
+                        isTransparent ? 'bg-white' : 'bg-black'
+                      }`} />
                     )}
                   </Link>
                 </li>
@@ -117,7 +154,7 @@ export default function HeaderNew() {
                 <Search size={18} strokeWidth={1.5} />
               </button>
               {isSearchOpen && (
-                <div className="absolute right-0 top-full mt-4 w-[300px] bg-white border p-4 shadow-lg">
+                <div className="absolute right-0 top-full mt-4 w-[300px] bg-white border p-4 shadow-lg text-black">
                    <input 
                     type="text" 
                     placeholder="Type to start searching..." 
@@ -136,7 +173,7 @@ export default function HeaderNew() {
               </div>
               {/* Dropdown */}
               <div className="absolute right-0 top-full pt-4 hidden group-hover:block">
-                <div className="bg-white shadow-lg border p-4 min-w-[120px]">
+                <div className="bg-white shadow-lg border p-4 min-w-[120px] text-black">
                   <ul className="space-y-2 text-[1.2rem]">
                     <li className="font-bold">• English</li>
                     <li className="text-gray-500 hover:text-black cursor-pointer">Italiano</li>
@@ -152,7 +189,7 @@ export default function HeaderNew() {
       {/* Mega Menu Overlay */}
       {activeMenu && (
         <div 
-          className="absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 overflow-hidden animate-in"
+          className="absolute top-full left-0 w-full bg-white text-black shadow-xl border-t border-gray-100 overflow-hidden animate-in"
           onMouseEnter={() => setActiveMenu(activeMenu)}
           onMouseLeave={() => setActiveMenu(null)}
         >
@@ -197,4 +234,3 @@ export default function HeaderNew() {
     </header>
   );
 }
-

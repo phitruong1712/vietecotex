@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const NEWS_ITEMS = [
   {
@@ -35,6 +39,11 @@ const NEWS_ITEMS = [
 ];
 
 export default function LatestNews() {
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, align: 'start', slidesToScroll: 1 },
+    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+  );
+
   return (
     <section className="py-[8rem] bg-white">
       <div className="container-xl">
@@ -42,32 +51,38 @@ export default function LatestNews() {
           <h3 className="text-[1.4rem] font-bold uppercase tracking-widest">Latest News</h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[3rem]">
-          {NEWS_ITEMS.map((item) => (
-            <div key={item.title} className="group">
-               <Link href={item.href} className="flex items-start gap-[2rem]">
-                 <div className="relative w-[12rem] aspect-[3/2] flex-shrink-0 bg-gray-100">
-                   <Image
-                     src={item.image}
-                     alt={item.title}
-                     fill
-                     className="object-cover"
-                   />
-                 </div>
-                 <div>
-                   <h4 className="text-[1.6rem] font-serif leading-tight group-hover:text-gray-600 transition-colors">
-                     {item.title}
-                   </h4>
-                   <span className="text-[1.1rem] font-bold uppercase tracking-widest mt-[1rem] inline-block border-b border-transparent group-hover:border-black transition-all">
-                     Read more
-                   </span>
-                 </div>
-               </Link>
-            </div>
-          ))}
+        <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+          <div className="flex -ml-[3rem]">
+            {NEWS_ITEMS.map((item) => (
+              <div 
+                key={item.title} 
+                className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0 pl-[3rem]"
+              >
+                <div className="group h-full">
+                   <Link href={item.href} className="flex items-start gap-[2rem]">
+                     <div className="relative w-[12rem] aspect-[3/2] flex-shrink-0 bg-gray-100">
+                       <Image
+                         src={item.image}
+                         alt={item.title}
+                         fill
+                         className="object-cover transition-transform duration-500 group-hover:scale-105"
+                       />
+                     </div>
+                     <div>
+                       <h4 className="text-[1.6rem] font-serif leading-tight group-hover:text-gray-600 transition-colors line-clamp-3">
+                         {item.title}
+                       </h4>
+                       <span className="text-[1.1rem] font-bold uppercase tracking-widest mt-[1rem] inline-block border-b border-transparent group-hover:border-black transition-all">
+                         Read more
+                       </span>
+                     </div>
+                   </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
