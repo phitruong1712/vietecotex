@@ -26,8 +26,29 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.02em;
 }
 
+/* Container - EXACT match to reference */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 64.0625em) {
+  .container {
+    max-width: 1300px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+.container.container--expanded {
+  width: 100%;
+  max-width: 1920px;
+}
+
 .container-xl {
-  @apply max-w-[1440px] mx-auto px-6 md:px-12; /* Wider container for premium feel */
+  @apply container;
 }
 
 .nav-link {

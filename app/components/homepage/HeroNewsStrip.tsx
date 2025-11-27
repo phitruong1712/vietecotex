@@ -45,40 +45,61 @@ export default function HeroNewsStrip() {
   );
 
   return (
-    <div className="absolute bottom-0 left-0 w-full bg-white z-20 border-t border-gray-100 hidden md:block">
-      <div className="container-xl">
-        <div className="flex items-center h-[6rem]">
-          <div className="font-bold uppercase tracking-widest text-[1.2rem] mr-8 shrink-0 border-r border-gray-200 pr-8 h-full flex items-center">
-            Latest News
+    <div 
+      id="strip-news"
+      className="fixed bottom-0 left-0 w-full bg-white z-[50] py-[20px] transition-transform duration-[400ms] ease-out"
+    >
+      <div className="container container--expanded">
+        <div className="strip-news__wrapper flex flex-wrap md:flex-nowrap">
+          {/* Head - 33.3% width */}
+          <div className="strip-news__head w-full md:w-[33.3%] px-[20px] md:px-[30px] mb-5 md:mb-0">
+            <div className="font-bold uppercase tracking-widest text-[1.2rem]">Latest News</div>
           </div>
           
-          <div className="overflow-hidden flex-1 h-[6rem]" ref={emblaRef}>
+          {/* Slider - 66.7% width */}
+          <div className="strip-news__slider w-full md:w-[66.7%]">
+            <div className="overflow-hidden h-[150px]" ref={emblaRef}>
             <div className="flex flex-col h-full">
               {NEWS_ITEMS.map((item) => (
-                <div key={item.title} className="flex-[0_0_100%] h-full flex items-center gap-4 min-w-0">
-                   <div className="relative w-[6rem] h-[4rem] shrink-0 bg-gray-100">
-                     <Image 
-                       src={item.image} 
-                       alt={item.title} 
-                       fill 
-                       className="object-cover" 
-                     />
-                   </div>
-                   <div className="flex flex-col justify-center">
-                     <Link href={item.href} className="text-[1.3rem] font-serif hover:text-gray-600 transition-colors truncate max-w-[60rem]">
-                       {item.title}
-                     </Link>
-                     <Link href={item.href} className="text-[1rem] uppercase tracking-widest font-bold border-b border-black inline-block w-max mt-1 hover:border-gray-600">
-                       Read More
-                     </Link>
-                   </div>
+                <div key={item.title} className="flex-[0_0_100%] min-w-0 h-full">
+                  <div className="news flex w-full pr-[20px] md:pr-[30px] h-full">
+                    <div className="news__image shrink-0">
+                      <Link href={item.href} title={item.title}>
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          width={150}
+                          height={100}
+                          className="w-[150px] h-auto md:w-[150px]"
+                        />
+                      </Link>
+                    </div>
+                    <div className="news__meta pl-[20px] md:pl-[30px] flex-1">
+                      <div className="news__meta__wrap flex flex-wrap h-full">
+                        <h3 className="w-full uppercase text-[16px] leading-[1.4] mb-0">
+                          <Link href={item.href} title={item.title} className="text-black no-underline">
+                            {item.title}
+                          </Link>
+                        </h3>
+                        <p className="hidden">{item.title}</p>
+                        <p className="hidden">{item.title}</p>
+                        <Link 
+                          href={item.href} 
+                          title={item.title}
+                          className="btn-underline text-[14px] self-end uppercase tracking-widest font-bold border-b border-black pb-1 hover:border-gray-600 transition-colors"
+                        >
+                          Read more
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
+      </div>
     </div>
   );
 }
-

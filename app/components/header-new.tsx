@@ -66,12 +66,11 @@ export default function HeaderNew() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Change state if scrolled more than 50px
       setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial state
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -80,101 +79,112 @@ export default function HeaderNew() {
 
   return (
     <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isTransparent 
-          ? 'bg-transparent text-white' 
-          : 'bg-white text-black shadow-sm'
+      id="main-header"
+      className={`fixed top-0 w-full z-[99] transition-all duration-200 ${
+        isTransparent ? 'transparent not-fixed not-hover' : ''
       }`}
     >
-      {/* Main Header Bar */}
-      <div className={`border-b transition-colors duration-300 ${
-        isTransparent ? 'border-white/20' : 'border-gray-100'
+      <div className={`main-header--wrapper transition-all duration-200 ${
+        isTransparent ? 'bg-transparent border-transparent' : 'bg-white border-b border-[#eee]'
       }`}>
-        <div className="container-xl h-[8rem] flex items-center justify-between">
-          {/* Logo */}
-          <div className="w-[18rem] flex-shrink-0">
-            <Link href="/">
-              {/* Use CSS filter to make the logo white when transparent */}
-              <div className={`relative transition-all duration-300 ${isTransparent ? 'brightness-0 invert' : ''}`}>
+        <div className="container container--expanded">
+          <div className="cont relative h-[66px] leading-[66px]">
+            {/* Logo - EXACT structure from reference */}
+            <div className="logo relative inline-block mr-5 z-[100]">
+              <Link href="/" className="flex items-center">
                 <Image 
                   src="/images/vietecotex-logo.png" 
-                  alt="Viet Ecotex" 
+                  alt="Viet Ecotex Logo" 
                   width={180} 
                   height={32} 
-                  className="w-auto h-[32px]"
+                  className="h-[32px] w-auto align-middle mr-[10px]"
                   priority
                 />
+                <span className="logo-text-wrapper relative inline-block">
+                  <span className={`logo--dark inline-block transition-opacity duration-200 ${
+                    isTransparent ? 'opacity-0' : 'opacity-100'
+                  }`} style={{ color: '#000' }}>
+                    VIET ECOTEX
+                  </span>
+                  <span className={`logo--light absolute top-0 left-0 inline-block transition-opacity duration-200 ${
+                    isTransparent ? 'opacity-100' : 'opacity-0'
+                  }`} style={{ color: '#fff' }}>
+                    VIET ECOTEX
+                  </span>
+                </span>
+              </Link>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="nav--desktop absolute top-0 left-0 w-full h-full hidden lg:block">
+              <div className="inner h-full">
+                <div className="main-menu h-full">
+                  <ul className="menu h-full m-0 p-0 list-none flex items-center justify-center">
+                    {MENU_ITEMS.map((item) => (
+                      <li 
+                        key={item.label}
+                        className="menu-item inline-block h-full m-0 px-5 align-top"
+                        onMouseEnter={() => item.submenu && setActiveMenu(item.label)}
+                        onMouseLeave={() => setActiveMenu(null)}
+                      >
+                        <Link 
+                          href={item.href}
+                          className={`block h-full text-[16px] font-normal no-underline transition-colors ${
+                            isTransparent ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-600'
+                          }`}
+                        >
+                          <span className="block h-full relative">
+                            {item.label}
+                            {activeMenu === item.label && (
+                              <span className={`absolute bottom-0 left-0 h-[2px] transition-all duration-200 ${
+                                isTransparent ? 'bg-white w-full' : 'bg-black w-full'
+                              }`} />
+                            )}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </Link>
-          </div>
+            </nav>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center h-full">
-            <ul className="flex items-center gap-[4rem] h-full">
-              {MENU_ITEMS.map((item) => (
-                <li 
-                  key={item.label}
-                  className="h-full flex items-center"
-                  onMouseEnter={() => item.submenu && setActiveMenu(item.label)}
-                  onMouseLeave={() => setActiveMenu(null)}
-                >
-                  <Link 
-                    href={item.href}
-                    className={`text-[1.3rem] font-bold uppercase tracking-widest transition-colors relative ${
-                      isTransparent ? 'hover:text-gray-300' : 'hover:text-gray-600'
-                    }`}
-                  >
-                    {item.label}
-                    {/* Underline effect */}
-                    {activeMenu === item.label && (
-                      <span className={`absolute -bottom-[3.2rem] left-0 w-full h-[2px] ${
-                        isTransparent ? 'bg-white' : 'bg-black'
-                      }`} />
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Right Side: Search & Language */}
-          <div className="flex items-center gap-[3rem]">
             {/* Search */}
-            <div className="relative">
+            <div className="search absolute top-0 right-0 h-full z-[2] hidden lg:block">
               <button 
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="p-2 hover:opacity-70"
+                className={`text-[20px] align-middle p-0 border-0 bg-transparent cursor-pointer ${
+                  isTransparent ? 'text-white' : 'text-black'
+                }`}
               >
-                <Search size={18} strokeWidth={1.5} />
+                <Search size={20} strokeWidth={1.5} />
               </button>
               {isSearchOpen && (
-                <div className="absolute right-0 top-full mt-4 w-[300px] bg-white border p-4 shadow-lg text-black">
-                   <input 
-                    type="text" 
-                    placeholder="Type to start searching..." 
-                    className="w-full border-b border-gray-300 pb-2 focus:outline-none text-[1.4rem]"
-                    autoFocus
-                   />
+                <div className="search--box absolute top-full right-[-30px] z-[9] bg-white w-[300px] p-4 shadow-lg">
+                  <form className="w-full relative">
+                    <input 
+                      type="text" 
+                      name="s" 
+                      placeholder="Type to start searching" 
+                      className="w-full p-0 m-0 border-0 text-[20px] pr-[60px] focus:outline-none"
+                      autoFocus
+                    />
+                    <button type="submit" className="absolute top-[7px] right-0 border-0 bg-transparent cursor-pointer">
+                      →
+                    </button>
+                  </form>
                 </div>
               )}
             </div>
 
             {/* Language */}
-            <div className="relative group cursor-pointer">
-              <div className="flex items-center gap-2 text-[1.2rem] uppercase font-bold tracking-widest">
+            <div className="lang absolute top-0 right-[60px] h-full text-right hidden lg:block">
+              <span className={`w-[140px] h-full block py-0 px-[30px] relative cursor-pointer ${
+                isTransparent ? 'text-white' : 'text-black'
+              }`}>
                 English
-                <ChevronDown size={14} />
-              </div>
-              {/* Dropdown */}
-              <div className="absolute right-0 top-full pt-4 hidden group-hover:block">
-                <div className="bg-white shadow-lg border p-4 min-w-[120px] text-black">
-                  <ul className="space-y-2 text-[1.2rem]">
-                    <li className="font-bold">• English</li>
-                    <li className="text-gray-500 hover:text-black cursor-pointer">Italiano</li>
-                    <li className="text-gray-500 hover:text-black cursor-pointer">Vietnamese</li>
-                  </ul>
-                </div>
-              </div>
+                <ChevronDown size={14} className="absolute top-[5px] right-0" />
+              </span>
             </div>
           </div>
         </div>
@@ -183,46 +193,58 @@ export default function HeaderNew() {
       {/* Mega Menu Overlay */}
       {activeMenu && (
         <div 
-          className="absolute top-full left-0 w-full bg-white text-black shadow-xl border-t border-gray-100 overflow-hidden animate-in"
+          className="sub-menu absolute left-0 w-full top-full pt-[1px] bg-white shadow-lg opacity-100 visible pointer-events-auto transition-all duration-200"
           onMouseEnter={() => setActiveMenu(activeMenu)}
           onMouseLeave={() => setActiveMenu(null)}
         >
-          {MENU_ITEMS.map((item) => (
-            item.label === activeMenu && item.submenu && (
-              <div key={item.label} className="container-xl py-[6rem] flex gap-[6rem]">
-                {/* Left: Description */}
-                <div className="w-1/4 pr-[4rem] border-r border-gray-100">
-                  <h3 className="text-[4rem] font-serif leading-tight mb-[2rem]">{item.label}</h3>
-                  <div className="text-[1.4rem] leading-relaxed text-gray-600 font-light">
-                    {item.description}
-                  </div>
-                </div>
+          <div className="sub-inner m-0 bg-white">
+            <div className="sub-wrapper table w-full table-fixed p-[20px_30px]">
+              {MENU_ITEMS.map((item) => (
+                item.label === activeMenu && item.submenu && (
+                  <React.Fragment key={item.label}>
+                    {/* Left: Description */}
+                    <div className="sub-cell table-cell align-top border-r border-[#ddd] pr-[4%]">
+                      <div className="head py-[30px] px-0">
+                        <h3 className="uppercase text-[40px] mb-5 font-serif">{item.label}</h3>
+                        <div className="text-[20px] leading-[1.4] font-light text-[#333]">
+                          {item.description}
+                        </div>
+                      </div>
+                    </div>
 
-                {/* Right: Grid */}
-                <div className="w-3/4">
-                  <ul className="grid grid-cols-4 gap-x-[2rem] gap-y-[4rem]">
-                    {item.submenu.map((subItem) => (
-                      <li key={subItem.label} className="group">
-                        <Link href={subItem.href} className="block">
-                          <div className="mb-[1.5rem] overflow-hidden aspect-[3/2] relative bg-gray-100">
-                            <Image
-                              src={subItem.image}
-                              alt={subItem.label}
-                              fill
-                              className="object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                          </div>
-                          <span className="text-[1.2rem] font-bold uppercase tracking-widest group-hover:text-gray-600 transition-colors">
-                            {subItem.label}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )
-          ))}
+                    {/* Middle: Menu Items */}
+                    <div className="sub-cell table-cell align-top pl-[45px]">
+                      <ul className="m-0 p-0 list-none">
+                        {item.submenu.map((subItem) => (
+                          <li key={subItem.label} className="my-[30px] p-0 block">
+                            <Link 
+                              href={subItem.href} 
+                              className="text-black no-underline inline-block leading-[1.5] border-b border-transparent hover:border-black transition-colors"
+                            >
+                              <div className="relative mb-2 overflow-hidden aspect-[3/2] bg-gray-100">
+                                <Image
+                                  src={subItem.image}
+                                  alt={subItem.label}
+                                  fill
+                                  className="object-cover transition-transform duration-700 hover:scale-110"
+                                />
+                              </div>
+                              <span className="text-[1.2rem] font-bold uppercase tracking-widest">
+                                {subItem.label}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Right: Empty cell for spacing */}
+                    <div className="sub-cell table-cell align-top w-[330px]"></div>
+                  </React.Fragment>
+                )
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </header>
