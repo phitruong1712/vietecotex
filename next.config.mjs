@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { typedRoutes: true },
+  experimental: { typedRoutes: false }, // Disable typedRoutes for now to allow gradual migration
   async headers() {
     return [
       // Favicon specific headers - MUST come FIRST for iPhone Chrome
