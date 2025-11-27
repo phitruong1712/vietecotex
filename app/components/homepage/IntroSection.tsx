@@ -1,11 +1,45 @@
+'use client';
+
 import Link from 'next/link';
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function IntroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const elements = textRef.current?.children;
+    if (!elements) return;
+
+    gsap.fromTo(elements, 
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }, { scope: containerRef });
+
   return (
-    <section className="py-[8rem] lg:py-[12rem]">
+    <section ref={containerRef} className="py-[8rem] lg:py-[12rem]">
       <div className="container-xl">
         <div className="flex flex-col lg:flex-row lg:justify-end">
-          <div className="lg:w-2/3">
+          <div ref={textRef} className="lg:w-2/3">
             <h1 className="text-[4rem] lg:text-[6rem] leading-tight mb-[4rem] font-serif uppercase font-normal">
               VIET ECOTEX
             </h1>
@@ -33,4 +67,3 @@ export default function IntroSection() {
     </section>
   );
 }
-

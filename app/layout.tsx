@@ -2,6 +2,7 @@ import './globals.css';
 import { Metadata } from 'next';
 import HeaderNew from './components/header-new';
 import FooterNew from './components/footer-new';
+import SmoothScroll from './components/SmoothScroll';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vietecotex.com'),
@@ -183,9 +184,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <HeaderNew />
-        <main className="pt-[8rem]">{children}</main>
-        <FooterNew />
+        <SmoothScroll>
+          <HeaderNew />
+          <main className="pt-0">{children}</main>
+          <FooterNew />
+        </SmoothScroll>
       </body>
     </html >
   );
