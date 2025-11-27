@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import HeroNewsStrip from './HeroNewsStrip';
 
 const SLIDES = [
   '/images/homepage/banner-1.jpg',
@@ -43,7 +44,7 @@ export default function HeroSlider() {
       <div className="absolute inset-0 bg-black/20" />
 
       {/* Explore Button/Scroll Hint */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-white text-center">
+      <div className="absolute bottom-10 md:bottom-[10rem] left-1/2 -translate-x-1/2 z-10 text-white text-center">
         <span className="text-[1.2rem] uppercase tracking-widest font-bold block mb-4">Explore</span>
         <div className="h-[6rem] w-[1px] bg-white/50 mx-auto relative overflow-hidden">
            <motion.div 
@@ -53,7 +54,8 @@ export default function HeroSlider() {
            />
         </div>
       </div>
+
+      <HeroNewsStrip />
     </section>
   );
 }
-

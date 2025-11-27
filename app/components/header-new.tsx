@@ -94,23 +94,17 @@ export default function HeaderNew() {
           {/* Logo */}
           <div className="w-[18rem] flex-shrink-0">
             <Link href="/">
-              {isTransparent ? (
-                <Image 
-                  src="/images/logo-new-white.svg" 
-                  alt="Viet Ecotex" 
-                  width={180} 
-                  height={32} 
-                  className="w-auto h-[32px]"
-                />
-              ) : (
+              {/* Use CSS filter to make the logo white when transparent */}
+              <div className={`relative transition-all duration-300 ${isTransparent ? 'brightness-0 invert' : ''}`}>
                 <Image 
                   src="/images/vietecotex-logo.png" 
                   alt="Viet Ecotex" 
                   width={180} 
                   height={32} 
                   className="w-auto h-[32px]"
+                  priority
                 />
-              )}
+              </div>
             </Link>
           </div>
 
@@ -126,7 +120,7 @@ export default function HeaderNew() {
                 >
                   <Link 
                     href={item.href}
-                    className={`text-[1.2rem] font-bold uppercase tracking-widest transition-colors relative ${
+                    className={`text-[1.3rem] font-bold uppercase tracking-widest transition-colors relative ${
                       isTransparent ? 'hover:text-gray-300' : 'hover:text-gray-600'
                     }`}
                   >
